@@ -26,3 +26,27 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+# Navigation
+include:
+  - _pages
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
