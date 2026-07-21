@@ -1,0 +1,28 @@
+remote_theme: "mmistakes/minimal-mistakes@4.28.0"
+
+plugins:
+  - jekyll-include-cache
+
+title: "Yan AKOUEDENOUDJE"
+description: "Agro-Equipment Technician | Robotics | Mechatronics | Smart Agriculture"
+url: "https://yanakouedenoudje.github.io"
+
+author:
+  name: "Yan AKOUEDENOUDJE"
+  bio: "Agro-Equipment Technician | Python Developer | Robotics & Smart Agriculture Enthusiast"
+  location: "Benin"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/TON_USERNAME"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "linkedin.com/in/yan-akouedenoudje-58b02929a"
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
