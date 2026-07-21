@@ -65,7 +65,13 @@ When the vegetable oil reaches the required temperature, the system controls the
 
 ## 📸 Project Gallery
 
-Images of the system will be added here.
+### Complete System
+
+![Complete dual-fuel system](/assets/images/bicarburation/class.jpg)
+
+### Electronic Control System
+
+![Electronic control system](/assets/images/bicarburation/mf.jpg)
 
 ---
 
