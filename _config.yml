@@ -50,3 +50,9 @@ defaults:
     values:
       layout: single
       author_profile: true
+main:
+  - title: "About"
+    url: /about/
+
+  - title: "Projects"
+    url: /projects/
