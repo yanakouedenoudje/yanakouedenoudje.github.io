@@ -104,6 +104,7 @@ The electronic control system allowed real-time monitoring of system parameters 
 
 The system automatically controls the heating process.
 
+````markdown
 ```cpp
 if (temperature < 70) {
     digitalWrite(HEATER_PIN, HIGH);
