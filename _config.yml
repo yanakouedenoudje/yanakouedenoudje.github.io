@@ -14,10 +14,10 @@ author:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/TON_USERNAME"
+      url: "https://github.com/yanakouedenoudje"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "linkedin.com/in/yan-akouedenoudje-58b02929a"
+      url: "https://www.linkedin.com/in/yan-akouedenoudje-58b02929a"
 
 defaults:
   - scope:
