@@ -119,3 +119,8 @@ if (temperature < 70) {
 if (temperature > 70) {
     digitalWrite(HEATER_PIN, LOW);
 }
+## 💻 Source Code
+
+The complete source code of the electronic control system is available on GitHub.
+
+[🔗 View Source Code](https://github.com/yanakouedenoudje/diesel-dual-fuel-system/blob/main/dual_fuel_system.ino){: .btn .btn--primary}
