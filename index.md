@@ -5,8 +5,8 @@ permalink: /
 
 header:
   overlay_image: /assets/images/header.jpeg
-  overlay_filter: "0.45"
-  caption: "Agriculture • Technology • Innovation"
+  overlay_filter: rgba(15, 23, 42, 0.65)
+  caption: "Agro Equipment • Robotics • Mechatronics • Smart Agriculture"
 
 excerpt: >
   Agro-Equipment Technician passionate about Robotics, Mechatronics,
@@ -43,39 +43,104 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-## 👋 About Me
+# 👋 Hi, I'm Yan AKOUEDENOUDJE
 
-I am **Yan AKOUEDENOUDJE**, an Agro-Equipment Technician with a background in **electrotechnics, mechanical design, agricultural machinery, electronics and programming**.
+## Agro-Equipment Technician | Robotics & Mechatronics Enthusiast
 
-My main interest is at the intersection of:
+I design and develop technological solutions combining:
 
-> **Agriculture × Robotics × Mechatronics × Artificial Intelligence**
+**🚜 Agricultural Engineering**  
+**🤖 Robotics**  
+**⚡ Embedded Systems**  
+**🐍 Programming**  
+**🌱 Smart Agriculture**
 
-I am passionate about designing technological solutions that can address real-world agricultural challenges.
-
----
-
-## 🧰 What I Work With
-
-| 🚜 Agricultural Engineering | 🤖 Robotics & Embedded Systems |
-|---|---|
-| Agricultural Machinery | Arduino |
-| Mechanical Design | Sensors & Actuators |
-| Precision Agriculture | Electronics |
-| Maintenance | Automation |
-
-| 🐍 Software & Programming | ⚙️ Engineering |
-|---|---|
-| Python | SolidWorks |
-| C/C++ | CAD |
-| Git & GitHub | Electrotechnics |
-| Data Analysis | Welding & Manufacturing |
+My ambition is to become a **Mechatronics and Robotics Engineer specialized in Smart Agriculture**, creating accessible technologies adapted to agricultural challenges.
 
 ---
 
-## 🚀 Featured Projects
+<a href="/projects/" class="btn btn--primary">
+Explore My Projects
+</a>
 
-{% include feature_row %}
+<a href="/files/CV_Yan_Akouedenooudje.pdf" class="btn btn--success">
+Download CV
+</a>
+---
+
+---
+
+## 🚀 What I Do
+
+<div class="notice--info">
+
+### 🚜 Agricultural Engineering
+
+Design, maintenance and improvement of agricultural equipment.
+
+</div>
+
+
+<div class="notice--success">
+
+### 🤖 Robotics & Embedded Systems
+
+Arduino, sensors, automation, electronics and intelligent systems.
+
+</div>
+
+
+<div class="notice--primary">
+
+### 🐍 Software Development
+
+Python, C/C++, data analysis and automation.
+
+</div>
+---
+
+---
+
+# ⭐ Featured Projects
+
+
+## 🚜 Electronic Dual-Fuel System
+
+An Arduino-based control system developed for a diesel engine using Diesel and Jatropha vegetable oil.
+
+**Technologies:**
+
+`Arduino` `C/C++` `DS18B20` `Electronics` `Automation`
+
+[View Project →](/projects/dual-fuel-system/)
+
+
+---
+
+## 🐍 Python Projects
+
+Programming projects focused on:
+
+- Algorithms
+- Data analysis
+- Automation
+- Machine learning fundamentals
+
+[View Projects →](/projects/python/)
+
+
+---
+
+## 🤖 Robotics Projects
+
+Embedded systems and robotics projects involving:
+
+- Sensors
+- Actuators
+- Microcontrollers
+- Automation
+
+[View Projects →](/projects/robotics/)
 
 ---
 
