@@ -356,6 +356,160 @@
 
 </section>
 
+<!-- ==========================
+     SKILLS SECTION
+========================== -->
+
+<section id="skills" class="skills">
+
+
+    <div class="section-header">
+
+        <p class="section-title">
+            Skills & Technologies
+        </p>
+
+        <h2>
+            Tools I Use To Build Solutions
+        </h2>
+
+        <p>
+            Combining software, electronics,
+            mechanical design and agricultural engineering.
+        </p>
+
+    </div>
+
+
+
+    <div class="skills-grid">
+
+
+        <!-- SOFTWARE -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                💻
+            </div>
+
+
+            <h3>
+                Software Development
+            </h3>
+
+
+            <ul>
+
+                <li>Python</li>
+                <li>C / C++</li>
+                <li>Git & GitHub</li>
+                <li>Data Analysis</li>
+                <li>Automation</li>
+
+            </ul>
+
+
+        </div>
+
+
+
+        <!-- ROBOTICS -->
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🤖
+            </div>
+
+
+            <h3>
+                Embedded Systems
+            </h3>
+
+
+            <ul>
+
+                <li>Arduino</li>
+                <li>Sensors</li>
+                <li>Actuators</li>
+                <li>IoT</li>
+                <li>Electronics</li>
+
+            </ul>
+
+
+        </div>
+
+
+
+
+        <!-- MECHANICAL -->
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                ⚙️
+            </div>
+
+
+            <h3>
+                Mechanical Engineering
+            </h3>
+
+
+            <ul>
+
+                <li>SolidWorks</li>
+                <li>CAD Design</li>
+                <li>Mechanical Design</li>
+                <li>Manufacturing</li>
+                <li>Welding</li>
+
+            </ul>
+
+
+        </div>
+
+
+
+
+        <!-- AGRICULTURE -->
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🌱
+            </div>
+
+
+            <h3>
+                Smart Agriculture
+            </h3>
+
+
+            <ul>
+
+                <li>Agricultural Machinery</li>
+                <li>Precision Agriculture</li>
+                <li>Agro-equipment</li>
+                <li>Farm Technologies</li>
+                <li>Sustainable Solutions</li>
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
 
 <script src="script.js"></script>
 
