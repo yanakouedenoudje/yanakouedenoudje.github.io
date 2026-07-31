@@ -234,3 +234,146 @@ nav a:hover {
     font-weight:600;
 
 }
+
+/* ==========================
+   ABOUT SECTION
+========================== */
+
+
+.about {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:100px 40px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+
+.about-image {
+
+    flex:1;
+
+}
+
+
+
+.about-image img {
+
+    width:100%;
+
+    max-width:400px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.15);
+
+}
+
+
+
+.about-text {
+
+    flex:1;
+
+}
+
+
+
+.section-title {
+
+    color:#2563EB;
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+
+
+.about-text h2 {
+
+    font-size:42px;
+
+    margin:20px 0;
+
+}
+
+
+
+.about-text p {
+
+    color:#475569;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+.about-cards {
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.mini-card {
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+
+    border:1px solid #E2E8F0;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+.mini-card:hover {
+
+
+    transform:translateY(-8px);
+
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,0.1);
+
+
+}
+
+
+
+.mini-card h3 {
+
+    margin-bottom:15px;
+
+}
