@@ -207,3 +207,30 @@ nav a:hover {
     0 20px 40px rgba(0,0,0,0.15);
 
 }
+
+.tags {
+
+    margin-top:30px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+
+.tags span {
+
+    background:white;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    border:1px solid #E2E8F0;
+
+    font-weight:600;
+
+}
