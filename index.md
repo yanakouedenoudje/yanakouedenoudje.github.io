@@ -510,6 +510,92 @@
 
 </section>
 
+<!-- ==========================
+     TIMELINE SECTION
+========================== -->
+
+<section id="journey" class="timeline-section">
+
+
+    <div class="section-header">
+
+        <p class="section-title">
+            My Journey
+        </p>
+
+        <h2>
+            Education & Professional Experience
+        </h2>
+
+        <p>
+            A journey combining electrical engineering,
+            agricultural technologies and robotics.
+        </p>
+
+    </div>
+
+
+
+    <div class="timeline">
+
+
+
+        <!-- BAC -->
+
+        <div class="timeline-item">
+
+
+            <div class="timeline-dot"></div>
+
+
+            <div class="timeline-content">
+
+
+                <span class="timeline-date">
+                    2020 - 2021
+                </span>
+
+
+                <h3>
+                    Baccalauréat F3 - Electrotechnics
+                </h3>
+
+
+                <h4>
+                    Technical Education
+                </h4>
+
+
+                <p>
+                    Technical training focused on
+                    electrical systems, automation basics,
+                    electrical installations and industrial
+                    technologies.
+                </p>
+
+
+                <div class="timeline-tags">
+
+                    <span>Electrotechnics</span>
+                    <span>Electrical Systems</span>
+                    <span>Automation</span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+</section>
+
 
 <script src="script.js"></script>
 
