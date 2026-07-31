@@ -1,0 +1,209 @@
+/* ==========================
+   GLOBAL SETTINGS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #F8FAFC;
+    color: #0F172A;
+}
+
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(248,250,252,0.9);
+    backdrop-filter: blur(10px);
+}
+
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2563EB;
+}
+
+
+nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #0F172A;
+    font-weight: 600;
+}
+
+
+nav a:hover {
+    color: #16A34A;
+}
+
+
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 120px 40px 60px;
+
+    gap: 50px;
+
+}
+
+
+.hero-text {
+    flex: 1;
+}
+
+
+.hero-text p:first-child {
+
+    color: #2563EB;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+
+.hero h1 {
+
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 20px 0;
+
+}
+
+
+.hero h2 {
+
+    color: #16A34A;
+    font-size: 30px;
+
+}
+
+
+.hero-text p {
+
+    font-size: 20px;
+    margin-top: 20px;
+
+    color: #475569;
+
+}
+
+
+
+/* ==========================
+   BUTTONS
+========================== */
+
+
+.buttons {
+
+    margin-top: 40px;
+
+    display: flex;
+    gap: 20px;
+
+}
+
+
+.buttons a {
+
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+}
+
+
+.buttons a:first-child {
+
+    background: #2563EB;
+    color:white;
+
+}
+
+
+.buttons a:last-child {
+
+    border:2px solid #16A34A;
+    color:#16A34A;
+
+}
+
+
+.buttons a:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+
+.hero-image {
+
+    flex:1;
+
+}
+
+
+.hero-image img {
+
+    width:100%;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.15);
+
+}
