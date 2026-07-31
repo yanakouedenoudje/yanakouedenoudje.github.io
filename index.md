@@ -80,6 +80,107 @@
 
 </section>
 
+<!-- ==========================
+     ABOUT SECTION
+========================== -->
+
+<section id="about" class="about">
+
+
+    <div class="about-image">
+
+        <img src="assets/images/profile.jpg"
+        alt="Yan AKOUEDENOUDJE">
+
+    </div>
+
+
+
+    <div class="about-text">
+
+        <p class="section-title">
+            About Me
+        </p>
+
+
+        <h2>
+            Engineering Agriculture
+            Through Technology
+        </h2>
+
+
+        <p>
+            I am Yan AKOUEDENOUDJE, an Agro-Equipment
+            Technician passionate about robotics,
+            embedded systems and smart agriculture.
+        </p>
+
+
+        <p>
+            My background combines agricultural engineering,
+            electrotechnics, mechanical design,
+            electronics and programming.
+        </p>
+
+
+        <p>
+            I enjoy designing intelligent systems that
+            connect software and hardware to solve
+            real-world agricultural challenges.
+        </p>
+
+
+
+        <div class="about-cards">
+
+
+            <div class="mini-card">
+
+                <h3>🚜 Agriculture</h3>
+
+                <p>
+                    Agricultural machinery,
+                    precision agriculture
+                    and equipment innovation.
+                </p>
+
+            </div>
+
+
+
+            <div class="mini-card">
+
+                <h3>🤖 Robotics</h3>
+
+                <p>
+                    Embedded systems,
+                    automation and intelligent machines.
+                </p>
+
+            </div>
+
+
+
+            <div class="mini-card">
+
+                <h3>💻 Programming</h3>
+
+                <p>
+                    Python, C/C++,
+                    data analysis and automation.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
 
 <script src="script.js"></script>
 
