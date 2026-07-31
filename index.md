@@ -40,6 +40,15 @@
             Future Mechatronics & Robotics Engineer
         </h2>
 
+        <div class="tags">
+        
+            <span>🚜 Smart Agriculture</span>
+            <span>🤖 Robotics</span>
+            <span>🐍 Python</span>
+            <span>⚡ Embedded Systems</span>
+        
+        </div>
+
         <p>
             Building intelligent technologies
             for Smart Agriculture.
