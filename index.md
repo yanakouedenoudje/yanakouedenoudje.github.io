@@ -181,6 +181,181 @@
 
 </section>
 
+<!-- ==========================
+     PROJECTS SECTION
+========================== -->
+
+<section id="projects" class="projects">
+
+
+    <div class="section-header">
+
+        <p class="section-title">
+            My Projects
+        </p>
+
+        <h2>
+            Engineering Solutions
+            I Have Built
+        </h2>
+
+        <p>
+            A selection of projects combining
+            agriculture, electronics,
+            programming and mechanical engineering.
+        </p>
+
+    </div>
+
+
+
+    <div class="project-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+
+            <img src="assets/images/projects/bicarburation.jpg"
+            alt="Dual Fuel System">
+
+
+            <div class="project-content">
+
+                <h3>
+                    Electronic Dual-Fuel System
+                </h3>
+
+
+                <p>
+                    Design and implementation of an
+                    Arduino-based control system for
+                    a diesel engine using Diesel and
+                    Jatropha vegetable oil.
+                </p>
+
+
+                <div class="tech">
+
+                    <span>Arduino</span>
+                    <span>C/C++</span>
+                    <span>Electronics</span>
+
+                </div>
+
+
+                <a href="#">
+                    View Project →
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <!-- PROJECT 2 -->
+
+
+        <div class="project-card">
+
+
+            <img src="assets/images/projects/python.jpg"
+            alt="Python Projects">
+
+
+            <div class="project-content">
+
+
+                <h3>
+                    Python Projects
+                </h3>
+
+
+                <p>
+                    Programming projects focused on
+                    algorithms, automation,
+                    data analysis and problem solving.
+                </p>
+
+
+                <div class="tech">
+
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+
+                </div>
+
+
+                <a href="#">
+                    View Project →
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- PROJECT 3 -->
+
+
+        <div class="project-card">
+
+
+            <img src="assets/images/projects/robotics.jpg"
+            alt="Robotics Projects">
+
+
+            <div class="project-content">
+
+
+                <h3>
+                    Robotics & Embedded Systems
+                </h3>
+
+
+                <p>
+                    Arduino projects involving
+                    sensors, actuators and
+                    automation systems.
+                </p>
+
+
+                <div class="tech">
+
+                    <span>Arduino</span>
+                    <span>Sensors</span>
+                    <span>IoT</span>
+
+                </div>
+
+
+                <a href="#">
+                    View Project →
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
 
 <script src="script.js"></script>
 
