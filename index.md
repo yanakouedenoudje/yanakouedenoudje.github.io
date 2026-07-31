@@ -63,7 +63,7 @@ My ambition is to become a **Mechatronics and Robotics Engineer specialized in S
 Explore My Projects
 </a>
 
-<a href="assets/files/CV_Yan_AKOUEDENOUDJE.pdf" class="btn btn--success">
+<a href="/assets/files/CV_Yan_AKOUEDENOUDJE.pdf" class="btn btn--success">
 Download CV
 </a>
 ---
