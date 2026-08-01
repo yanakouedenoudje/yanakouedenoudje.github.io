@@ -600,7 +600,7 @@
 
 
         <span class="timeline-date">
-            2021 - 2024
+            2022 - 2025
         </span>
 
 
