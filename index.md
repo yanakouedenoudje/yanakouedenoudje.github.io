@@ -552,7 +552,7 @@
 
 
                 <span class="timeline-date">
-                    2020 - 2021
+                    2021 - 2022
                 </span>
 
 
@@ -592,6 +592,66 @@
 
 
     </div>
+
+    <!-- LICENCE PROFESSIONNELLE -->
+
+<div class="timeline-item">
+
+
+    <div class="timeline-dot"></div>
+
+
+    <div class="timeline-content">
+
+
+        <span class="timeline-date">
+            2021 - 2024
+        </span>
+
+
+        <h3>
+            Licence Professionnelle Agroéquipements
+        </h3>
+
+
+        <h4>
+            Université Nationale d'Agriculture (UNA) - Bénin
+        </h4>
+
+
+        <p>
+
+            Engineering training focused on agricultural
+            machinery, equipment design, maintenance and
+            technological solutions for modern agriculture.
+
+            This program allowed me to combine mechanical
+            engineering, electrical systems and agricultural
+            applications.
+
+        </p>
+
+
+
+        <div class="timeline-tags">
+
+            <span>Agricultural Machinery</span>
+
+            <span>Mechanical Design</span>
+
+            <span>Electronics</span>
+
+            <span>Maintenance</span>
+
+            <span>CAD</span>
+
+        </div>
+
+
+    </div>
+
+
+</div>
 
 
 </section>
