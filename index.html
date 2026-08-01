@@ -168,15 +168,6 @@
 
   
 
-  /* about */
-  .about-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:48px; align-items:start; }
-  .about-grid p{ color:var(--muted); margin-bottom:16px; }
-  .skills-list{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
-  .skill-chip{
-    padding:8px 16px; border-radius:10px; background:var(--panel); border:1px solid var(--line);
-    font-size:0.85rem; font-family:'JetBrains Mono',monospace;
-  }
-
   /* projects */
   .projects-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   .project-card{
@@ -254,27 +245,30 @@
 
 <section id="apropos">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">À propos</div>
-      <h2>Qui je suis</h2>
-    </div>
     <div class="about-grid">
-      <div>
-        <p>[Court paragraphe sur ton parcours : formation, expériences marquantes, ce qui te motive.]</p>
+      <div class="about-photo">
+        <img src="assets/images/profile.jpg" alt="Yan Akouedenoudje">
       </div>
-      <div>
-        <p>[Deuxième paragraphe : ce que tu recherches actuellement — poste, projets, collaborations.]</p>
-        <div class="skills-list">
-          <span class="skill-chip">[Compétence 1]</span>
-          <span class="skill-chip">[Compétence 2]</span>
-          <span class="skill-chip">[Compétence 3]</span>
-          <span class="skill-chip">[Compétence 4]</span>
-          <span class="skill-chip">[Compétence 5]</span>
+      <div class="about-content">
+        <div class="about-eyebrow">Qui suis-je ?</div>
+        <h2>Yan Akouedenoudje</h2>
+        <div class="about-role">Technicien en Agroéquipements</div>
+        <p class="bio">Je projette de devenir ingénieur en robotique afin de contribuer, par la recherche et l'innovation, au développement de solutions technologiques pour les exploitations agricoles africaines. [Tu peux compléter avec 1-2 phrases sur ta personnalité, ex : rigoureux, curieux, passionné par le terrain et la tech.]</p>
+        <div class="about-badges">
+          <span class="about-badge">🚜 Technicien en Agroéquipements</span>
+          <span class="about-badge">🐍 Développeur Python</span>
+          <span class="about-badge">🤖 Futur Ingénieur Robotique</span>
+          <!-- Ajoute/retire des badges selon tes casquettes réelles -->
+        </div>
+        <div class="about-ctas">
+          <a href="#projets" class="btn btn-primary">Voir mes projets →</a>
+          <a href="mailto:yanakouedenoudje@gmail.com" class="btn btn-ghost">Me contacter</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section id="projets" style="background:var(--panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="wrap">
