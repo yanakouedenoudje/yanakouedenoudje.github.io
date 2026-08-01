@@ -588,11 +588,6 @@
 
         </div>
 
-
-
-
-    </div>
-
     <!-- LICENCE PROFESSIONNELLE -->
 
 <div class="timeline-item">
@@ -653,6 +648,10 @@
 
 </div>
 
+
+
+    </div>
+    
 
 </section>
 
