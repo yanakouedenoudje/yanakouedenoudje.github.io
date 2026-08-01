@@ -22,6 +22,13 @@
     --radius: 14px;
   }
 
+  body, header, .project-card, .cert-card, .timeline-card, .skill-pill, .contact-box,
+  .tag, .badge, .social-btn, .about-photo, .project-thumb, .cert-thumb, .edu-exp-icon,
+  .nav-links a, .btn-ghost, .projects-all-link, .skills-cloud, .about-badge, .project-tag,
+  .timeline-period, .nav-toggle{
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  }
+
   *{ margin:0; padding:0; box-sizing:border-box; }
 
   html{ scroll-behavior:smooth; }
@@ -65,7 +72,13 @@
     background:var(--grad); padding:9px 18px; border-radius:999px;
     font-size:0.9rem; font-weight:600; color:#fff;
   }
-  .nav-toggle{ display:none; background:none; border:none; color:var(--text); font-size:1.4rem; cursor:pointer; }
+  .theme-toggle{
+    width:40px; height:40px; border-radius:50%; background:var(--panel); border:1px solid var(--line);
+    color:var(--text); font-size:1.05rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .theme-toggle:hover{ border-color:var(--blue); }
+  .nav-right{ display:flex; align-items:center; gap:14px; } 
 
   /* ---------- HERO ---------- */
   .hero{
@@ -307,7 +320,10 @@
       <li><a href="#expériences">Parcours</a></li>
       <li><a href="#projets">Projets</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Contact</a>
+    <div class="nav-right">
+      <a href="#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
+    </div>
   </nav>
 </header>
 
