@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[TON NOM] — Portfolio</title>
-<meta name="description" content="[Une phrase d'accroche décrivant qui tu es et ce que tu fais]">
+<title>Bylvanus Yan Mahugnon AKOUEDENOUDJE — Portfolio</title>
+<meta name="description" content="Titulaire d'une licence professionnelle en Agroéquipements, je suis passionné par l'intégration des robots dans le monde agricole">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -183,7 +183,7 @@
 
 <header>
   <nav>
-    <div class="logo">[TON] <span>NOM</span></div>
+    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
     <ul class="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#apropos">À propos</a></li>
@@ -196,32 +196,32 @@
 
 <section class="hero" id="accueil">
   <div class="wrap">
-    <div class="badge">📍 [TA VILLE, TON PAYS]</div>
+    <div class="badge">📍 Abomey-calavi, Bénin</div>
     <div class="tags">
-      <span class="tag t1">[RÔLE 1]</span>
+      <span class="tag t1">Technicien en Agroéquipements</span>
       <span class="tag t2">[RÔLE 2]</span>
       <span class="tag t3">[RÔLE 3]</span>
     </div>
-    <h1>[Ton Nom Complet]</h1>
-    <p class="lead">[Ta phrase d'accroche — ex : "Je conçois des <b>produits</b> qui allient <span class="accent">technologie</span> et impact humain."]</p>
+    <h1>Bylvanus Yan Mahugnon AKOUEDENOUDJE</h1>
+    <p class="lead">"je projette de devenir <b>ingénieur robotique</b> afin de contribuer par la recherche et l’innovation au développement de <span class="accent">solutions technologiques</span> à l’endroit des exploitations agricoles africaines.</p>
     <div class="cta-row">
       <a href="#projets" class="btn btn-primary">Voir mes projets →</a>
-      <a href="[LIEN_VERS_TON_CV.pdf]" class="btn btn-ghost">Télécharger le CV ↓</a>
+      <a href="assets/files/CV_Yan_AKOUEDENOUDJE.pdf" class="btn btn-ghost">Télécharger le CV ↓</a>
     </div>
     <div class="socials">
-      <a href="[LIEN_LINKEDIN]" class="social-btn" title="LinkedIn">in</a>
-      <a href="[LIEN_GITHUB]" class="social-btn" title="GitHub">gh</a>
-      <a href="mailto:[TON_EMAIL]" class="social-btn" title="Email">✉</a>
+      <a href="linkedin.com/in/yan-akouedenoudje-58b02929a" class="social-btn" title="LinkedIn">in</a>
+      <a href="https://github.com/yanakouedenoudje" class="social-btn" title="GitHub">gh</a>
+      <a href="mailto:yanakouedenoudje@gmail.com" class="social-btn" title="Email">✉</a>
     </div>
   </div>
 </section>
 
 <div class="stats">
   <div class="stats-grid">
-    <div><h3>[X]+</h3><p>[Ex: Projets]</p></div>
-    <div><h3>[X]+</h3><p>[Ex: Ans d'expérience]</p></div>
-    <div><h3>[X]+</h3><p>[Ex: Certifications]</p></div>
-    <div><h3>[X]+</h3><p>[Ex: Clients / entreprises]</p></div>
+    <div><h3>+10</h3><p>Projets</p></div>
+    <div><h3>+5</h3><p>Certifications</p></div>
+    <div><h3>+5</h3><p>Conférences</p></div>
+    <div><h3>+1</h3><p>Forum</p></div>
   </div>
 </div>
 
