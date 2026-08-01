@@ -617,8 +617,22 @@
   © <span id="year"></span> Bylvanus Yan Mahugnon AKOUEDENOUDJE. Tous droits réservés.
 </footer>
 
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+ 
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+  themeToggle.addEventListener('click', () => {
+    const isLight = htmlEl.getAttribute('data-theme') === 'light';
+    if (isLight){
+      htmlEl.removeAttribute('data-theme');
+      themeToggle.textContent = '🌙';
+    } else {
+      htmlEl.setAttribute('data-theme', 'light');
+      themeToggle.textContent = '☀️';
+    }
+  });
 </script>
 
 </body>
