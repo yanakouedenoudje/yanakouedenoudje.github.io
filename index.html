@@ -140,6 +140,33 @@
   .section-head{ margin-bottom:48px; text-align:center; }
   .eyebrow{ color:var(--cyan); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
   .section-head h2{ font-size:clamp(1.8rem,4vw,2.6rem); }
+ 
+  /* about */
+  .about-grid{ display:grid; grid-template-columns:1fr 1.3fr; gap:56px; align-items:center; }
+  .about-photo{
+    width:100%; aspect-ratio:4/4.6; border-radius:20px; overflow:hidden;
+    background:var(--panel); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .about-photo .placeholder-note{
+    color:var(--muted); font-size:0.85rem; text-align:center; padding:24px;
+    font-family:'JetBrains Mono',monospace; line-height:1.7;
+  }
+  .about-eyebrow{ color:var(--cyan); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; font-weight:600; }
+  .about-content h2{ font-size:clamp(1.9rem,3.6vw,2.6rem); margin-bottom:10px; }
+  .about-role{ color:var(--blue); font-size:1.05rem; font-weight:600; margin-bottom:20px; }
+  .about-content p.bio{ color:var(--muted); margin-bottom:26px; font-size:1.02rem; }
+  .about-badges{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px; }
+  .about-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:9px 16px; border-radius:999px; background:var(--panel); border:1px solid var(--line);
+    font-size:0.88rem; color:var(--text);
+  }
+  .about-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  
 
   /* about */
   .about-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:48px; align-items:start; }
