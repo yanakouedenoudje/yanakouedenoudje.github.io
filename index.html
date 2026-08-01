@@ -209,6 +209,28 @@
     font-size:0.95rem; color:var(--text); font-weight:500;
   }
 
+  /* certifications */
+  .certs-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .cert-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; transition:transform .25s, border-color .25s; display:flex; flex-direction:column;
+  }
+  .cert-card:hover{ transform:translateY(-4px); border-color:var(--blue); }
+  .cert-thumb{
+    width:100%; aspect-ratio:16/11; background:var(--panel-2);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--muted); font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-align:center;
+  }
+  .cert-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .cert-card-body{ padding:22px 24px 0; flex:1; }
+  .cert-card h3{ font-size:1.05rem; margin-bottom:8px; line-height:1.35; }
+  .cert-meta{ color:var(--muted); font-size:0.88rem; }
+  .cert-actions{
+    display:flex; gap:10px; padding:20px 24px 24px; margin-top:16px; border-top:1px solid var(--line);
+  }
+  .cert-actions .btn{ padding:10px 18px; font-size:0.85rem; flex:1; justify-content:center; }
+  .certs-more{ text-align:center; margin-top:40px; }
+
   /* contact */
   .contact-box{
     background:var(--panel); border:1px solid var(--line); border-radius:20px;
@@ -414,6 +436,65 @@
       <!-- Ajoute/retire des .skill-pill selon tes vraies compétences -->
     </div>
     <a href="https://github.com/yanakouedenoudje" class="btn btn-ghost">Voir toutes mes compétences →</a>
+  </div>
+</section>
+
+<section id="certifications" style="background:var(--panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="projects-header">
+      <div>
+        <div class="eyebrow">Formation continue</div>
+        <h2>Certifications récentes</h2>
+      </div>
+      <a href="[LIEN_VERS_TOUTES_TES_CERTIFS]" class="projects-all-link">Toutes →</a>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/images/certif1.jpg" alt="...">
+          🖼️ Image certificat 1
+        </div>
+        <div class="cert-card-body">
+          <h3>[Titre de la certification 1]</h3>
+          <p class="cert-meta">[Organisme] • [Année]</p>
+        </div>
+        <div class="cert-actions">
+          <a href="[LIEN_TELECHARGEMENT_1]" class="btn btn-ghost">Télécharger</a>
+          <a href="[LIEN_IMAGE_1]" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/images/certif1.jpg" alt="...">
+          🖼️ Image certificat 2
+        </div>
+        <div class="cert-card-body">
+          <h3>[Titre de la certification 2]</h3>
+          <p class="cert-meta">[Organisme] • [Année]</p>
+        </div>
+        <div class="cert-actions">
+          <a href="[LIEN_TELECHARGEMENT_2]" class="btn btn-ghost">Télécharger</a>
+          <a href="[LIEN_IMAGE_2]" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/images/certif1.jpg" alt="...">
+          🖼️ Image certificat 3
+        </div>
+        <div class="cert-card-body">
+          <h3>[Titre de la certification 3]</h3>
+          <p class="cert-meta">[Organisme] • [Année]</p>
+        </div>
+        <div class="cert-actions">
+          <a href="[LIEN_IMAGE_3]" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+      <!-- Duplique un .cert-card entier pour ajouter d'autres certifications -->
+    </div>
+    <div class="certs-more">
+      <a href="[LIEN_VERS_TOUTES_TES_CERTIFS]" class="btn btn-ghost">+ Voir toutes les certifications</a>
+    </div>
   </div>
 </section>
   
