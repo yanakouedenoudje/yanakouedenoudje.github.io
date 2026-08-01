@@ -166,7 +166,55 @@
   }
   .about-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
 
-  
+  /* experiences */
+  /* experiences - two columns */
+  .edu-exp-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+  .edu-exp-col-header{
+    display:flex; align-items:center; gap:12px; margin-bottom:28px;
+  }
+  .edu-exp-icon{
+    width:38px; height:38px; border-radius:10px; background:var(--panel);
+    border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    font-size:1.1rem; flex-shrink:0;
+  }
+  .edu-exp-col-header h3{
+    font-size:1rem; letter-spacing:0.04em; text-transform:uppercase; font-family:'Space Grotesk',sans-serif;
+  }
+  .timeline{ position:relative; max-width:none; margin:0; }
+  .timeline::before{
+    content:''; position:absolute; left:20px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(var(--line), var(--line));
+  }
+  .timeline-item{ position:relative; padding-left:64px; margin-bottom:40px; }
+  .timeline-item:last-child{ margin-bottom:0; }
+  .timeline-dot{
+    position:absolute; left:12px; top:4px; width:18px; height:18px; border-radius:50%;
+    background:var(--grad); box-shadow:0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+  }
+  .timeline-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px 28px; transition:border-color .25s, transform .25s;
+  }
+  .timeline-card:hover{ border-color:var(--blue); transform:translateY(-2px); }
+  .timeline-period{
+    display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+    color:var(--cyan); background:rgba(53,208,224,0.08); border:1px solid rgba(53,208,224,0.3);
+    padding:4px 12px; border-radius:999px; margin-bottom:12px;
+  }
+  .timeline-card h3{ font-size:1.15rem; margin-bottom:4px; }
+  .timeline-card ul{ list-style:none; margin-top:8px; }
+  .timeline-card ul li{
+    color:var(--muted); font-size:0.9rem; padding-left:16px; position:relative; margin-bottom:6px;
+  }
+  .timeline-card ul li::before{
+    content:''; position:absolute; left:0; top:9px; width:5px; height:5px; border-radius:50%; background:var(--blue);
+  }
+  .timeline-org{ color:var(--blue); font-size:0.92rem; font-weight:600; margin-bottom:12px; }
+  .timeline-card p{ color:var(--muted); font-size:0.94rem; }
+  .projects-header{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    margin-bottom:40px; gap:20px; flex-wrap:wrap;
+  }
 
   /* projects */
   .projects-header h2{ font-size:clamp(1.8rem,4vw,2.6rem); margin-top:6px; }
@@ -320,44 +368,82 @@
   </div>
 </section>
 
-  <section id="expériences">
+<section id="expériences">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Expériences</div>
-      <h2>Mon parcours</h2>
+      <div class="eyebrow">Parcours</div>
+      <h2>Éducation &amp; Expérience</h2>
     </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <span class="timeline-period">[2023 — Présent]</span>
-          <h3>[Titre du poste]</h3>
-          <div class="timeline-org">[Nom de l'entreprise / organisation]</div>
-          <p>[Description courte : tes missions, responsabilités, outils utilisés, résultats obtenus.]</p>
+    <div class="edu-exp-grid">
+      <!-- Colonne Formation académique -->
+      <div>
+        <div class="edu-exp-col-header">
+          <div class="edu-exp-icon">🎓</div>
+          <h3>Formation académique</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-period">[En cours]</span>
+              <h3>[Intitulé du diplôme en cours]</h3>
+              <div class="timeline-org">[École / Université · Pays]</div>
+              <p>[Description courte de la spécialisation ou des matières clés.]</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-period">[2022]</span>
+              <h3>[Licence Professionnelle en Agroéquipements]</h3>
+              <div class="timeline-org">[Nom de l'école · Pays]</div>
+              <p>[Description courte de la formation.]</p>
+            </div>
+          </div>
+          <!-- Duplique un .timeline-item pour ajouter d'autres diplômes -->
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <span class="timeline-period">[2022 — 2023]</span>
-          <h3>[Titre du poste / stage]</h3>
-          <div class="timeline-org">[Nom de l'entreprise / organisation]</div>
-          <p>[Description courte : tes missions, responsabilités, outils utilisés, résultats obtenus.]</p>
+ 
+      <!-- Colonne Parcours professionnel -->
+      <div>
+        <div class="edu-exp-col-header">
+          <div class="edu-exp-icon">💼</div>
+          <h3>Parcours professionnel</h3>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <span class="timeline-period">[2020 — 2022]</span>
-          <h3>[Formation / Licence Agroéquipements]</h3>
-          <div class="timeline-org">[Nom de l'école]</div>
-          <p>[Description courte : ce que tu as appris, projets marquants pendant cette période.]</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-period">[2024 — Présent]</span>
+              <h3>[Titre du poste]</h3>
+              <div class="timeline-org">[Nom de l'entreprise / organisation]</div>
+              <ul>
+                <li>[Mission ou réalisation 1]</li>
+                <li>[Mission ou réalisation 2]</li>
+                <li>[Mission ou réalisation 3]</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-period">[2023 — 2024]</span>
+              <h3>[Titre du poste / stage]</h3>
+              <div class="timeline-org">[Nom de l'entreprise / organisation]</div>
+              <ul>
+                <li>[Mission ou réalisation 1]</li>
+                <li>[Mission ou réalisation 2]</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Duplique un .timeline-item pour ajouter d'autres expériences -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
+  
 <section id="projets" style="background:var(--panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="projects-header">
