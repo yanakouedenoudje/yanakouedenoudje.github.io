@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bylvanus Yan Mahugnon AKOUEDENOUDJE — Portfolio</title>
+<title>Yan AKOUEDENOUDJE — Portfolio</title>
 <meta name="description" content="Titulaire d'une licence professionnelle en Agroéquipements, je suis passionné par l'intégration des robots dans le monde agricole">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -187,8 +186,8 @@
     <ul class="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#apropos">À propos</a></li>
+      <li><a href="#expériences">Contact</a></li>
       <li><a href="#projets">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Contact</a>
   </nav>
@@ -202,7 +201,7 @@
       <span class="tag t2">[RÔLE 2]</span>
       <span class="tag t3">[RÔLE 3]</span>
     </div>
-    <h1>Bylvanus Yan Mahugnon AKOUEDENOUDJE</h1>
+    <h1>Yan AKOUEDENOUDJE</h1>
     <p class="lead">"je projette de devenir <b>ingénieur robotique</b> afin de contribuer par la recherche et l’innovation au développement de <span class="accent">solutions technologiques</span> à l’endroit des exploitations agricoles africaines.</p>
     <div class="cta-row">
       <a href="#projets" class="btn btn-primary">Voir mes projets →</a>
