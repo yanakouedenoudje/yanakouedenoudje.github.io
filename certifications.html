@@ -116,6 +116,12 @@
   .btn-ghost{ background:var(--panel-2); border:1px solid var(--line); color:var(--text); }
   .btn-ghost:hover{ border-color:var(--blue); }
 
+  .cert-card.hidden{ display:none; }
+  .no-results{
+    text-align:center; color:var(--muted); padding:60px 20px; display:none; font-size:0.95rem;
+  }
+  .no-results.show{ display:block; }
+
   footer{ border-top:1px solid var(--line); padding:28px 0; text-align:center; color:var(--muted); font-size:0.85rem; }
 
   @media (max-width: 820px){
@@ -149,71 +155,128 @@
   <div class="wrap">
     <div class="eyebrow">Formation continue</div>
     <h1>Toutes mes certifications &amp; attestations</h1>
-    <p>L'ensemble de mes certifications professionnelles, attestations de conférences et cours suivis.</p>
+    <p>L'ensemble de mes certifications professionnelles, attestations, conférences et forums assistés.</p>
     <a href="index.html" class="back-link">← Retour au portfolio</a>
   </div>
 </section>
 
 <!-- Filtres optionnels par catégorie — supprime ce bloc si tu ne veux pas de filtres, sinon ajoute le JS correspondant -->
 <div class="filters">
-  <span class="page-filter active">Toutes</span>
-  <span class="page-filter">Certifications</span>
-  <span class="page-filter">Attestations</span>
-  <span class="page-filter">Conférences</span>
+  <span class="page-filter active" data-filter="all">Toutes</span>
+  <span class="page-filter" data-filter="certification">Certifications</span>
+  <span class="page-filter" data-filter="attestation">Attestations</span>
+  <span class="page-filter" data-filter="conference">Conférences & Forums</span>
 </div>
 
 <main>
   <div class="wrap">
-    <div class="certs-grid">
+    <div class="certs-grid" id="certsGrid">
 
-      <div class="cert-card">
-        <div class="cert-thumb">🖼️ Image certificat 1</div>
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+            <img src="assets/images/certif/python_programming_fundamentals.png" alt="...">
+        </div>
         <div class="cert-card-body">
-          <h3>[Titre de la certification 1]</h3>
-          <p class="cert-meta">[Organisme] • [Année]</p>
+          <h3>Python Programming Fundamentals</h3>
+          <p class="cert-meta">Microsoft • 2026</p>
         </div>
         <div class="cert-actions">
-          <a href="[LIEN_TELECHARGEMENT_1]" class="btn btn-ghost">Télécharger</a>
-          <a href="[LIEN_IMAGE_1]" class="btn btn-primary">Agrandir</a>
+          <a href="assets/files/python_programming_fundamentals.pdf" class="btn btn-ghost">Ouvrir</a>
         </div>
       </div>
 
-      <div class="cert-card">
-        <div class="cert-thumb">🖼️ Image certificat 2</div>
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+            <img src="assets/images/certif/iot.png" alt="...">  
+        </div>
         <div class="cert-card-body">
-          <h3>[Titre de la certification 2]</h3>
-          <p class="cert-meta">[Organisme] • [Année]</p>
+          <h3>IoT (Internet of Things) Wireless & Cloud Computing Emerging Technologies</h3>
+          <p class="cert-meta">Yonsei University  • 2025</p>
         </div>
         <div class="cert-actions">
-          <a href="[LIEN_TELECHARGEMENT_2]" class="btn btn-ghost">Télécharger</a>
-          <a href="[LIEN_IMAGE_2]" class="btn btn-primary">Agrandir</a>
+          <a href="assets/files/iot.pdf" class="btn btn-ghost">Ouvrir</a>
         </div>
       </div>
 
-      <div class="cert-card">
-        <div class="cert-thumb">🖼️ Image certificat 3</div>
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+            <img src="assets/images/certif/codeyour.png" alt="...">  
+        </div>
         <div class="cert-card-body">
-          <h3>[Titre de la certification 3]</h3>
-          <p class="cert-meta">[Organisme] • [Année]</p>
+          <h3>Code Yourself! An Introduction to Programming</h3>
+          <p class="cert-meta">The University of Edinburgh and Universidad ORT Uruguay • 2025</p>
         </div>
         <div class="cert-actions">
-          <a href="[LIEN_TELECHARGEMENT_3]" class="btn btn-ghost">Télécharger</a>
-          <a href="[LIEN_IMAGE_3]" class="btn btn-primary">Agrandir</a>
+          <a href="assets/files/codeyour" class="btn btn-ghost">Ouvrir</a>
         </div>
       </div>
 
-      <div class="cert-card">
-        <div class="cert-thumb">🖼️ Image certificat 4</div>
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+            <img src="assets/images/attes/attesServ.png" alt="...">  
+        </div>
         <div class="cert-card-body">
-          <h3>[Titre de la certification 4]</h3>
-          <p class="cert-meta">[Organisme] • [Année]</p>
+          <h3>Attestation de fin de mission de service civique</h3>
+          <p class="cert-meta">Agricampus de Castelnaudary • 2026</p>
         </div>
         <div class="cert-actions">
-          <a href="[LIEN_IMAGE_4]" class="btn btn-primary">Agrandir</a>
+          <a href="assets/files/Attestation_Service_Civique.pdf" class="btn btn-ghost">Ouvrir</a>
         </div>
       </div>
 
-      <div class="cert-card">
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+            <img src="assets/images/attes/attesSou.png" alt="...">  
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestation individuelle de fin de formation en soudure</h3>
+          <p class="cert-meta">CFPPA Castelnaudary • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/attesSou.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+            <img src="assets/images/attes/attesCCMUF.png" alt="...">  
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestaion de fin de Stage</h3>
+          <p class="cert-meta">Centre de Conception Mécanique d’Usinage et de Forge (CCMUF) • 2025</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/attesCCMUF.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+            <img src="assets/images/attes/sst.png" alt="...">  
+        </div>
+        <div class="cert-card-body">
+          <h3>Certificat de sauveteur secouriste de travail</h3>
+          <p class="cert-meta">Institut Nationle de Recherche et de Sécurité (INRS) • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/carte_sst.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+       <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+            <img src="assets/images/attes/policier.png" alt="...">  
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestation de participation à la formation civique et citoyenne</h3>
+          <p class="cert-meta">UnisCité occitanie • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/policier.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="conference">
         <div class="cert-thumb">🖼️ Image certificat 5</div>
         <div class="cert-card-body">
           <h3>[Titre de la certification 5]</h3>
@@ -224,7 +287,7 @@
         </div>
       </div>
 
-      <div class="cert-card">
+      <div class="cert-card" data-category="conference">
         <div class="cert-thumb">🖼️ Image certificat 6</div>
         <div class="cert-card-body">
           <h3>[Titre de la certification 6]</h3>
@@ -238,6 +301,7 @@
       <!-- Duplique un .cert-card entier pour ajouter d'autres certifications/attestations -->
 
     </div>
+    <p class="no-results" id="noResults">Aucun élément dans cette catégorie pour le moment.</p>
   </div>
 </main>
 
@@ -259,6 +323,29 @@
       htmlEl.setAttribute('data-theme', 'light');
       themeToggle.textContent = '☀️';
     }
+  });
+
+  // Filtrage des certifications par catégorie
+  const filterBtns = document.querySelectorAll('.page-filter');
+  const certCards = document.querySelectorAll('#certsGrid .cert-card');
+  const noResults = document.getElementById('noResults');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      certCards.forEach(card => {
+        const matches = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.classList.toggle('hidden', !matches);
+        if (matches) visibleCount++;
+      });
+
+      noResults.classList.toggle('show', visibleCount === 0);
+    });
   });
 </script>
 
