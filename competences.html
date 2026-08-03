@@ -1,0 +1,261 @@
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compétences — Yan Akouedenoudje</title>
+<meta name="description" content="Toutes les compétences techniques et transversales de Yan Akouedenoudje">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0c12;
+    --panel: #12151d;
+    --panel-2: #171b26;
+    --line: #242938;
+    --text: #eef0f5;
+    --muted: #8b93a7;
+    --blue: #4f7cff;
+    --violet: #9b6bff;
+    --cyan: #35d0e0;
+    --grad: linear-gradient(135deg, var(--blue), var(--violet));
+    --radius: 14px;
+  }
+
+  html[data-theme="light"]{
+    --bg: #f6f7fb;
+    --panel: #ffffff;
+    --panel-2: #eef0f6;
+    --line: #e2e5ee;
+    --text: #12151d;
+    --muted: #5c6479;
+  }
+
+  body, header, .skill-group, .soft-card, .btn-ghost, .theme-toggle, .nav-links a, .skill-pill{
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.6; }
+  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; letter-spacing:-0.02em; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 24px; }
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,12,18,0.75); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  html[data-theme="light"] header{ background:rgba(246,247,251,0.8); }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1100px; margin:0 auto;
+  }
+  .logo{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem; }
+  .logo span{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .nav-links{ display:flex; gap:8px; list-style:none; }
+  .nav-links a{ padding:8px 14px; border-radius:999px; font-size:0.9rem; color:var(--muted); }
+  .nav-links a:hover{ color:var(--text); background:var(--panel); }
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+  .nav-cta{ background:var(--grad); padding:9px 18px; border-radius:999px; font-size:0.9rem; font-weight:600; color:#fff; }
+  .theme-toggle{
+    width:40px; height:40px; border-radius:50%; background:var(--panel); border:1px solid var(--line);
+    color:var(--text); font-size:1.05rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+  .theme-toggle:hover{ border-color:var(--blue); }
+
+  .page-hero{ padding:70px 0 20px; border-bottom:1px solid var(--line); }
+  .eyebrow{ color:var(--cyan); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:14px; font-weight:600; }
+  .page-hero h1{ font-size:clamp(2.4rem,5vw,3.4rem); margin-bottom:16px; }
+  .page-hero p{ color:var(--muted); font-size:1.05rem; max-width:640px; }
+  .back-link{ display:inline-flex; align-items:center; gap:6px; color:var(--muted); font-size:0.9rem; margin-top:22px; margin-bottom:36px; }
+  .back-link:hover{ color:var(--text); }
+
+  main{ padding:56px 0 100px; }
+
+  .skills-groups{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px;
+  }
+  .skill-group{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px;
+  }
+  .skill-group-head{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+  .skill-group-icon{
+    width:34px; height:34px; border-radius:9px; background:var(--panel-2); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:1rem; flex-shrink:0;
+  }
+  .skill-group-head h3{ font-size:1.15rem; }
+  .skill-group-pills{ display:flex; flex-wrap:wrap; gap:10px; }
+  .skill-pill{
+    padding:8px 16px; border-radius:999px; background:var(--panel-2); border:1px solid var(--line);
+    font-size:0.88rem; color:var(--text);
+  }
+
+  .soft-title{ text-align:center; font-size:clamp(1.5rem,3.4vw,2rem); margin-bottom:32px; }
+  .soft-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .soft-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 22px; text-align:center;
+  }
+  .soft-icon{ font-size:1.8rem; margin-bottom:14px; }
+  .soft-card h4{ font-size:1.05rem; margin-bottom:8px; font-family:'Space Grotesk',sans-serif; }
+  .soft-card p{ color:var(--muted); font-size:0.85rem; }
+
+  footer{ border-top:1px solid var(--line); padding:28px 0; text-align:center; color:var(--muted); font-size:0.85rem; }
+
+  @media (max-width: 900px){
+    .nav-links{ display:none; }
+    .skills-groups{ grid-template-columns:1fr 1fr; }
+    .soft-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 560px){
+    .skills-groups{ grid-template-columns:1fr; }
+    .soft-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#accueil">Accueil</a></li>
+      <li><a href="index.html#apropos">À propos</a></li>
+      <li><a href="index.html#projets">Projets</a></li>
+      <li><a href="index.html#competences">Compétences</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Stack technique</div>
+    <h1>Compétences</h1>
+    <p>[Ta phrase d'accroche — ex : "IA · Machine Learning · Agroéquipements — un profil tourné vers le terrain et l'innovation."]</p>
+    <a href="index.html" class="back-link">← Retour au portfolio</a>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+
+    <div class="skills-groups">
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <div class="skill-group-icon">&lt;/&gt;</div>
+          <h3>Programmation</h3>
+        </div>
+        <div class="skill-group-pills">
+          <span class="skill-pill">[Langage 1]</span>
+          <span class="skill-pill">[Langage 2]</span>
+          <span class="skill-pill">[Langage 3]</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <div class="skill-group-icon">☰</div>
+          <h3>Frameworks &amp; Librairies</h3>
+        </div>
+        <div class="skill-group-pills">
+          <span class="skill-pill">[Framework 1]</span>
+          <span class="skill-pill">[Framework 2]</span>
+          <span class="skill-pill">[Framework 3]</span>
+          <span class="skill-pill">[Framework 4]</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <div class="skill-group-icon">⬡</div>
+          <h3>Outils &amp; Logiciels</h3>
+        </div>
+        <div class="skill-group-pills">
+          <span class="skill-pill">[Outil 1]</span>
+          <span class="skill-pill">[Outil 2]</span>
+          <span class="skill-pill">[Outil 3]</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <div class="skill-group-icon">⛁</div>
+          <h3>Agroéquipements</h3>
+        </div>
+        <div class="skill-group-pills">
+          <span class="skill-pill">[Équipement / Machine 1]</span>
+          <span class="skill-pill">[Équipement / Machine 2]</span>
+          <span class="skill-pill">[Technique 3]</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head">
+          <div class="skill-group-icon">◇</div>
+          <h3>[Autre catégorie]</h3>
+        </div>
+        <div class="skill-group-pills">
+          <span class="skill-pill">[Compétence 1]</span>
+          <span class="skill-pill">[Compétence 2]</span>
+        </div>
+      </div>
+      <!-- Duplique un .skill-group entier pour ajouter d'autres catégories -->
+    </div>
+
+    <h2 class="soft-title">Compétences transversales</h2>
+    <div class="soft-grid">
+      <div class="soft-card">
+        <div class="soft-icon">🗣️</div>
+        <h4>Communication</h4>
+        <p>[Ex : conférencier, vulgarisation technique, formation]</p>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">🔬</div>
+        <h4>Recherche</h4>
+        <p>[Ex : veille technologique, rigueur, analyse]</p>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">👥</div>
+        <h4>Travail d'équipe</h4>
+        <p>[Ex : collaboration terrain, coordination de projet]</p>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">🌍</div>
+        <h4>Langues</h4>
+        <p>[Ex : Français courant · Anglais professionnel]</p>
+      </div>
+      <!-- Duplique un .soft-card pour ajouter d'autres compétences transversales -->
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> Yan Akouedenoudje. Fait avec HTML &amp; CSS.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+  themeToggle.addEventListener('click', () => {
+    const isLight = htmlEl.getAttribute('data-theme') === 'light';
+    if (isLight){
+      htmlEl.removeAttribute('data-theme');
+      themeToggle.textContent = '🌙';
+    } else {
+      htmlEl.setAttribute('data-theme', 'light');
+      themeToggle.textContent = '☀️';
+    }
+  });
+</script>
+
+</body>
+</html>
