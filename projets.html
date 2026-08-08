@@ -127,7 +127,7 @@
   /* Corps */
   .cert-card-body{ padding:25px 24px 0; flex:1;
   max-height: 280px;      /* Définissez la hauteur maximale souhaitée */
-  overflow-y: auto;       /* Ajoute une barre de défilement si le texte dépasse */
+  /*overflow-y: auto;       /* Ajoute une barre de défilement si le texte dépasse */
   /*padding: 16px !important;*/
 }
   .cert-card h3{ font-size:1.1rem; margin-bottom:6px; line-height:1.35; }
@@ -136,6 +136,11 @@
   /* Description */
   .cert-desc{
     color:var(--muted); font-size:0.9rem; line-height:1.6; margin-bottom:16px;
+    display: -webkit-box;
+  -webkit-line-clamp: 3; /* Nombre maximal de lignes visibles */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 12px !important;
   }
 
   /* Outils */
