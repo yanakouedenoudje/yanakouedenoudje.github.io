@@ -359,80 +359,31 @@ Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle 
       </div>
            
 
-      <!-- ═══ PROJET 2 : IoT ═══ -->
+      <!-- ═══ PROJET 2 : robot ═══ -->
       <div class="cert-card" data-category="certification iot">
         <div class="cert-thumb">
-          <img src="assets/images/certif/iot.png" alt="IoT Certification">
-          <span class="cert-badge">Certification</span>
+          <img src="assets/images/robot_mobile/equipe" alt="robot_mobile">
         </div>
         <div class="cert-card-body">
-          <h3>IoT (Internet of Things) Wireless & Cloud Computing Emerging Technologies</h3>
-          <p class="cert-meta">Yonsei University • 2025</p>
+          <h3>Robot mobile éviteur d'obstacle</h3>
+          <p class="cert-meta">EEIA • 2026</p>
           <p class="cert-desc">
-            Développement d'une interface de pilotage intelligente et multimodale pour le drone DJI Tello.
-Elle intègre la commande vocale en temps réel et le guidage gestuel par vision par ordinateur au signal de la main.
-Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle de secours d'une précision maximale.          </p>
+            Conception et réalisation d'un robot mobile autonome capable de naviguer dans un environnement inconnu tout en évitant les obstacles.
+Il embarque un capteur ultrason pour mesurer la distance en temps réel et un servomoteur permettant de balayer l'espace pour choisir la meilleure trajectoire.
+Le système analyse les données pour stopper les moteurs, réorienter le robot et poursuivre sa navigation en toute sécurité.         </p>
     
 
           <!-- Outils -->
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-orange"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>MQTT</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>AWS IoT</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Node-RED</span>
-            <span class="tool-tag"><span class="dot dot-violet"></span>ESP32</span>
+            <span class="tool-tag"><span class="dot dot-orange"></span>ESP32</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Thonny</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Micropython</span>
           </div>
-
-          <!-- Galerie réalisations -->
-          <div class="gallery-section">
-            <div class="gallery-title">Réalisations</div>
-            <div class="gallery-grid">
-              <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="assets/images/realisations/iot_circuit.png" alt="Circuit ESP32 + capteurs">
-              </div>
-              <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="assets/images/realisations/iot_dashboard.png" alt="Dashboard Node-RED">
-              </div>
-              <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="assets/images/realisations/iot_cloud.png" alt="Architecture cloud AWS">
-              </div>
-              <div class="gallery-item more" onclick="openLightbox(this)">
-                +3
-              </div>
-            </div>
-          </div>
-
-          <!-- Code source -->
-          <div class="code-section">
-            <div class="gallery-title">Code source</div>
-            <div class="code-wrapper">
-              <div class="code-header">
-                <span class="code-lang-badge">cpp</span>
-                <button class="btn-copy" onclick="copyCode(this)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  Copier
-                </button>
-              </div>
-              <div class="code-block"><pre><span class="comment">// ESP32 — Envoi température vers AWS IoT Core</span>
-<span class="keyword">#include</span> <span class="string">&lt;WiFi.h&gt;</span>
-<span class="keyword">#include</span> <span class="string">&lt;PubSubClient.h&gt;</span>
-
-<span class="keyword">void</span> <span class="func">setup</span>() {
-  WiFi.begin(SSID, PASSWORD);
-  client.setServer(AWS_ENDPOINT, <span class="number">8883</span>);
-}
-
-<span class="keyword">void</span> <span class="func">loop</span>() {
-  <span class="keyword">float</span> temp = dht.readTemperature();
-  client.publish(<span class="string">"iot/sensor"</span>, String(temp).c_str());
-  delay(<span class="number">5000</span>);
-}</pre></div>
-            </div>
-          </div>
+          
         </div>
         <div class="cert-actions">
-          <a href="assets/files/iot.pdf" class="btn btn-ghost">Certificat PDF</a>
+          <a href="assets/files/iot.pdf" class="btn btn-ghost">Code source</a>
         </div>
       </div>
 
