@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -19,6 +20,7 @@
     --cyan: #35d0e0;
     --grad: linear-gradient(135deg, var(--blue), var(--violet));
     --radius: 14px;
+    --img-height: 200px;
   }
 
   html[data-theme="light"]{
@@ -95,12 +97,27 @@
     overflow:hidden; transition:transform .25s, border-color .25s; display:flex; flex-direction:column;
   }
   .cert-card:hover{ transform:translateY(-4px); border-color:var(--blue); }
+
+  /* ===== IMAGES UNIFORMES ===== */
   .cert-thumb{
-    width:100%; aspect-ratio:16/11; background:var(--panel-2);
+    width:100%;
+    height: var(--img-height);
+    min-height: var(--img-height);
+    max-height: var(--img-height);
+    background:var(--panel-2);
     display:flex; align-items:center; justify-content:center;
-    color:var(--muted); font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-align:center;
+    overflow:hidden;
+    position:relative;
   }
-  .cert-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .cert-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+  /* ============================ */
+
   .cert-card-body{ padding:22px 24px 0; flex:1; }
   .cert-card h3{ font-size:1.05rem; margin-bottom:8px; line-height:1.35; }
   .cert-meta{ color:var(--muted); font-size:0.88rem; }
@@ -108,8 +125,8 @@
     display:flex; gap:10px; padding:20px 24px 24px; margin-top:16px; border-top:1px solid var(--line);
   }
   .espace-haut {
-  margin-top: 22px;
-}
+    margin-top: 22px;
+  }
   .btn{
     padding:10px 18px; border-radius:999px; font-weight:600; font-size:0.85rem;
     display:inline-flex; align-items:center; gap:8px; transition:transform .2s; flex:1; justify-content:center;
@@ -163,7 +180,6 @@
   </div>
 </section>
 
-<!-- Filtres optionnels par catégorie — supprime ce bloc si tu ne veux pas de filtres, sinon ajoute le JS correspondant -->
 <div class="filters">
   <span class="page-filter active" data-filter="all">Toutes</span>
   <span class="page-filter" data-filter="certification">Certifications</span>
@@ -177,7 +193,7 @@
 
       <div class="cert-card" data-category="certification">
         <div class="cert-thumb">
-            <img src="assets/images/certif/python_programming_fundamentals.png" alt="...">
+            <img src="assets/images/certif/python_programming_fundamentals.png" alt="Python Programming Fundamentals">
         </div>
         <div class="cert-card-body">
           <h3>Python Programming Fundamentals</h3>
@@ -190,7 +206,7 @@
 
       <div class="cert-card" data-category="certification">
         <div class="cert-thumb">
-            <img src="assets/images/certif/iot.png" alt="...">  
+            <img src="assets/images/certif/iot.png" alt="IoT">  
         </div>
         <div class="cert-card-body">
           <h3>IoT (Internet of Things) Wireless & Cloud Computing Emerging Technologies</h3>
@@ -203,7 +219,7 @@
 
       <div class="cert-card" data-category="certification">
         <div class="cert-thumb">
-            <img src="assets/images/certif/codeyour.png" alt="...">  
+            <img src="assets/images/certif/codeyour.png" alt="Code Yourself">  
         </div>
         <div class="cert-card-body">
           <h3>Code Yourself! An Introduction to Programming</h3>
@@ -216,7 +232,7 @@
 
       <div class="cert-card" data-category="attestation">
         <div class="cert-thumb">
-            <img src="assets/images/attes/attesServ.png" alt="...">  
+            <img src="assets/images/attes/attesServ.png" alt="Attestation service civique">  
         </div>
         <div class="cert-card-body">
           <h3>Attestation de fin de mission de service civique</h3>
@@ -229,7 +245,7 @@
 
       <div class="cert-card" data-category="attestation">
         <div class="cert-thumb">
-            <img src="assets/images/attes/atteSou.png" alt="...">  
+            <img src="assets/images/attes/atteSou.png" alt="Attestation soudure">  
         </div>
         <div class="cert-card-body">
           <h3>Attestation individuelle de fin de formation en soudure</h3>
@@ -242,11 +258,11 @@
 
       <div class="cert-card" data-category="attestation">
         <div class="cert-thumb">
-            <img src="assets/images/attes/attesCCMUF.png" alt="...">  
+            <img src="assets/images/attes/attesCCMUF.png" alt="Attestation stage CCMUF">  
         </div>
         <div class="cert-card-body">
           <h3>Attestaion de fin de Stage</h3>
-          <p class="cert-meta">Centre de Conception Mécanique d’Usinage et de Forge (CCMUF) • 2025</p>
+          <p class="cert-meta">Centre de Conception Mécanique d'Usinage et de Forge (CCMUF) • 2025</p>
         </div>
         <div class="cert-actions">
           <a href="assets/files/attesCCMUF.pdf" class="btn btn-ghost">Ouvrir</a>
@@ -255,7 +271,7 @@
 
       <div class="cert-card" data-category="attestation">
         <div class="cert-thumb">
-            <img src="assets/images/attes/sst.png" alt="...">  
+            <img src="assets/images/attes/sst.png" alt="Certificat SST">  
         </div>
         <div class="cert-card-body">
           <h3>Certificat de sauveteur secouriste de travail</h3>
@@ -268,7 +284,7 @@
 
        <div class="cert-card" data-category="attestation">
         <div class="cert-thumb">
-            <img src="assets/images/attes/attes_unis.png" alt="...">  
+            <img src="assets/images/attes/attes_unis.png" alt="Attestation UnisCité">  
         </div>
         <div class="cert-card-body">
           <h3>Attestation de participation à la formation civique et citoyenne</h3>
@@ -281,7 +297,7 @@
 
       <div class="cert-card" data-category="attestation">
         <div class="cert-thumb">
-            <img src="assets/images/attes/policier.png" alt="diplôme de policier">  
+            <img src="assets/images/attes/policier.png" alt="Diplôme de policier">  
         </div>
         <div class="cert-card-body">
           <h3>Diplôme de policier</h3>
@@ -299,7 +315,7 @@
         <div class="cert-card-body">
           <h3>GOFAR</h3>
           <p class="cert-meta">World FIRA – Forum Internationale de la Robotique Agricole • 2026</p>
-          <p class="cert-meta espace-haut">Au GOFAR (Forum Global de la Robotique Agricole), j’ai suivi les conférences et démonstrations terrain de robots autonomes (Naïo Technologies, Exxact Robotics, Léger SAS, Cyclair, Softirob). Une immersion clé pour analyser leurs architectures mécatroniques, la perception embarquée et l'adaptation des outils aux contraintes du sol.</p>
+          <p class="cert-meta espace-haut">Au GOFAR (Forum Global de la Robotique Agricole), j'ai suivi les conférences et démonstrations terrain de robots autonomes (Naïo Technologies, Exxact Robotics, Léger SAS, Cyclair, Softirob). Une immersion clé pour analyser leurs architectures mécatroniques, la perception embarquée et l'adaptation des outils aux contraintes du sol.</p>
         </div>
         <div class="cert-actions">
           <a href="assets/images/conf_forum/fira.jpeg" class="btn btn-primary">Agrandir</a>
@@ -312,8 +328,8 @@
         </div>
         <div class="cert-card-body">
           <h3>Projet FAAN</h3>
-          <p class="cert-meta">Agricampus de Castelnaudary & Chambre régionale d’Agriculture Occitanie • 2026</p>
-          <p class="cert-meta espace-haut">Cette journée portée par la Chambre régionale d’agriculture d’Occitanie et l’Agricampus de Castelnaudary a permis de faire le point sur les usages drones en agriculture, la réglementation. Cette journée a été organisée dans le cadre des projets FAAN et AdvisoryNetPEST.</p>
+          <p class="cert-meta">Agricampus de Castelnaudary & Chambre régionale d'Agriculture Occitanie • 2026</p>
+          <p class="cert-meta espace-haut">Cette journée portée par la Chambre régionale d'agriculture d'Occitanie et l'Agricampus de Castelnaudary a permis de faire le point sur les usages drones en agriculture, la réglementation. Cette journée a été organisée dans le cadre des projets FAAN et AdvisoryNetPEST.</p>
         </div>
         <div class="cert-actions">
           <a href="assets/images/conf_forum/faan.jpg" class="btn btn-primary">Agrandir</a>
@@ -322,46 +338,16 @@
 
       <div class="cert-card" data-category="conference">
         <div class="cert-thumb">
-          <img src="assets/images/conf_forum/agri1.jpg" alt="50 ans d’agriculture : le Lauragais se raconte (Castelnaudary, 2026)">  
+          <img src="assets/images/conf_forum/agri1.jpg" alt="50 ans d'agriculture">  
         </div>
         <div class="cert-card-body">
-          <h3>50 ans d’agriculture : le Lauragais se raconte</h3>
-          <p class="cert-meta">50 ans d’agriculture : le Lauragais se raconte • 2026</p>
+          <h3>50 ans d'agriculture : le Lauragais se raconte</h3>
+          <p class="cert-meta">50 ans d'agriculture : le Lauragais se raconte • 2026</p>
         </div>
         <div class="cert-actions">
           <a href="assets/images/conf_forum/agri1.jpg" class="btn btn-primary">Agrandir</a>
         </div>
       </div>
-
-      <div class="cert-card" data-category="conference">
-        <div class="cert-thumb">
-          <img src="assets/images/conf_forum/fira.jpeg" alt="World FIRA">  
-        </div>
-        <div class="cert-card-body">
-          <h3>GOFAR</h3>
-          <p class="cert-meta">World FIRA • 2026</p>
-        </div>
-        <div class="cert-actions">
-          <a href="assets/images/conf_forum/fira.jpeg" class="btn btn-primary">Agrandir</a>
-        </div>
-      </div>
-
-      <div class="cert-card" data-category="conference">
-        <div class="cert-thumb">
-          <img src="assets/images/conf_forum/fira.jpeg" alt="World FIRA">  
-        </div>
-        <div class="cert-card-body">
-          <h3>GOFAR</h3>
-          <p class="cert-meta">World FIRA • 2026</p>
-        </div>
-        <div class="cert-actions">
-          <a href="assets/images/conf_forum/fira.jpeg" class="btn btn-primary">Agrandir</a>
-        </div>
-      </div>
-      
-
-
-      <!-- Duplique un .cert-card entier pour ajouter d'autres certifications/attestations -->
 
     </div>
     <p class="no-results" id="noResults">Aucun élément dans cette catégorie pour le moment.</p>
@@ -388,7 +374,6 @@
     }
   });
 
-  // Filtrage des certifications par catégorie
   const filterBtns = document.querySelectorAll('.page-filter');
   const certCards = document.querySelectorAll('#certsGrid .cert-card');
   const noResults = document.getElementById('noResults');
