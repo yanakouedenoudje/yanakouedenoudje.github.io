@@ -423,105 +423,48 @@ Le système analyse les données pour stopper les moteurs, réorienter le robot 
       
 
       <!-- ═══ EXEMPLE PROJET PERSONNEL ═══ -->
-      <div class="cert-card" data-category="projet python">
+
+      <div class="cert-card" data-category="certification python">
         <div class="cert-thumb">
-          <img src="assets/images/realisations/portfolio_preview.png" alt="Portfolio personnel">
-          <span class="cert-badge" style="color:var(--orange);">Projet</span>
+          <img src="yield_prediction.png" alt="Yield prediction">
         </div>
         <div class="cert-card-body">
-          <h3>Portfolio Personnel Interactif</h3>
-          <p class="cert-meta">Projet personnel • 2026</p>
+          <h3>Yield prediction</h3>
+          <p class="cert-meta">Projet réalisé en autodidacte</p>
           <p class="cert-desc">
-            Conception et développement de mon portfolio web avec mode sombre/clair, animations CSS et grille responsive.
+            Ce projet utilise la régression linéaire pour modéliser la relation entre la quantité d'engrais épandue et le rendement du maïs, à partir d'un jeu de données agricole, en s'appuyant sur une analyse de corrélation pour justifier le choix de la variable prédictive.
           </p>
 
           <!-- Outils -->
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-orange"></span>HTML5</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>CSS3</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>JavaScript</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Figma</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
+            
           </div>
 
-          <!-- Galerie réalisations -->
-          <div class="gallery-section">
-            <div class="gallery-title">Réalisations</div>
-            <div class="gallery-grid">
-              <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="assets/images/realisations/portfolio_dark.png" alt="Mode sombre">
-              </div>
-              <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="assets/images/realisations/portfolio_light.png" alt="Mode clair">
-              </div>
-              <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="assets/images/realisations/portfolio_mobile.png" alt="Version mobile">
-              </div>
-              <div class="gallery-item more" onclick="openLightbox(this)">
-                +2
-              </div>
-            </div>
-          </div>
-
-          <!-- Code source -->
-          <div class="code-section">
-            <div class="gallery-title">Code source</div>
-            <div class="code-wrapper">
-              <div class="code-header">
-                <span class="code-lang-badge">javascript</span>
-                <button class="btn-copy" onclick="copyCode(this)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  Copier
-                </button>
-              </div>
-              <div class="code-block"><pre><span class="comment">// Toggle thème sombre/clair</span>
-<span class="keyword">const</span> toggle = document.getElementById(<span class="string">'themeToggle'</span>);
-<span class="keyword">const</span> html = document.documentElement;
-
-toggle.addEventListener(<span class="string">'click'</span>, () => {
-  <span class="keyword">const</span> isLight = html.getAttribute(<span class="string">'data-theme'</span>) === <span class="string">'light'</span>;
-  isLight
-    ? html.removeAttribute(<span class="string">'data-theme'</span>)
-    : html.setAttribute(<span class="string">'data-theme'</span>, <span class="string">'light'</span>);
-});</pre></div>
-            </div>
-          </div>
+          <!-- Code source-->
+          <div class="cert-actions">
+          <a href="yield_prediction.ipynb" class="btn btn-ghost">Code source</a>
         </div>
-        <div class="cert-actions">
-          <a href="index.html" class="btn btn-primary">Voir le site</a>
+          
         </div>
+        
       </div>
-
-      <!-- ═══ EXEMPLE : COMMENT AJOUTER TON CODE ═══ -->
-      <!--
-      POUR AJOUTER UN NOUVEAU PROJET AVEC TON CODE :
-
-      1. Copie un bloc .cert-card complet ci-dessus
-      2. Remplace le contenu du <div class="code-block"><pre>...</pre></div>
-      3. Colle TON code entre les balises <pre> et </pre>
-      4. Mets à jour la classe .code-lang-badge (python, cpp, javascript, html, css, etc.)
-      5. Ajoute les classes de coloration si tu veux :
-         - <span class="comment"> pour les commentaires
-         - <span class="keyword"> pour les mots-clés (def, if, while, const, etc.)
-         - <span class="string"> pour les chaînes de caractères
-         - <span class="func"> pour les noms de fonctions
-         - <span class="number"> pour les nombres
-
-      EXEMPLE avec ton propre code Python :
-
-      <div class="code-block"><pre>import pandas as pd
-      df = pd.read_csv('data.csv')
-      print(df.head())</pre></div>
-
-      C'est tout ! Pas besoin de fichier externe.
-      -->
-
+      
+    
+    
+    
+    
+    
+    
+    
     </div>
-
-    <div class="no-results" id="noResults">
-      Aucun projet ne correspond à ce filtre.
-    </div>
-  </div>
 </main>
 
 <!-- ===== LIGHTBOX ===== -->
