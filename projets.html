@@ -457,10 +457,55 @@ Le système analyse les données pour stopper les moteurs, réorienter le robot 
         
       </div>
       
+    <!-- ═══ Fin ═══ -->
     
-    
-    
-    
+    <!-- ═══ Calibration capteur ultrason ═══ -->
+
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/projects/distance_predict.png" alt="Calibration d'un capteur ultrason par régression linéaire">
+        </div>
+        <div class="cert-card-body">
+          <h3>Calibration d'un capteur ultrason par régression linéaire</h3>
+          <p class="cert-meta">Projet réalisé en autodidacte</p>
+          <p class="cert-desc">
+    Développement d'un système de calibration intelligente pour un capteur ultrason 
+HC-SR04, combinant data science et électronique embarquée. Le projet part d'un 
+dataset simulant des mesures réelles (incluant valeurs manquantes, doublons et 
+outliers), nettoyé puis standardisé (Z-score, via StandardScaler) afin de 
+stabiliser l'apprentissage d'un modèle de régression linéaire entraîné avec 
+scikit-learn, en veillant à éviter toute fuite de données entre les phases 
+d'entraînement et de test. La chaîne complète de standardisation, prédiction 
+et déstandardisation a ensuite été simplifiée mathématiquement en une seule 
+équation linéaire, permettant un déploiement optimisé en C++ sur Arduino Uno 
+et ESP32, avec lecture du capteur en temps réel et correction automatique des 
+mesures brutes en distance réelle. </p>
+
+          <!-- Outils -->
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>C++/Arduino</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Electronique embarquée</span>
+            
+          </div>
+
+          <!-- Code source-->
+          <div class="cert-actions">
+          <a href="https://github.com/yanakouedenoudje/hcsr04_linear_regression" class="btn btn-ghost">Code source</a>
+        </div>
+          
+        </div>
+        
+      </div>
+
+      <!-- ═══ Fin ═══ -->
     
     
     
