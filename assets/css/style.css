@@ -1,0 +1,634 @@
+/* ============================================================================
+   PORTFOLIO — Yan AKOUEDENOUDJE
+   Feuille de style UNIQUE partagée par les 4 pages (index, projets,
+   certifications, competences).
+
+   Pourquoi un seul fichier CSS ?
+   Avant, chaque page copiait/collait tout son CSS. Résultat : si tu voulais
+   changer une couleur ou la taille d'un bouton, il fallait le faire dans
+   4 fichiers différents (et on en oubliait toujours un). Maintenant, TOUTES
+   les pages chargent ce même fichier via :
+       <link rel="stylesheet" href="assets/css/style.css">
+   Un seul changement ici = répercuté partout automatiquement.
+
+   SOMMAIRE (utilise Ctrl+F pour sauter à une section) :
+     1. VARIABLES (couleurs, polices, rayons...)
+     2. RESET & BASE (styles de fond appliqués à tout le document)
+     3. HEADER & NAVIGATION (+ menu hamburger mobile)
+     4. BOUTONS
+     5. HERO (page d'accueil)
+     6. STATISTIQUES (bandeau +10 projets, etc.)
+     7. SECTIONS GÉNÉRIQUES (titres de section, eyebrow...)
+     8. À PROPOS
+     9. PARCOURS / TIMELINE (formation & expérience)
+    10. CARTES "cert-card" (projets + certifications, même composant)
+    11. GALERIE D'IMAGES & CODE SOURCE (page projets)
+    12. LIGHTBOX (zoom image plein écran)
+    13. COMPÉTENCES (page competences.html)
+    14. CONTACT
+    15. FOOTER
+    16. PAGE-HERO (bandeau de titre des pages secondaires)
+    17. FILTRES (boutons "Toutes / Certifications / ...")
+    18. RESPONSIVE (règles mobile & tablette)
+   ============================================================================ */
+
+
+/* ============================================================================
+   1. VARIABLES
+   Toutes les couleurs et dimensions du site sont définies ici UNE SEULE FOIS.
+   Pour changer le thème de couleur de tout le site, il suffit de modifier
+   les valeurs ci-dessous.
+   ============================================================================ */
+:root{
+  /* Couleurs du thème SOMBRE (par défaut) */
+  --bg: #0a0c12;          /* fond général de la page */
+  --panel: #12151d;       /* fond des cartes / header */
+  --panel-2: #171b26;     /* fond légèrement plus clair (sections alternées) */
+  --panel-3: #1c2130;     /* fond encore plus clair (blocs de code, galerie) */
+  --line: #242938;        /* couleur des bordures / séparateurs */
+  --text: #eef0f5;        /* couleur du texte principal */
+  --muted: #8b93a7;       /* couleur du texte secondaire (descriptions, dates) */
+
+  /* Couleurs d'accent (identité visuelle) */
+  --blue: #4f7cff;
+  --violet: #9b6bff;
+  --cyan: #35d0e0;
+  --green: #3ddc84;
+  --orange: #ff9f43;
+  --grad: linear-gradient(135deg, var(--blue), var(--violet)); /* dégradé signature */
+
+  /* Rayons de bordure */
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  /* --------------------------------------------------------------------
+     TAILLE UNIFORME DES IMAGES (miniatures projets/certifications)
+     Ce ratio garantit que TOUTES les vignettes (projets, certifications,
+     attestations, conférences) ont exactement la même forme/taille,
+     quelle que soit la taille réelle de l'image source.
+     4/3 = format légèrement "paysage", standard et lisible sur mobile.
+     Pour changer la forme de toutes les vignettes du site, modifie
+     uniquement cette ligne.
+     -------------------------------------------------------------------- */
+  --thumb-ratio: 4 / 3;
+}
+
+/* Thème CLAIR : activé quand <html data-theme="light"> (via le bouton 🌙/☀️) */
+html[data-theme="light"]{
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --panel-2: #eef0f6;
+  --panel-3: #e4e7f0;
+  --line: #e2e5ee;
+  --text: #12151d;
+  --muted: #5c6479;
+}
+
+
+/* ============================================================================
+   2. RESET & BASE
+   ============================================================================ */
+
+/* On importe les polices Google Fonts directement ici pour ne pas avoir
+   à répéter la balise <link> dans chaque page. Si tu préfères garder les
+   <link> dans le <head>, tu peux supprimer ce bloc @import. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Transition douce quand on bascule entre thème sombre et clair */
+body, header, .project-card, .cert-card, .timeline-card, .skill-pill, .contact-box,
+.tag, .badge, .social-btn, .about-photo, .project-thumb, .cert-thumb, .edu-exp-icon,
+.nav-links a, .btn-ghost, .projects-all-link, .skills-cloud, .about-badge, .project-tag,
+.timeline-period, .nav-toggle, .skill-group, .soft-card, .page-filter, .tool-tag{
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; } /* défilement fluide vers les ancres (#apropos, etc.) */
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+  line-height:1.6;
+  overflow-x:hidden; /* évite le scroll horizontal parasite */
+}
+
+h1,h2,h3{ font-family:'Space Grotesk', sans-serif; letter-spacing:-0.02em; }
+.mono{ font-family:'JetBrains Mono', monospace; }
+a{ color:inherit; text-decoration:none; }
+
+/* Conteneur centré utilisé dans toutes les sections du site.
+   Pour élargir/rétrécir tout le site, change juste le max-width ici. */
+.wrap{ max-width:1100px; margin:0 auto; padding:0 24px; }
+
+
+/* ============================================================================
+   3. HEADER & NAVIGATION (avec menu hamburger mobile)
+   ============================================================================ */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(10,12,18,0.75);
+  backdrop-filter:blur(12px); /* effet "verre dépoli" derrière le header */
+  border-bottom:1px solid var(--line);
+}
+html[data-theme="light"] header{ background:rgba(246,247,251,0.8); }
+
+nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px; max-width:1100px; margin:0 auto;
+  position:relative; /* nécessaire pour positionner le menu mobile en dessous */
+}
+.logo{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem; }
+.logo span{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* Liste des liens de navigation (Accueil, À propos, Projets...) */
+.nav-links{ display:flex; gap:8px; list-style:none; }
+.nav-links a{
+  padding:8px 14px; border-radius:999px; font-size:0.9rem; color:var(--muted);
+}
+.nav-links a:hover{ color:var(--text); background:var(--panel); }
+/* Lien actif = la page actuellement affichée, mis en évidence */
+.nav-links a.active{ color:var(--text); background:var(--panel); font-weight:600; }
+
+.nav-right{ display:flex; align-items:center; gap:14px; }
+.nav-cta{
+  background:var(--grad); padding:9px 18px; border-radius:999px;
+  font-size:0.9rem; font-weight:600; color:#fff;
+}
+.theme-toggle{
+  width:40px; height:40px; border-radius:50%; background:var(--panel); border:1px solid var(--line);
+  color:var(--text); font-size:1.05rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.theme-toggle:hover{ border-color:var(--blue); }
+
+/* --------------------------------------------------------------------------
+   MENU HAMBURGER (bouton 3 barres, visible uniquement sur mobile/tablette)
+   Cette icône est masquée par défaut (display:none) et n'apparaît qu'en
+   dessous de 900px grâce à la media query dans la section RESPONSIVE.
+   -------------------------------------------------------------------------- */
+.nav-toggle{
+  display:none; /* affiché uniquement en mobile, voir media query plus bas */
+  flex-direction:column; justify-content:center; align-items:center;
+  gap:5px; width:40px; height:40px; border-radius:10px;
+  background:var(--panel); border:1px solid var(--line); cursor:pointer;
+  flex-shrink:0;
+}
+.nav-toggle span{
+  display:block; width:18px; height:2px; background:var(--text);
+  border-radius:2px; transition:transform .25s ease, opacity .25s ease;
+}
+/* Quand le menu est ouvert (classe .is-open ajoutée en JS), on transforme
+   les 3 barres en croix ✕ */
+.nav-toggle.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2){ opacity:0; }
+.nav-toggle.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+
+/* ============================================================================
+   4. BOUTONS
+   ============================================================================ */
+.btn{
+  padding:14px 28px; border-radius:999px; font-weight:600; font-size:0.95rem;
+  display:inline-flex; align-items:center; gap:8px; justify-content:center;
+  transition:transform .2s, box-shadow .2s;
+}
+.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 8px 24px rgba(79,124,255,0.25); }
+.btn-primary:hover{ transform:translateY(-2px); }
+.btn-ghost{ background:var(--panel); border:1px solid var(--line); color:var(--text); }
+.btn-ghost:hover{ background:var(--panel-2); }
+.btn-code{ background:var(--panel-3); border:1px solid var(--line); color:var(--cyan); }
+.btn-code:hover{ border-color:var(--cyan); }
+
+.cta-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+
+.socials{ display:flex; gap:12px; justify-content:center; }
+.social-btn{
+  width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+  background:var(--panel); border:1px solid var(--line); color:var(--muted);
+  transition:all .2s;
+}
+.social-btn:hover{ color:var(--text); border-color:var(--blue); transform:translateY(-2px); }
+
+
+/* ============================================================================
+   5. HERO (bandeau d'accueil de index.html)
+   ============================================================================ */
+.hero{ position:relative; padding:100px 0 70px; text-align:center; overflow:hidden; }
+.hero::before{
+  content:''; position:absolute; inset:-20% -10%; z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(79,124,255,0.18), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(155,107,255,0.18), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(53,208,224,0.10), transparent 40%);
+}
+.badge{
+  display:inline-flex; align-items:center; gap:6px;
+  border:1px solid var(--line); background:var(--panel);
+  padding:6px 16px; border-radius:999px; font-size:0.78rem;
+  color:var(--muted); letter-spacing:0.06em; text-transform:uppercase;
+  margin-bottom:20px;
+}
+.tags{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+.tag{
+  padding:7px 16px; border-radius:999px; font-size:0.78rem; font-weight:600;
+  letter-spacing:0.04em; text-transform:uppercase; border:1px solid var(--line);
+}
+.tag.t1{ color:var(--blue); border-color:rgba(79,124,255,0.35); background:rgba(79,124,255,0.08); }
+.tag.t2{ color:var(--cyan); border-color:rgba(53,208,224,0.35); background:rgba(53,208,224,0.08); }
+.tag.t3{ color:var(--violet); border-color:rgba(155,107,255,0.35); background:rgba(155,107,255,0.08); }
+
+.hero h1{ font-size:clamp(2.6rem, 7vw, 5rem); font-weight:700; line-height:1.05; margin-bottom:22px; }
+.hero p.lead{ max-width:640px; margin:0 auto 36px; color:var(--muted); font-size:1.15rem; }
+.hero p.lead b{ color:var(--text); }
+.hero p.lead .accent{ color:var(--cyan); font-weight:600; }
+
+
+/* ============================================================================
+   6. STATISTIQUES (bandeau "+10 Projets / +2 Certifications...")
+   ============================================================================ */
+.stats{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel); }
+.stats-grid{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  max-width:1100px; margin:0 auto; padding:44px 24px; text-align:center;
+}
+.stats-grid div h3{
+  font-size:2.4rem; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.stats-grid div p{ color:var(--muted); font-size:0.82rem; letter-spacing:0.05em; text-transform:uppercase; margin-top:4px; }
+
+
+/* ============================================================================
+   7. SECTIONS GÉNÉRIQUES
+   ============================================================================ */
+section{ padding:90px 0; }
+.section-head{ margin-bottom:48px; text-align:center; }
+.eyebrow{ color:var(--cyan); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+.section-head h2{ font-size:clamp(1.8rem,4vw,2.6rem); }
+
+
+/* ============================================================================
+   8. À PROPOS
+   ============================================================================ */
+.about-grid{ display:grid; grid-template-columns:1fr 1.3fr; gap:56px; align-items:center; }
+.about-photo{
+  width:100%; aspect-ratio:4/4.6; border-radius:20px; overflow:hidden;
+  background:var(--panel); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+.about-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.about-eyebrow{ color:var(--cyan); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; font-weight:600; }
+.about-content h2{ font-size:clamp(1.9rem,3.6vw,2.6rem); margin-bottom:10px; }
+.about-role{ color:var(--blue); font-size:1.05rem; font-weight:600; margin-bottom:20px; }
+.about-content p.bio{ color:var(--muted); margin-bottom:26px; font-size:1.02rem; }
+.about-badges{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px; }
+.about-badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:9px 16px; border-radius:999px; background:var(--panel); border:1px solid var(--line);
+  font-size:0.88rem; color:var(--text);
+}
+.about-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+
+
+/* ============================================================================
+   9. PARCOURS / TIMELINE (Formation académique + Expérience professionnelle)
+   ============================================================================ */
+.edu-exp-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+.edu-exp-col-header{ display:flex; align-items:center; gap:12px; margin-bottom:28px; }
+.edu-exp-icon{
+  width:38px; height:38px; border-radius:10px; background:var(--panel);
+  border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.edu-exp-col-header h3{ font-size:1rem; letter-spacing:0.04em; text-transform:uppercase; font-family:'Space Grotesk',sans-serif; }
+
+.timeline{ position:relative; }
+/* Ligne verticale reliant les points de la timeline */
+.timeline::before{
+  content:''; position:absolute; left:20px; top:8px; bottom:8px; width:2px;
+  background:var(--line);
+}
+.timeline-item{ position:relative; padding-left:64px; margin-bottom:40px; }
+.timeline-item:last-child{ margin-bottom:0; }
+.timeline-dot{
+  position:absolute; left:12px; top:4px; width:18px; height:18px; border-radius:50%;
+  background:var(--grad); box-shadow:0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+}
+.timeline-card{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+  padding:24px 28px; transition:border-color .25s, transform .25s;
+}
+.timeline-card:hover{ border-color:var(--blue); transform:translateY(-2px); }
+.timeline-period{
+  display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+  color:var(--cyan); background:rgba(53,208,224,0.08); border:1px solid rgba(53,208,224,0.3);
+  padding:4px 12px; border-radius:999px; margin-bottom:12px;
+}
+.timeline-card h3{ font-size:1.15rem; margin-bottom:4px; }
+.timeline-org{ color:var(--blue); font-size:0.92rem; font-weight:600; margin-bottom:12px; }
+.timeline-card p{ color:var(--muted); font-size:0.94rem; }
+.timeline-card ul{ list-style:none; margin-top:8px; }
+.timeline-card ul li{ color:var(--muted); font-size:0.9rem; padding-left:16px; position:relative; margin-bottom:6px; }
+.timeline-card ul li::before{
+  content:''; position:absolute; left:0; top:9px; width:5px; height:5px; border-radius:50%; background:var(--blue);
+}
+
+
+/* ============================================================================
+   10. CARTES "cert-card"
+   Ce composant unique sert à la fois pour les PROJETS et les CERTIFICATIONS
+   (même structure HTML : .cert-thumb > img, puis .cert-card-body).
+   C'est ici qu'on garantit que toutes les images ont la MÊME TAILLE grâce
+   à --thumb-ratio défini section 1.
+   ============================================================================ */
+.projects-header{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  margin-bottom:40px; gap:20px; flex-wrap:wrap;
+}
+.projects-header h2{ font-size:clamp(1.8rem,4vw,2.6rem); margin-top:6px; }
+.projects-all-link{
+  background:var(--panel); border:1px solid var(--line); color:var(--text);
+  padding:11px 20px; border-radius:999px; font-size:0.88rem; font-weight:600; white-space:nowrap;
+}
+.projects-all-link:hover{ border-color:var(--blue); }
+
+.projects-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.certs-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+.project-card, .cert-card{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; transition:transform .25s, border-color .25s, box-shadow .25s;
+  display:flex; flex-direction:column;
+}
+.project-card:hover, .cert-card:hover{
+  transform:translateY(-4px); border-color:var(--blue); box-shadow:0 12px 40px rgba(79,124,255,0.08);
+}
+
+/* --------------------------------------------------------------------------
+   IMAGE DE VIGNETTE — taille strictement identique sur toutes les cartes.
+   aspect-ratio impose un format fixe (défini par --thumb-ratio), et
+   object-fit:cover recadre automatiquement l'image pour remplir ce cadre
+   sans la déformer, quelle que soit sa taille/orientation d'origine.
+   -------------------------------------------------------------------------- */
+.project-thumb, .cert-thumb{
+  width:100%;
+  aspect-ratio: var(--thumb-ratio);
+  background:var(--panel-2);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; position:relative;
+}
+.project-thumb img, .cert-thumb img{
+  width:100%; height:100%;
+  object-fit:cover;       /* recadre l'image pour remplir le cadre sans déformation */
+  object-position:center; /* centre le recadrage */
+  display:block;
+  transition:transform .4s;
+}
+.cert-card:hover .cert-thumb img{ transform:scale(1.03); } /* léger zoom au survol */
+
+.cert-badge{
+  position:absolute; top:12px; right:12px;
+  background:rgba(10,12,18,0.8); backdrop-filter:blur(6px);
+  padding:5px 12px; border-radius:999px; font-size:0.75rem; font-weight:600;
+  color:var(--cyan); border:1px solid var(--line);
+}
+
+.project-card-body, .cert-card-body{ padding:24px 24px 0; flex:1; display:flex; flex-direction:column; }
+.project-card h3, .cert-card h3{ font-size:1.1rem; margin-bottom:8px; line-height:1.35; }
+.project-card p, .cert-desc{ color:var(--muted); font-size:0.9rem; line-height:1.6; margin-bottom:16px; }
+.cert-meta{ color:var(--muted); font-size:0.85rem; margin-bottom:14px; }
+.cert-meta.espace-haut{ margin-top:22px; } /* petit espace avant un paragraphe descriptif supplémentaire */
+
+.project-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-bottom:24px; }
+.project-tag{
+  padding:6px 13px; border-radius:8px; background:var(--panel-2); border:1px solid var(--line);
+  font-size:0.78rem; color:var(--text);
+}
+
+/* Étiquettes "Outils utilisés" (page projets) */
+.tools-title{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:8px; font-weight:600; }
+.tools-list{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+.tool-tag{
+  padding:4px 12px; border-radius:999px; font-size:0.78rem; font-weight:500;
+  background:var(--panel-2); border:1px solid var(--line); color:var(--text);
+  display:inline-flex; align-items:center; gap:5px;
+}
+.tool-tag:hover{ border-color:var(--blue); }
+.tool-tag .dot{ width:6px; height:6px; border-radius:50%; display:inline-block; }
+.dot-blue{ background:var(--blue); }
+.dot-cyan{ background:var(--cyan); }
+.dot-green{ background:var(--green); }
+.dot-orange{ background:var(--orange); }
+.dot-violet{ background:var(--violet); }
+
+/* Boutons d'action en bas de carte (Code source / Télécharger / Agrandir) */
+.cert-actions{
+  display:flex; gap:10px; padding:20px 24px 24px; margin-top:auto; border-top:1px solid var(--line);
+}
+.cert-actions .btn{ padding:10px 18px; font-size:0.85rem; flex:1; }
+
+.projects-more, .certs-more{ text-align:center; margin-top:40px; }
+
+/* Carte masquée par le système de filtre (JS ajoute/retire cette classe) */
+.cert-card.hidden{ display:none; }
+.no-results{ text-align:center; color:var(--muted); padding:60px 20px; display:none; font-size:0.95rem; }
+.no-results.show{ display:block; }
+
+
+/* ============================================================================
+   11. GALERIE D'IMAGES & BLOC CODE SOURCE
+   Composants prêts à l'emploi si tu veux enrichir une fiche projet plus tard
+   avec une mini-galerie de photos ou un extrait de code.
+   ============================================================================ */
+.gallery-section{ margin-bottom:18px; }
+.gallery-title{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:8px; font-weight:600; }
+.gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+.gallery-item{
+  aspect-ratio:1; border-radius:var(--radius-sm); overflow:hidden; cursor:pointer;
+  border:1px solid var(--line); background:var(--panel-2); position:relative;
+}
+.gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+.gallery-item:hover img{ transform:scale(1.1); }
+.gallery-item.more{
+  display:flex; align-items:center; justify-content:center;
+  background:var(--panel-3); color:var(--muted); font-size:0.8rem; font-weight:600;
+}
+
+.code-section{ margin-bottom:18px; }
+.code-wrapper{ background:var(--panel-3); border:1px solid var(--line); border-radius:var(--radius-sm); overflow:hidden; position:relative; }
+.code-header{ display:flex; align-items:center; justify-content:space-between; padding:8px 14px; background:var(--panel-2); border-bottom:1px solid var(--line); }
+.code-lang-badge{ font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); font-family:'JetBrains Mono',monospace; }
+.btn-copy{
+  padding:4px 12px; border-radius:6px; font-size:0.75rem; font-weight:600;
+  background:var(--panel); border:1px solid var(--line); color:var(--text);
+  cursor:pointer; display:flex; align-items:center; gap:5px; transition:all .2s; font-family:'Inter',sans-serif;
+}
+.btn-copy:hover{ border-color:var(--blue); }
+.btn-copy.copied{ background:var(--green); color:var(--bg); border-color:var(--green); }
+.code-block{ padding:14px 16px; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--muted); overflow-x:auto; max-height:280px; overflow-y:auto; }
+.code-block pre{ margin:0; white-space:pre-wrap; word-break:break-word; }
+.code-block code{ color:var(--cyan); }
+.code-block .comment{ color:var(--muted); }
+.code-block .keyword{ color:var(--violet); }
+.code-block .string{ color:var(--green); }
+.code-block .func{ color:var(--orange); }
+.code-block .number{ color:var(--blue); }
+
+
+/* ============================================================================
+   12. LIGHTBOX (agrandissement d'image en plein écran)
+   ============================================================================ */
+.lightbox{
+  position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,0.92); backdrop-filter:blur(8px);
+  display:none; align-items:center; justify-content:center;
+  opacity:0; transition:opacity .3s;
+}
+.lightbox.active{ display:flex; opacity:1; }
+.lightbox img{ max-width:90vw; max-height:85vh; border-radius:var(--radius); box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+.lightbox-close{
+  position:absolute; top:20px; right:24px; font-size:2rem; color:#fff;
+  cursor:pointer; background:none; border:none; opacity:0.7; transition:opacity .2s;
+}
+.lightbox-close:hover{ opacity:1; }
+.lightbox-caption{
+  position:absolute; bottom:24px; left:50%; transform:translateX(-50%);
+  color:rgba(255,255,255,0.8); font-size:0.9rem; text-align:center;
+  background:rgba(0,0,0,0.5); padding:8px 20px; border-radius:999px;
+}
+
+
+/* ============================================================================
+   13. COMPÉTENCES (page competences.html)
+   ============================================================================ */
+.skills-section{ text-align:center; }
+.skills-cloud{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; max-width:880px; margin:0 auto 40px; }
+
+.skills-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px; }
+.skill-group{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+.skill-group-head{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+.skill-group-icon{
+  width:34px; height:34px; border-radius:9px; background:var(--panel-2); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:1rem; flex-shrink:0;
+}
+.skill-group-head h3{ font-size:1.15rem; }
+.skill-group-pills{ display:flex; flex-wrap:wrap; gap:10px; }
+
+/* .skill-pill est utilisé à 2 endroits : le nuage de tags sur index.html
+   (plus grand) et les groupes détaillés sur competences.html (plus petit).
+   La classe de base définit le style "grand" (index.html) ; à l'intérieur
+   d'un .skill-group-pills, on réduit un peu le padding et la taille. */
+.skill-pill{
+  padding:11px 22px; border-radius:999px; background:var(--panel); border:1px solid var(--line);
+  font-size:0.95rem; color:var(--text); font-weight:500;
+}
+.skill-group-pills .skill-pill{
+  padding:8px 16px; background:var(--panel-2); font-size:0.88rem; font-weight:400;
+}
+
+.soft-title{ text-align:center; font-size:clamp(1.5rem,3.4vw,2rem); margin-bottom:32px; }
+.soft-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.soft-card{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:28px 22px; text-align:center; }
+.soft-icon{ font-size:1.8rem; margin-bottom:14px; }
+.soft-card h4{ font-size:1.05rem; margin-bottom:8px; font-family:'Space Grotesk',sans-serif; }
+.soft-card p{ color:var(--muted); font-size:0.85rem; }
+
+
+/* ============================================================================
+   14. CONTACT
+   ============================================================================ */
+.contact-box{ background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:56px 40px; text-align:center; }
+.contact-box h2{ font-size:clamp(1.8rem,4vw,2.4rem); margin-bottom:14px; }
+.contact-box p{ color:var(--muted); margin-bottom:30px; }
+
+
+/* ============================================================================
+   15. FOOTER
+   ============================================================================ */
+footer{ border-top:1px solid var(--line); padding:28px 0; text-align:center; color:var(--muted); font-size:0.85rem; }
+
+
+/* ============================================================================
+   16. PAGE-HERO (bandeau de titre des pages secondaires :
+   projets.html, certifications.html, competences.html)
+   ============================================================================ */
+.page-hero{ position:relative; padding:70px 0 40px; text-align:center; overflow:hidden; }
+.page-hero::before{
+  content:''; position:absolute; inset:-20% -10%; z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(79,124,255,0.16), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(155,107,255,0.16), transparent 45%);
+}
+.page-hero h1{ font-size:clamp(2.2rem,5vw,3.2rem); margin-bottom:14px; }
+.page-hero p{ color:var(--muted); max-width:560px; margin:0 auto; font-size:1.05rem; }
+.back-link{ display:inline-flex; align-items:center; gap:6px; color:var(--muted); font-size:0.9rem; margin-top:20px; }
+.back-link:hover{ color:var(--text); }
+
+main{ padding:40px 0 100px; }
+
+
+/* ============================================================================
+   17. FILTRES (boutons "Toutes / Certifications / Attestations...")
+   ============================================================================ */
+.filters{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:36px 0 10px; }
+.page-filter{
+  padding:8px 18px; border-radius:999px; background:var(--panel); border:1px solid var(--line);
+  font-size:0.85rem; color:var(--muted); cursor:pointer;
+}
+.page-filter.active, .page-filter:hover{ color:var(--text); border-color:var(--blue); }
+
+
+/* ============================================================================
+   18. RESPONSIVE
+   Toutes les règles mobile/tablette sont regroupées ici, de la plus large
+   à la plus étroite, pour que ce soit facile à suivre.
+   ============================================================================ */
+
+/* --- Tablette / petits écrans d'ordinateur (jusqu'à 1080px) --- */
+@media (max-width: 1080px){
+  .projects-grid{ grid-template-columns:repeat(2,1fr); }
+  .certs-grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+/* --- Tablette (jusqu'à 900px) : bascule vers le menu hamburger --- */
+@media (max-width: 900px){
+  /* Le menu de liens classique se transforme en panneau déroulant */
+  .nav-links{
+    display:flex; flex-direction:column; gap:4px;
+    position:absolute; top:100%; left:16px; right:16px;
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:12px; margin-top:10px;
+    box-shadow:0 16px 40px rgba(0,0,0,0.35);
+    opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:opacity .2s ease, transform .2s ease, visibility .2s;
+  }
+  .nav-links.is-open{ opacity:1; visibility:visible; transform:translateY(0); }
+  .nav-links a{ padding:12px 14px; border-radius:10px; }
+
+  .nav-cta{ display:none; } /* le bouton Contact reste accessible via le lien dans le menu */
+  .nav-toggle{ display:flex; } /* on affiche le bouton hamburger */
+
+  .stats-grid{ grid-template-columns:repeat(2,1fr); gap:24px; }
+  .about-grid{ grid-template-columns:1fr; }
+  .edu-exp-grid{ grid-template-columns:1fr; gap:56px; }
+  .skills-groups{ grid-template-columns:1fr 1fr; }
+  .soft-grid{ grid-template-columns:1fr 1fr; }
+  .gallery-grid{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* --- Mobile (jusqu'à 640px) --- */
+@media (max-width: 640px){
+  .projects-grid{ grid-template-columns:1fr; }
+  .certs-grid{ grid-template-columns:1fr; }
+  section{ padding:60px 0; }
+  .contact-box{ padding:40px 24px; }
+}
+
+/* --- Petit mobile (jusqu'à 560px) --- */
+@media (max-width: 560px){
+  .skills-groups{ grid-template-columns:1fr; }
+  .soft-grid{ grid-template-columns:1fr; }
+  .stats-grid{ grid-template-columns:1fr 1fr; }
+  .hero{ padding:70px 0 50px; }
+  .cta-row .btn{ width:100%; }
+}
