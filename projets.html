@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Yan Akouedenoudje</title>
+<meta name="description" content="Tous les projets de Yan Akouedenoudje">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- Les liens des cartes projet (Code source) s'ouvrent dans un nouvel onglet -->
+<base target="_blank">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVIGATION (identique sur les 4 pages) ===== -->
+<header>
+  <nav>
+    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#accueil" target="_self">Accueil</a></li>
+      <li><a href="index.html#apropos" target="_self">À propos</a></li>
+      <li><a href="projets.html" class="active" target="_self">Projets</a></li>
+      <li><a href="competences.html" target="_self">Compétences</a></li>
+      <li><a href="certifications.html" target="_self">Certifications</a></li>
+      <li><a href="index.html#contact" target="_self">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="index.html#contact" class="nav-cta" target="_self">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== HERO DE LA PAGE ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Réalisations techniques</div>
+    <h1>Projets</h1>
+    <a href="index.html" class="back-link" target="_self">← Retour au portfolio</a>
+  </div>
+</section>
+
+<!-- ===== CONTENU PRINCIPAL ===== -->
+<main>
+  <div class="wrap">
+
+    <!-- Grille de projets. Chaque .cert-card ci-dessous suit exactement la
+         même structure : .cert-thumb (image) > .cert-card-body (texte,
+         outils) > .cert-actions (bouton). Pour ajouter un projet, duplique
+         un bloc .cert-card entier et modifie son contenu. -->
+    <div class="certs-grid" id="certsGrid">
+
+      <!-- ═══ PROJET 1 : Drone DJI Tello ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/drone_voice_touch_video/equipe.jpeg" alt="Contrôle Multimodal d'un Drone DJI Tello">
+        </div>
+        <div class="cert-card-body">
+          <h3>Contrôle Multimodal d'un Drone DJI Tello (Vocal, Gestuel et Manuel)</h3>
+          <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
+          <p class="cert-desc">Développement d'une interface de pilotage intelligente et multimodale pour le drone DJI Tello. Elle intègre la commande vocale en temps réel et le guidage gestuel par vision par ordinateur au signal de la main. Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle de secours d'une précision maximale.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python 3</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>VS Code</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>sounddevice</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>djitellopy</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>numpy</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>pandas</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>cvzone</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>cv2</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/edit/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJET 2 : Robot mobile éviteur d'obstacle ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <!-- ⚠️ Corrigé : l'extension du fichier manquait (assets/images/robot_mobile/equipe
+               sans extension cassait l'affichage de l'image). Vérifie que le nom
+               ci-dessous correspond bien à ton fichier réel. -->
+          <img src="assets/images/robot_mobile/equipe.jpeg" alt="Robot mobile éviteur d'obstacle">
+        </div>
+        <div class="cert-card-body">
+          <h3>Robot éviteur d'obstacle</h3>
+          <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
+          <p class="cert-desc">Conception et réalisation d'un robot mobile autonome capable de naviguer dans un environnement inconnu tout en évitant les obstacles. Il embarque un capteur ultrason pour mesurer la distance en temps réel et un servomoteur permettant de balayer l'espace pour choisir la meilleure trajectoire. Le système analyse les données pour stopper les moteurs, réorienter le robot et poursuivre sa navigation en toute sécurité.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-blue"></span>ESP32</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Micropython</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Thonny</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/edit/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJET 3 : Robot auto-balanceur autonome ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/robot_auto_balanceur/projet_robot_auto_balanceur.png" alt="Robot auto-balanceur autonome">
+        </div>
+        <div class="cert-card-body">
+          <h3>Robot auto-balanceur autonome</h3>
+          <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
+          <!-- ⚠️ Corrigé : il y avait une balise </p> en trop juste après ce paragraphe -->
+          <p class="cert-desc">Ce projet consiste à modéliser un robot auto-balanceur comme un pendule inversé sur chariot, puis à comparer plusieurs stratégies de contrôle PID, LQR, logique floue et apprentissage par renforcement afin d'identifier l'approche la plus rapide, précise, robuste et économe en énergie. La commande retenue a ensuite été déployée et testée en conditions réelles sur un microcontrôleur STM32, validant la faisabilité d'un système embarqué d'équilibrage autonome.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>STM32CubeIDE</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>C embarqué</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/edit/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJET 4 : Yield prediction ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/projects/yield_prediction.png" alt="Yield prediction">
+        </div>
+        <div class="cert-card-body">
+          <h3>Yield prediction</h3>
+          <p class="cert-meta">Projet réalisé en autodidacte</p>
+          <p class="cert-desc">Ce projet utilise la régression linéaire pour modéliser la relation entre la quantité d'engrais épandue et le rendement du maïs, à partir d'un jeu de données agricole, en s'appuyant sur une analyse de corrélation pour justifier le choix de la variable prédictive.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/maize_yield_prediction/blob/main/yield_prediction.ipynb" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJET 5 : AgriPredict ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/projects/agripredict_portfolio.svg" alt="AgriPredict">
+        </div>
+        <div class="cert-card-body">
+          <h3>AgriPredict</h3>
+          <p class="cert-meta">Projet réalisé en autodidacte</p>
+          <p class="cert-desc">Modèle KNN (scikit-learn) prédisant la classe d'une culture agricole à partir de données de sol et de climat, avec prétraitement adapté par type de variable. Précision de 96% en validation croisée, contre 21% pour une prédiction aléatoire.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/AgriPredict" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJET 6 : Calibration capteur ultrason ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/projects/portfolio_capteur_ultrason.png" alt="Calibration d'un capteur ultrason par régression linéaire">
+        </div>
+        <div class="cert-card-body">
+          <h3>Calibration d'un capteur ultrason par régression linéaire</h3>
+          <p class="cert-meta">Projet réalisé en autodidacte</p>
+          <p class="cert-desc">Calibration d'un capteur ultrason HC-SR04 par régression linéaire : nettoyage et standardisation des données (StandardScaler), entraînement d'un modèle scikit-learn, puis simplification mathématique en une équation linéaire pour un déploiement optimisé en C++ sur Arduino Uno et ESP32.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>C++/Arduino</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>Electronique embarquée</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/hcsr04_linear_regression" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJET 7 : Robot Mobile Éviteur d'Obstacles & Station Météo ═══ -->
+      <div class="cert-card" data-category="certification python">
+        <div class="cert-thumb">
+          <img src="assets/images/projects/robot_arduino_.svg" alt="Robot Mobile Éviteur d'Obstacles & Station Météo Embarquée">
+        </div>
+        <div class="cert-card-body">
+          <h3>Robot Mobile Éviteur d'Obstacles & Station Météo Embarquée</h3>
+          <p class="cert-meta">Projet réalisé en autodidacte</p>
+          <p class="cert-desc">Conception d'un robot autonome en C++ POO combinant navigation intelligente et mesure microclimatique. Le système balaye son environnement pour éviter les collisions tout en affichant la température et l'humidité en temps réel.</p>
+
+          <div class="tools-title">Outils utilisés</div>
+          <div class="tools-list">
+            <span class="tool-tag"><span class="dot dot-green"></span>Arduino (C++)</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Programmation Orientée Objet (POO)</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>L298N</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>HC-SR04</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Servomoteur</span>
+            <span class="tool-tag"><span class="dot dot-green"></span>DHT11</span>
+            <span class="tool-tag"><span class="dot dot-cyan"></span>Ecran LCD I2C</span>
+            <span class="tool-tag"><span class="dot dot-blue"></span>Régression linéaire</span>
+          </div>
+
+          <div class="cert-actions">
+            <a href="https://github.com/yanakouedenoudje/robot_eviteur_obstacles" class="btn btn-ghost">Code source</a>
+          </div>
+        </div>
+      </div>
+      <!-- Duplique un bloc .cert-card entier pour ajouter un nouveau projet -->
+
+    </div>
+  </div>
+</main>
+
+<!-- ===== LIGHTBOX (agrandissement d'image, si tu ajoutes des galeries) ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Yan Akouedenoudje.
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

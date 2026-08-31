@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications & Attestations — Yan Akouedenoudje</title>
+<meta name="description" content="Toutes les certifications et attestations de Yan Akouedenoudje">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVIGATION (identique sur les 4 pages) ===== -->
+<header>
+  <nav>
+    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#accueil">Accueil</a></li>
+      <li><a href="index.html#apropos">À propos</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="certifications.html" class="active">Certifications</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== HERO DE LA PAGE ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Formation continue</div>
+    <h1>Toutes mes certifications &amp; attestations</h1>
+    <p>L'ensemble de mes certifications professionnelles, attestations, conférences et forums assistés.</p>
+    <a href="index.html" class="back-link">← Retour au portfolio</a>
+  </div>
+</section>
+
+<!-- ===== FILTRES =====
+     Chaque bouton porte data-filter, qui doit correspondre à une valeur
+     data-category présente sur les cartes plus bas. Le script (main.js,
+     section 4) gère automatiquement l'affichage/masquage. -->
+<div class="filters">
+  <span class="page-filter active" data-filter="all">Toutes</span>
+  <span class="page-filter" data-filter="certification">Certifications</span>
+  <span class="page-filter" data-filter="attestation">Attestations</span>
+  <span class="page-filter" data-filter="conference">Conférences & Forums</span>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="certs-grid" id="certsGrid">
+
+      <!-- ═══ CERTIFICATIONS ═══ -->
+
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+          <img src="assets/images/certif/Certificat_simple_linear_regression_Coursera.png" alt="Linear regression">
+        </div>
+        <div class="cert-card-body">
+          <h3>Simple Linear Regression for the Absolute Beginner</h3>
+          <p class="cert-meta">Rayan Ahmed - Adjunct Professor - Coursera Project Network • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/Certificat_simple_linear_regression_Coursera.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+          <img src="assets/images/certif/python_programming_fundamentals.png" alt="Python Programming Fundamentals">
+        </div>
+        <div class="cert-card-body">
+          <h3>Python Programming Fundamentals</h3>
+          <p class="cert-meta">Microsoft • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/python_programming_fundamentals.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+          <img src="assets/images/certif/iot.png" alt="IoT">
+        </div>
+        <div class="cert-card-body">
+          <h3>IoT (Internet of Things) Wireless & Cloud Computing Emerging Technologies</h3>
+          <p class="cert-meta">Yonsei University • 2025</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/iot.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="certification">
+        <div class="cert-thumb">
+          <img src="assets/images/certif/codeyour.png" alt="Code Yourself">
+        </div>
+        <div class="cert-card-body">
+          <h3>Code Yourself! An Introduction to Programming</h3>
+          <p class="cert-meta">The University of Edinburgh and Universidad ORT Uruguay • 2025</p>
+        </div>
+        <div class="cert-actions">
+          <!-- ⚠️ Corrigé : il manquait l'extension .pdf sur ce lien -->
+          <a href="assets/files/codeyour.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <!-- ═══ ATTESTATIONS ═══ -->
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+          <img src="assets/images/attes/attesServ.png" alt="Attestation service civique">
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestation de fin de mission de service civique</h3>
+          <p class="cert-meta">Agricampus de Castelnaudary • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/Attestation_Service_Civique.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+          <img src="assets/images/attes/atteSou.png" alt="Attestation soudure">
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestation individuelle de fin de formation en soudure</h3>
+          <p class="cert-meta">CFPPA Castelnaudary • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/atteSou.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+          <img src="assets/images/attes/attesCCMUF.png" alt="Attestation stage CCMUF">
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestation de fin de Stage</h3>
+          <p class="cert-meta">Centre de Conception Mécanique d'Usinage et de Forge (CCMUF) • 2025</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/attesCCMUF.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+          <img src="assets/images/attes/sst.png" alt="Certificat SST">
+        </div>
+        <div class="cert-card-body">
+          <h3>Certificat de sauveteur secouriste de travail</h3>
+          <p class="cert-meta">Institut National de Recherche et de Sécurité (INRS) • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/carte_sst.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+          <img src="assets/images/attes/attes_unis.png" alt="Attestation UnisCité">
+        </div>
+        <div class="cert-card-body">
+          <h3>Attestation de participation à la formation civique et citoyenne</h3>
+          <p class="cert-meta">UnisCité Occitanie • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/attes_unis.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="attestation">
+        <div class="cert-thumb">
+          <img src="assets/images/attes/policier.png" alt="Diplôme de policier">
+        </div>
+        <div class="cert-card-body">
+          <h3>Diplôme de policier</h3>
+          <p class="cert-meta">Agricampus de Castelnaudary • 2026</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/files/policier.pdf" class="btn btn-ghost">Ouvrir</a>
+        </div>
+      </div>
+
+      <!-- ═══ CONFÉRENCES & FORUMS ═══ -->
+
+      <div class="cert-card" data-category="conference">
+        <div class="cert-thumb">
+          <img src="assets/images/conf_forum/fira.jpeg" alt="World FIRA">
+        </div>
+        <div class="cert-card-body">
+          <h3>GOFAR</h3>
+          <p class="cert-meta">World FIRA – Forum Internationale de la Robotique Agricole • 2026</p>
+          <p class="cert-meta espace-haut">Au GOFAR (Forum Global de la Robotique Agricole), j'ai suivi les conférences et démonstrations terrain de robots autonomes (Naïo Technologies, Exxact Robotics, Léger SAS, Cyclair, Softirob). Une immersion clé pour analyser leurs architectures mécatroniques, la perception embarquée et l'adaptation des outils aux contraintes du sol.</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/images/conf_forum/fira.jpeg" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="conference">
+        <div class="cert-thumb">
+          <img src="assets/images/conf_forum/faan.jpg" alt="Projet FAAN">
+        </div>
+        <div class="cert-card-body">
+          <h3>Projet FAAN</h3>
+          <p class="cert-meta">Agricampus de Castelnaudary & Chambre régionale d'Agriculture Occitanie • 2026</p>
+          <p class="cert-meta espace-haut">Cette journée portée par la Chambre régionale d'agriculture d'Occitanie et l'Agricampus de Castelnaudary a permis de faire le point sur les usages des drones en agriculture et sur la réglementation. Cette journée a été organisée dans le cadre des projets FAAN et AdvisoryNetPEST.</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/images/conf_forum/faan.jpg" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="conference">
+        <div class="cert-thumb">
+          <img src="assets/images/conf_forum/agri1.jpg" alt="50 ans d'agriculture">
+        </div>
+        <div class="cert-card-body">
+          <h3>50 ans d'agriculture : le Lauragais se raconte</h3>
+          <p class="cert-meta">Agricampus de Castelnaudary • 2026</p>
+          <p class="cert-meta espace-haut">Participation à la présentation de l'ouvrage historique de Jean-François Gleizes, Gladys Kichkoff et Bernard Martin, "50 ans d'agriculture : le Lauragais se raconte". Une immersion au cœur de l'évolution du territoire (mécanisation, semences, PAC) pour analyser l'histoire agricole et nourrir la réflexion sur les mutations du secteur.</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/images/conf_forum/agri1.jpg" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="conference">
+        <div class="cert-thumb">
+          <img src="assets/images/conf_forum/eeia.jpg" alt="École d'Été sur l'Intelligence Artificielle (EEIA)">
+        </div>
+        <div class="cert-card-body">
+          <h3>École d'Été sur l'Intelligence Artificielle (EEIA)</h3>
+          <p class="cert-meta">BENIN EXCELLENCE • 2026</p>
+          <p class="cert-meta espace-haut">Suivi complet des sessions dédiées à l'IA (du composant au déploiement), à la gestion de la data, ainsi qu'à leurs applications en robotique et domotique (opportunités, risques et conception).</p>
+        </div>
+        <div class="cert-actions">
+          <a href="assets/images/conf_forum/eeia.jpg" class="btn btn-primary">Agrandir</a>
+        </div>
+      </div>
+      <!-- Duplique un bloc .cert-card entier pour ajouter une nouvelle certification/attestation/conférence.
+           N'oublie pas de bien renseigner data-category="certification|attestation|conference"
+           pour que le filtre fonctionne. -->
+
+    </div>
+    <p class="no-results" id="noResults">Aucun élément dans cette catégorie pour le moment.</p>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> Yan Akouedenoudje.
+</footer>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
