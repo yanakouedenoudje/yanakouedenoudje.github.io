@@ -429,8 +429,10 @@
         <div class="cert-card-body">
           <h3>Détecteur de présence et de métal</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Système Arduino de détection d'objets en deux étapes : mesure de distance par ultrasons (HC-SR04),
-            puis identification des objets métalliques avec un capteur inductif SN04-N, signalée par LED.
+          <p class="cert-desc">Conception d'un système de détection à deux niveaux sur Arduino : un capteur ultrason HC-SR04 
+            repère la présence d'un objet à moins de 5 cm, puis un capteur inductif SN04-N détermine s'il est métallique. Développement
+            en C++ avec lecture du capteur inductif en INPUT_PULLUP, calcul de distance par mesure du temp
+            s d'écho, signalisation par LED (métal détecté / objet non métallique) et suivi des mesures sur le moniteur série.
           </p>
 
           <div class="tools-title">Outils utilisés</div>
