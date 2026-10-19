@@ -44,18 +44,31 @@
   </div>
 </section>
 
+<!-- ===== FILTRES =====
+     Chaque bouton porte data-filter, qui doit correspondre à une valeur
+     data-category présente sur les cartes plus bas.
+     Valeurs possibles : ml | embarque | pcb | cao
+     Le script (main.js, section 4) gère automatiquement l'affichage/masquage. -->
+<div class="filters">
+  <span class="page-filter active" data-filter="all">Tous</span>
+  <span class="page-filter" data-filter="ml">Machine Learning</span>
+  <span class="page-filter" data-filter="embarque">Électronique embarquée</span>
+  <span class="page-filter" data-filter="pcb">PCB</span>
+  <span class="page-filter" data-filter="cao">CAO</span>
+</div>
+
 <!-- ===== CONTENU PRINCIPAL ===== -->
 <main>
   <div class="wrap">
 
-    <!-- Grille de projets. Chaque .cert-card ci-dessous suit exactement la
-         même structure : .cert-thumb (image) > .cert-card-body (texte,
-         outils) > .cert-actions (bouton). Pour ajouter un projet, duplique
-         un bloc .cert-card entier et modifie son contenu. -->
+    <!-- Grille de projets. Chaque .cert-card suit la même structure :
+         .cert-thumb (image) > .cert-card-body (texte, outils) > .cert-actions (bouton).
+         Pour ajouter un projet, duplique un bloc .cert-card entier, modifie son contenu
+         et renseigne data-category (plusieurs valeurs possibles, séparées par un espace). -->
     <div class="certs-grid" id="certsGrid">
 
       <!-- ═══ PROJET 1 : Drone DJI Tello ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="ml">
         <div class="cert-thumb">
           <img src="assets/images/drone_voice_touch_video/equipe.jpeg" alt="Contrôle Multimodal d'un Drone DJI Tello">
         </div>
@@ -77,13 +90,14 @@
           </div>
 
           <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/edit/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
+            <!-- Corrigé : /edit/ (page d'édition GitHub) remplacé par /blob/ (lecture seule) -->
+            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/blob/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
           </div>
         </div>
       </div>
 
       <!-- ═══ PROJET 2 : Robot mobile éviteur d'obstacle ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/robot_eviteur_eeia.jpeg" alt="Robot mobile éviteur d'obstacle">
         </div>
@@ -99,21 +113,23 @@
             <span class="tool-tag"><span class="dot dot-cyan"></span>Thonny</span>
           </div>
 
+          <!-- À FAIRE : ajoute ici le bon lien GitHub de ce projet. Le lien précédent
+               pointait par erreur vers le code du drone, je l'ai donc retiré.
           <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/edit/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
+            <a href="https://github.com/yanakouedenoudje/NOM_DU_DEPOT" class="btn btn-ghost">Code source</a>
           </div>
+          -->
         </div>
       </div>
 
       <!-- ═══ PROJET 3 : Robot auto-balanceur autonome ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="ml embarque">
         <div class="cert-thumb">
           <img src="assets/images/robot_auto_balanceur/projet_robot_auto_balanceur.png" alt="Robot auto-balanceur autonome">
         </div>
         <div class="cert-card-body">
           <h3>Robot auto-balanceur autonome</h3>
           <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
-          <!-- ⚠️ Corrigé : il y avait une balise </p> en trop juste après ce paragraphe -->
           <p class="cert-desc">Ce projet consiste à modéliser un robot auto-balanceur comme un pendule inversé sur chariot, puis à comparer plusieurs stratégies de contrôle PID, LQR, logique floue et apprentissage par renforcement afin d'identifier l'approche la plus rapide, précise, robuste et économe en énergie. La commande retenue a ensuite été déployée et testée en conditions réelles sur un microcontrôleur STM32, validant la faisabilité d'un système embarqué d'équilibrage autonome.</p>
 
           <div class="tools-title">Outils utilisés</div>
@@ -125,14 +141,17 @@
             <span class="tool-tag"><span class="dot dot-blue"></span>C embarqué</span>
           </div>
 
+          <!-- À FAIRE : ajoute ici le lien GitHub de ce projet (le lien précédent pointait
+               par erreur vers le code du drone).
           <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/edit/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
+            <a href="https://github.com/yanakouedenoudje/NOM_DU_DEPOT" class="btn btn-ghost">Code source</a>
           </div>
+          -->
         </div>
       </div>
 
       <!-- ═══ PROJET 4 : Yield prediction ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="ml">
         <div class="cert-thumb">
           <img src="assets/images/projects/yield_prediction.png" alt="Yield prediction">
         </div>
@@ -159,7 +178,7 @@
       </div>
 
       <!-- ═══ PROJET 5 : AgriPredict ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="ml">
         <div class="cert-thumb">
           <img src="assets/images/projects/agripredict_portfolio.svg" alt="AgriPredict">
         </div>
@@ -186,7 +205,7 @@
       </div>
 
       <!-- ═══ PROJET 6 : Calibration capteur ultrason ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="ml embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/portfolio_capteur_ultrason.png" alt="Calibration d'un capteur ultrason par régression linéaire">
         </div>
@@ -215,12 +234,12 @@
       </div>
 
       <!-- ═══ PROJET 7 : Robot Mobile Éviteur d'Obstacles & Station Météo ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/robot_arduino_.svg" alt="Robot Mobile Éviteur d'Obstacles & Station Météo Embarquée">
         </div>
         <div class="cert-card-body">
-          <h3>Robot Mobile Éviteur d'Obstacles & Station Météo Embarquée</h3>
+          <h3>Robot Mobile Éviteur d'Obstacles &amp; Station Météo Embarquée</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
           <p class="cert-desc">Conception d'un robot autonome en C++ POO combinant navigation intelligente et mesure microclimatique. Le système balaye son environnement pour éviter les collisions tout en affichant la température et l'humidité en temps réel.</p>
 
@@ -241,21 +260,17 @@
           </div>
         </div>
       </div>
-      <!-- Duplique un bloc .cert-card entier pour ajouter un nouveau projet -->
-
 
       <!-- ═══ PROJET 8 : Prédiction du Risque de Diabète par Machine Learning ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="ml">
         <div class="cert-thumb">
           <img src="assets/images/projects/diabetes_risk_ml_portfolio_cover_v2.svg" alt="Prédiction du Risque de Diabète par Machine Learning">
         </div>
         <div class="cert-card-body">
           <h3>Prédiction du Risque de Diabète par Machine Learning</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un pipeline de classification en Python (scikit-learn) prédisan
-            t le niveau de risque de diabète d'un patient à partir de données démographiques, physiologiques 
-            et de mode de vie. Le système combine un prétraitement structuré de
-            s variables numériques et catégorielles avec un modèle KNN optimisé par recherche d'hyperparamètres.</p>
+          <!-- Corrigé : mots coupés par des retours à la ligne (« prédisan t », « de s variables ») -->
+          <p class="cert-desc">Conception d'un pipeline de classification en Python (scikit-learn) prédisant le niveau de risque de diabète d'un patient à partir de données démographiques, physiologiques et de mode de vie. Le système combine un prétraitement structuré des variables numériques et catégorielles avec un modèle KNN optimisé par recherche d'hyperparamètres.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -276,17 +291,14 @@
       </div>
 
       <!-- ═══ PROJET 9 : Ouverture Automatique de Porte par Capteur Ultrason ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/open_door.png" alt="Ouverture Automatique de Porte par Capteur Ultrason">
         </div>
         <div class="cert-card-body">
           <h3>Ouverture Automatique de Porte par Capteur Ultrason</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d’un système embarqué en C++/Arduino permettant l’ouverture automatique d’une
-            porte par détection de proximité. Intégration d’un capteur ultrason HC-SR04 et d’un servomoteur, avec une 
-            architecture modulaire basée sur la programmation orientée objet.
-          </p>
+          <p class="cert-desc">Conception d’un système embarqué en C++/Arduino permettant l’ouverture automatique d’une porte par détection de proximité. Intégration d’un capteur ultrason HC-SR04 et d’un servomoteur, avec une architecture modulaire basée sur la programmation orientée objet.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -304,18 +316,14 @@
       </div>
 
       <!-- ═══ PROJET 10 : Suiveur de Ligne par Capteurs Infrarouges ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/suiveur_ligne.jpeg" alt="Suiveur de Ligne par Capteurs Infrarouges">
         </div>
         <div class="cert-card-body">
           <h3>Suiveur de Ligne par Capteurs Infrarouges</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino permettant la détection
-            et le suivi d'une ligne au sol grâce à trois capteurs infrarouges. Traitement en temps réel
-            des signaux de position (centre, gauche, droite)
-            et retour visuel via un système de LEDs indicatrices (vert/jaune/rouge) reflétant l'alignement du robot par rapport à la ligne.
-          </p>
+          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino permettant la détection et le suivi d'une ligne au sol grâce à trois capteurs infrarouges. Traitement en temps réel des signaux de position (centre, gauche, droite) et retour visuel via un système de LEDs indicatrices (vert/jaune/rouge) reflétant l'alignement du robot par rapport à la ligne.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -333,17 +341,14 @@
       </div>
 
       <!-- ═══ PROJET 11 : Détecteur de Flamme par Capteur Infrarouge ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/detect_fire.jpeg" alt="Détecteur de Flamme par Capteur Infrarouge">
         </div>
         <div class="cert-card-body">
           <h3>Détecteur de Flamme par Capteur Infrarouge</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino permettant la détection en temps 
-            réel d'une flamme grâce à un capteur infrarouge dédié. Déclenchement d'une alerte visuelle par LED clignotante en cas de détection,
-            assurant une surveillance continue de l'environnement.
-          </p>
+          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino permettant la détection en temps réel d'une flamme grâce à un capteur infrarouge dédié. Déclenchement d'une alerte visuelle par LED clignotante en cas de détection, assurant une surveillance continue de l'environnement.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -361,17 +366,14 @@
       </div>
 
       <!-- ═══ PROJET 12 : Simulation de Feux de Circulation ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/feux.jpeg" alt="Simulation de Feux de Circulation">
         </div>
         <div class="cert-card-body">
           <h3>Simulation de Feux de Circulation</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino simulant la gestion
-            d'un carrefour à deux feux de circulation. Implémentation d'un cycle temporel synchronisé entre les deux feux,
-            avec transitions vert/jaune/rouge reproduisant fidèlement la logique de régulation du trafic routier.
-          </p>
+          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino simulant la gestion d'un carrefour à deux feux de circulation. Implémentation d'un cycle temporel synchronisé entre les deux feux, avec transitions vert/jaune/rouge reproduisant fidèlement la logique de régulation du trafic routier.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -388,20 +390,15 @@
         </div>
       </div>
 
-
       <!-- ═══ PROJET 13 : Robot mobile autonome à évitement d'obstacles ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/robot_photo_1_final.jpg" alt="Robot mobile autonome à évitement d'obstacles">
         </div>
         <div class="cert-card-body">
           <h3>Robot mobile autonome à évitement d'obstacles</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d’un robot mobile autonome sur Arduino,
-            capable de détecter les obstacles et de choisir une trajectoire adaptée grâce à un capteur ultrason HC-SR04 et un servomoteur.
-            Développement en C++ orienté objet,
-            pilotage des moteurs via un double pont en H et affichage des mesures sur écran LCD I2C.
-          </p>
+          <p class="cert-desc">Conception d’un robot mobile autonome sur Arduino, capable de détecter les obstacles et de choisir une trajectoire adaptée grâce à un capteur ultrason HC-SR04 et un servomoteur. Développement en C++ orienté objet, pilotage des moteurs via un double pont en H et affichage des mesures sur écran LCD I2C.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -421,19 +418,16 @@
         </div>
       </div>
 
-<!-- ═══ PROJET 14 : Détecteur de présence et de métal (Arduino) ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <!-- ═══ PROJET 14 : Détecteur de présence et de métal (Arduino) ═══ -->
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/sn04.jpg" alt="Détecteur de présence et de métal (Arduino)">
         </div>
         <div class="cert-card-body">
           <h3>Détecteur de présence et de métal</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système de détection à deux niveaux sur Arduino : un capteur ultrason HC-SR04 
-            repère la présence d'un objet à moins de 5 cm, puis un capteur inductif SN04-N détermine s'il est métallique. Développement
-            en C++ avec lecture du capteur inductif en INPUT_PULLUP, calcul de distance par mesure du temp
-            s d'écho, signalisation par LED (métal détecté / objet non métallique) et suivi des mesures sur le moniteur série.
-          </p>
+          <!-- Corrigé : mot coupé par un retour à la ligne (« temp s d'écho ») -->
+          <p class="cert-desc">Conception d'un système de détection à deux niveaux sur Arduino : un capteur ultrason HC-SR04 repère la présence d'un objet à moins de 5 cm, puis un capteur inductif SN04-N détermine s'il est métallique. Développement en C++ avec lecture du capteur inductif en INPUT_PULLUP, calcul de distance par mesure du temps d'écho, signalisation par LED (métal détecté / objet non métallique) et suivi des mesures sur le moniteur série.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -451,21 +445,15 @@
         </div>
       </div>
 
-
       <!-- ═══ PROJET 15 : Contrôle de servomoteur par potentiomètre ═══ -->
-      <div class="cert-card" data-category="certification python">
+      <div class="cert-card" data-category="embarque">
         <div class="cert-thumb">
           <img src="assets/images/projects/controle.jpeg" alt="Contrôle de servomoteur par potentiomètre">
         </div>
         <div class="cert-card-body">
           <h3>Contrôle de servomoteur par potentiomètre</h3>
           <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">
-            Conception d’un système de commande de position sur Arduino : un potentiomètre branché sur une entrée analogique permet de piloter
-            un servomoteur sur toute sa plage de 0 à 180°. Développement en C++ avec la bibliothèque Servo, conversion de la lecture analogique (0-1023) en angle grâce à map(),
-            filtrage des micro-variations pour éviter les tremblements du servo,
-            et suivi de l’angle en temps réel sur le moniteur série.
-          </p>
+          <p class="cert-desc">Conception d’un système de commande de position sur Arduino : un potentiomètre branché sur une entrée analogique permet de piloter un servomoteur sur toute sa plage de 0 à 180°. Développement en C++ avec la bibliothèque Servo, conversion de la lecture analogique (0-1023) en angle grâce à map(), filtrage des micro-variations pour éviter les tremblements du servo, et suivi de l’angle en temps réel sur le moniteur série.</p>
 
           <div class="tools-title">Outils utilisés</div>
           <div class="tools-list">
@@ -483,12 +471,15 @@
         </div>
       </div>
 
-
-      
-      <!-- Duplique un bloc .cert-card entier pour ajouter un nouveau projet -->
-
+      <!-- Duplique un bloc .cert-card entier pour ajouter un nouveau projet.
+           N'oublie pas data-category="ml|embarque|pcb|cao" (plusieurs valeurs possibles,
+           séparées par un espace) pour que le filtre fonctionne. -->
 
     </div>
+
+    <!-- Message affiché par le filtre quand une catégorie est vide (ex : PCB, CAO) -->
+    <p class="no-results" id="noResults">Aucun projet dans cette catégorie pour le moment.</p>
+
   </div>
 </main>
 
