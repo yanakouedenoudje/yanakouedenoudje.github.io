@@ -10,7 +10,7 @@
 (function () {
   const EN = window.I18N_EN || {};
   const ATTRS = ['alt', 'title', 'aria-label', 'content'];
-  const store = (el, key, val) => { if (el.dataset['orig' + key] === undefined) el.dataset['orig' + key] = val; };
+  const store = (el, a, val) => { if (!el.hasAttribute('data-orig-' + a)) el.setAttribute('data-orig-' + a, val); };
 
   function setText(el, value, isTitle) {
     if (isTitle || !/[<]/.test(value)) el.textContent = value; else el.innerHTML = value;
@@ -27,9 +27,9 @@
     });
     ATTRS.forEach(a => {
       document.querySelectorAll('[data-i18n-' + a + ']').forEach(el => {
-        store(el, 'Attr' + a, el.getAttribute(a));
+        store(el, a, el.getAttribute(a));
         const key = el.getAttribute('data-i18n-' + a);
-        el.setAttribute(a, lang === 'en' && EN[key] ? EN[key] : el.dataset['origAttr' + a]);
+        el.setAttribute(a, lang === 'en' && EN[key] ? EN[key] : el.getAttribute('data-orig-' + a));
       });
     });
     const btn = document.getElementById('langToggle');
