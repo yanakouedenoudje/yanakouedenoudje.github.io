@@ -13,7 +13,7 @@
   const store = (el, a, val) => { if (!el.hasAttribute('data-orig-' + a)) el.setAttribute('data-orig-' + a, val); };
 
   function setText(el, value, isTitle) {
-    if (isTitle || !/[<]/.test(value)) el.textContent = value; else el.innerHTML = value;
+    if (isTitle) el.textContent = value; else el.innerHTML = value;
   }
 
   function apply(lang) {
