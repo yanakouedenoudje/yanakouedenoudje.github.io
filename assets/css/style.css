@@ -632,3 +632,13 @@ main{ padding:40px 0 100px; }
   .hero{ padding:70px 0 50px; }
   .cta-row .btn{ width:100%; }
 }
+
+/* --------------------------------------------------------------------------
+   BOUTON DE LANGUE (FR / EN) — placé à côté du bouton de thème
+   -------------------------------------------------------------------------- */
+.lang-toggle{
+  height:40px; min-width:40px; padding:0 12px; border-radius:999px; background:var(--panel);
+  border:1px solid var(--line); color:var(--text); font-size:0.82rem; font-weight:600;
+  letter-spacing:.04em; cursor:pointer; flex-shrink:0;
+}
+.lang-toggle:hover{ border-color:var(--blue); }
