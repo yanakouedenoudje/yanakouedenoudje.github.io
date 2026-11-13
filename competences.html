@@ -1,154 +1,142 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compétences — Yan Akouedenoudje</title>
-<meta name="description" content="Toutes les compétences techniques et transversales de Yan Akouedenoudje">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="k499">Compétences — Yan Akouedenoudje</title>
+<meta content="Toutes les compétences techniques et transversales de Yan Akouedenoudje" data-i18n-content="k500" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-
 <!-- ===== HEADER / NAVIGATION (identique sur les 4 pages) ===== -->
 <header>
-  <nav>
-    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html#accueil">Accueil</a></li>
-      <li><a href="index.html#apropos">À propos</a></li>
-      <li><a href="projets.html">Projets</a></li>
-      <li><a href="competences.html" class="active">Compétences</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="index.html#contact" class="nav-cta">Contact</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
-      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<nav>
+<div class="logo" data-i18n="k447">Yan <span>AKOUEDENOUDJE</span></div>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="k448" href="index.html#accueil">Accueil</a></li>
+<li><a data-i18n="k449" href="index.html#apropos">À propos</a></li>
+<li><a data-i18n="k450" href="projets.html">Projets</a></li>
+<li><a class="active" data-i18n="k451" href="competences.html">Compétences</a></li>
+<li><a data-i18n="k452" href="certifications.html">Certifications</a></li>
+<li><a data-i18n="k453" href="index.html#contact">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a class="nav-cta" data-i18n="k454" href="index.html#contact">Contact</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle" title="Français / English" type="button">EN</button><button aria-label="Changer de thème" class="theme-toggle" data-i18n-aria-label="k497" data-i18n-title="k496" id="themeToggle" title="Changer de thème">🌙</button>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle" data-i18n-aria-label="k498" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
 </header>
-
 <!-- ===== HERO DE LA PAGE ===== -->
 <section class="page-hero">
-  <div class="wrap">
-    <div class="eyebrow">Stack technique</div>
-    <h1>Compétences</h1>
-    <p>IA · Machine Learning · Electronique · Informatique · Agroéquipements — un profil tourné vers le terrain et l'innovation</p>
-    <a href="index.html" class="back-link">← Retour au portfolio</a>
-  </div>
+<div class="wrap">
+<div class="eyebrow" data-i18n="k455">Stack technique</div>
+<h1 data-i18n="k456">Compétences</h1>
+<p data-i18n="k457">IA · Machine Learning · Electronique · Informatique · Agroéquipements — un profil tourné vers le terrain et l'innovation</p>
+<a class="back-link" data-i18n="k458" href="index.html">← Retour au portfolio</a>
+</div>
 </section>
-
 <main>
-  <div class="wrap">
-
-    <!-- ===== COMPÉTENCES TECHNIQUES, groupées par catégorie =====
+<div class="wrap">
+<!-- ===== COMPÉTENCES TECHNIQUES, groupées par catégorie =====
          Pour ajouter une catégorie : duplique un bloc .skill-group entier.
          Pour ajouter une compétence dans une catégorie existante : duplique
          une ligne <span class="skill-pill">...</span>. -->
-    <div class="skills-groups">
-
-      <div class="skill-group">
-        <div class="skill-group-head">
-          <div class="skill-group-icon">&lt;/&gt;</div>
-          <h3>Programmation</h3>
-        </div>
-        <div class="skill-group-pills">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">C++</span>
-          <span class="skill-pill">MicroPython</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-head">
-          <div class="skill-group-icon">☰</div>
-          <h3>Frameworks &amp; Librairies</h3>
-        </div>
-        <div class="skill-group-pills">
-          <span class="skill-pill">Numpy</span>
-          <span class="skill-pill">Pandas</span>
-          <span class="skill-pill">Matplotlib</span>
-          <span class="skill-pill">Seaborn</span>
-          <span class="skill-pill">OpenCV</span>
-          <span class="skill-pill">Scikit-learn</span>
-          <span class="skill-pill">djitellopy</span>
-          <span class="skill-pill">sounddevice</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-head">
-          <div class="skill-group-icon">⬡</div>
-          <h3>Outils &amp; Logiciels</h3>
-        </div>
-        <div class="skill-group-pills">
-          <span class="skill-pill">Freecad</span>
-          <span class="skill-pill">SolidWorks</span>
-           <span class="skill-pill">Fusion 360</span>
-          <span class="skill-pill">Tinkercad</span>
-          <span class="skill-pill">KiCad</span>
-          <span class="skill-pill">ArduinoIDE</span>
-          <span class="skill-pill">VS Code</span>
-          <span class="skill-pill">Anaconda</span>
-          <span class="skill-pill">Thonny</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-head">
-          <div class="skill-group-icon">⛁</div>
-          <h3>Electronique embarquée</h3>
-        </div>
-        <div class="skill-group-pills">
-          <span class="skill-pill">Programmation de microcontrôleurs (Arduino UNO, ESP32)</span>
-          <span class="skill-pill">Conception de circuits électroniques</span>
-          <span class="skill-pill">Acquisition et traitement de données</span>
-          <span class="skill-pill">Edge Impulse</span>
-        </div>
-      </div>
-      <!-- Duplique un bloc .skill-group entier pour ajouter d'autres catégories -->
-
-    </div>
-
-    <!-- ===== COMPÉTENCES TRANSVERSALES (soft skills) ===== -->
-    <h2 class="soft-title">Compétences transversales</h2>
-    <div class="soft-grid">
-      <div class="soft-card">
-        <div class="soft-icon">🗣️</div>
-        <h4>Communication</h4>
-        <p>Prise de parole en public · Présentation de projets à l'oral</p>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">🔬</div>
-        <h4>Recherche</h4>
-        <p>Rigueur · Analyse · Créativité</p>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">👥</div>
-        <h4>Travail d'équipe</h4>
-        <p>Projets de groupe en cours · Collaboration sur GitHub · Entraide entre étudiants</p>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">🌍</div>
-        <h4>Langues</h4>
-        <p>Français courant · Anglais professionnel</p>
-      </div>
-      <!-- Duplique un bloc .soft-card pour ajouter d'autres compétences transversales -->
-    </div>
-
-  </div>
+<div class="skills-groups">
+<div class="skill-group">
+<div class="skill-group-head">
+<div class="skill-group-icon">&lt;/&gt;</div>
+<h3 data-i18n="k459">Programmation</h3>
+</div>
+<div class="skill-group-pills">
+<span class="skill-pill" data-i18n="k460">Python</span>
+<span class="skill-pill">C++</span>
+<span class="skill-pill" data-i18n="k461">MicroPython</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-head">
+<div class="skill-group-icon">☰</div>
+<h3 data-i18n="k462">Frameworks &amp; Librairies</h3>
+</div>
+<div class="skill-group-pills">
+<span class="skill-pill" data-i18n="k463">Numpy</span>
+<span class="skill-pill" data-i18n="k464">Pandas</span>
+<span class="skill-pill" data-i18n="k465">Matplotlib</span>
+<span class="skill-pill" data-i18n="k466">Seaborn</span>
+<span class="skill-pill" data-i18n="k467">OpenCV</span>
+<span class="skill-pill" data-i18n="k468">Scikit-learn</span>
+<span class="skill-pill" data-i18n="k469">djitellopy</span>
+<span class="skill-pill" data-i18n="k470">sounddevice</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-head">
+<div class="skill-group-icon">⬡</div>
+<h3 data-i18n="k471">Outils &amp; Logiciels</h3>
+</div>
+<div class="skill-group-pills">
+<span class="skill-pill" data-i18n="k472">Freecad</span>
+<span class="skill-pill" data-i18n="k473">SolidWorks</span>
+<span class="skill-pill" data-i18n="k474">Fusion 360</span>
+<span class="skill-pill" data-i18n="k475">Tinkercad</span>
+<span class="skill-pill" data-i18n="k476">KiCad</span>
+<span class="skill-pill" data-i18n="k477">ArduinoIDE</span>
+<span class="skill-pill" data-i18n="k478">VS Code</span>
+<span class="skill-pill" data-i18n="k479">Anaconda</span>
+<span class="skill-pill" data-i18n="k480">Thonny</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-head">
+<div class="skill-group-icon">⛁</div>
+<h3 data-i18n="k481">Electronique embarquée</h3>
+</div>
+<div class="skill-group-pills">
+<span class="skill-pill" data-i18n="k482">Programmation de microcontrôleurs (Arduino UNO, ESP32)</span>
+<span class="skill-pill" data-i18n="k483">Conception de circuits électroniques</span>
+<span class="skill-pill" data-i18n="k484">Acquisition et traitement de données</span>
+<span class="skill-pill" data-i18n="k485">Edge Impulse</span>
+</div>
+</div>
+<!-- Duplique un bloc .skill-group entier pour ajouter d'autres catégories -->
+</div>
+<!-- ===== COMPÉTENCES TRANSVERSALES (soft skills) ===== -->
+<h2 class="soft-title" data-i18n="k486">Compétences transversales</h2>
+<div class="soft-grid">
+<div class="soft-card">
+<div class="soft-icon">🗣️</div>
+<h4 data-i18n="k487">Communication</h4>
+<p data-i18n="k488">Prise de parole en public · Présentation de projets à l'oral</p>
+</div>
+<div class="soft-card">
+<div class="soft-icon">🔬</div>
+<h4 data-i18n="k489">Recherche</h4>
+<p data-i18n="k490">Rigueur · Analyse · Créativité</p>
+</div>
+<div class="soft-card">
+<div class="soft-icon">👥</div>
+<h4 data-i18n="k491">Travail d'équipe</h4>
+<p data-i18n="k492">Projets de groupe en cours · Collaboration sur GitHub · Entraide entre étudiants</p>
+</div>
+<div class="soft-card">
+<div class="soft-icon">🌍</div>
+<h4 data-i18n="k493">Langues</h4>
+<p data-i18n="k494">Français courant · Anglais professionnel</p>
+</div>
+<!-- Duplique un bloc .soft-card pour ajouter d'autres compétences transversales -->
+</div>
+</div>
 </main>
-
-<footer>
+<footer data-i18n="k495">
   © <span id="year"></span> Yan Akouedenoudje.
 </footer>
-
-<script src="assets/js/main.js"></script>
-
+<script src="assets/js/i18n-data.js"></script>
+<script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,436 +1,408 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Yan AKOUEDENOUDJE</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Titulaire d'une licence professionnelle en Agroéquipements, je suis passionné par l'intégration des robots dans le monde agricole">
-
+<meta charset="utf-8"/>
+<title data-i18n="k134">Yan AKOUEDENOUDJE</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Titulaire d'une licence professionnelle en Agroéquipements, je suis passionné par l'intégration des robots dans le monde agricole" data-i18n-content="k135" name="description"/>
 <!-- Polices Google (Space Grotesk pour les titres, Inter pour le texte, JetBrains Mono pour les détails techniques) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <!-- Feuille de style UNIQUE, partagée par les 4 pages du site.
      Toute modification visuelle globale se fait dans ce fichier. -->
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-
 <!-- ============================================================
      HEADER / NAVIGATION
      Identique sur les 4 pages (adapter juste les liens et la
      classe "active" selon la page courante).
      ============================================================ -->
 <header>
-  <nav>
-    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
-
-    <!-- Liens de navigation. Sur mobile, cette liste devient un
+<nav>
+<div class="logo" data-i18n="k0">Yan <span>AKOUEDENOUDJE</span></div>
+<!-- Liens de navigation. Sur mobile, cette liste devient un
          panneau déroulant contrôlé par le bouton hamburger (voir
          assets/js/main.js, section 3). -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#accueil" class="active">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="projets.html">Projets</a></li>
-      <li><a href="competences.html">Compétences</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <!-- Lien Contact dupliqué ici pour rester accessible dans le
+<ul class="nav-links" id="navLinks">
+<li><a class="active" data-i18n="k1" href="#accueil">Accueil</a></li>
+<li><a data-i18n="k2" href="#apropos">À propos</a></li>
+<li><a data-i18n="k3" href="projets.html">Projets</a></li>
+<li><a data-i18n="k4" href="competences.html">Compétences</a></li>
+<li><a data-i18n="k5" href="certifications.html">Certifications</a></li>
+<!-- Lien Contact dupliqué ici pour rester accessible dans le
            menu mobile (le bouton .nav-cta est masqué sur mobile) -->
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <a href="#contact" class="nav-cta">Contact</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
-      <!-- Bouton hamburger : invisible sur grand écran, apparaît sous 900px -->
-      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<li><a data-i18n="k6" href="#contact">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a class="nav-cta" data-i18n="k7" href="#contact">Contact</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle" title="Français / English" type="button">EN</button><button aria-label="Changer de thème" class="theme-toggle" data-i18n-aria-label="k122" data-i18n-title="k121" id="themeToggle" title="Changer de thème">🌙</button>
+<!-- Bouton hamburger : invisible sur grand écran, apparaît sous 900px -->
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle" data-i18n-aria-label="k123" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
 </header>
-
 <!-- ============================================================
      HERO — première chose que voit le visiteur
      ============================================================ -->
 <section class="hero" id="accueil">
-  <div class="wrap">
-    <div class="badge">📍 Abomey-calavi, Bénin</div>
-    <div class="tags">
-      <span class="tag t1">Technicien Supérieur en Agroéquipements</span>
-      <span class="tag t2">Passionné de solutions robotiques</span>
-      <span class="tag t3">Autodidacte en Machine Learning</span>
-    </div>
-    <h1>Yan AKOUEDENOUDJE</h1>
-    <p class="lead">Je projette de devenir <b>ingénieur R&D</b> afin de contribuer par la recherche et l'innovation au développement de <span class="accent">solutions robotiques intelligentes et innovantes</span> à l'endroit des exploitations agricoles africaines.</p>
-    <div class="cta-row">
-      <a href="projets.html" class="btn btn-primary">Voir mes projets →</a>
-      <a href="assets/files/CV_Yan_AKOUEDENOUDJE.pdf" class="btn btn-ghost">Télécharger le CV ↓</a>
-    </div>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/yan-akouedenoudje-58b02929a/" class="social-btn" title="LinkedIn">in</a>
-      <a href="https://github.com/yanakouedenoudje" class="social-btn" title="GitHub">gh</a>
-      <a href="mailto:yanakouedenoudje@gmail.com" class="social-btn" title="Email">✉</a>
-    </div>
-  </div>
+<div class="wrap">
+<div class="badge" data-i18n="k8">📍 Abomey-calavi, Bénin</div>
+<div class="tags">
+<span class="tag t1" data-i18n="k9">Technicien Supérieur en Agroéquipements</span>
+<span class="tag t2" data-i18n="k10">Passionné de solutions robotiques</span>
+<span class="tag t3" data-i18n="k11">Autodidacte en Machine Learning</span>
+</div>
+<h1 data-i18n="k12">Yan AKOUEDENOUDJE</h1>
+<p class="lead" data-i18n="k13">Je projette de devenir <b>ingénieur R&amp;D</b> afin de contribuer par la recherche et l'innovation au développement de <span class="accent">solutions robotiques intelligentes et innovantes</span> à l'endroit des exploitations agricoles africaines.</p>
+<div class="cta-row">
+<a class="btn btn-primary" data-i18n="k14" href="projets.html">Voir mes projets →</a>
+<a class="btn btn-ghost" data-i18n="k15" href="assets/files/CV_Yan_AKOUEDENOUDJE.pdf">Télécharger le CV ↓</a>
+</div>
+<div class="socials">
+<a class="social-btn" data-i18n="k16" data-i18n-title="k124" href="https://www.linkedin.com/in/yan-akouedenoudje-58b02929a/" title="LinkedIn">in</a>
+<a class="social-btn" data-i18n="k17" data-i18n-title="k125" href="https://github.com/yanakouedenoudje" title="GitHub">gh</a>
+<a class="social-btn" data-i18n-title="k126" href="mailto:yanakouedenoudje@gmail.com" title="Email">✉</a>
+</div>
+</div>
 </section>
-
 <!-- ============================================================
      BANDEAU STATISTIQUES
      Pour changer un chiffre, édite simplement le texte du <h3>.
      ============================================================ -->
 <div class="stats">
-  <div class="stats-grid">
-    <div><h3>+20</h3><p>Projets</p></div>
-    <div><h3>+5</h3><p>Certifications</p></div>
-    <div><h3>+5</h3><p>Attestations</p></div>
-    <div><h3>+5</h3><p>Conférences & Forums</p></div>
-  </div>
+<div class="stats-grid">
+<div><h3>+20</h3><p data-i18n="k18">Projets</p></div>
+<div><h3>+5</h3><p data-i18n="k19">Certifications</p></div>
+<div><h3>+5</h3><p data-i18n="k20">Attestations</p></div>
+<div><h3>+5</h3><p data-i18n="k21">Conférences &amp; Forums</p></div>
 </div>
-
+</div>
 <!-- ============================================================
      À PROPOS
      ============================================================ -->
 <section id="apropos">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-photo">
-        <img src="assets/images/profile.jpg" alt="Yan Akouedenoudje">
-      </div>
-      <div class="about-content">
-        <div class="about-eyebrow">Qui suis-je ?</div>
-        <h2>Yan AKOUEDENOUDJE</h2>
-        <div class="about-role">Technicien Supérieur en Agroéquipements</div>
-        <p class="bio">Je souhaite développer des systèmes robotiques intelligents combinant mécanique, électronique,
+<div class="wrap">
+<div class="about-grid">
+<div class="about-photo">
+<img alt="Yan Akouedenoudje" data-i18n-alt="k127" src="assets/images/profile.jpg"/>
+</div>
+<div class="about-content">
+<div class="about-eyebrow" data-i18n="k22">Qui suis-je ?</div>
+<h2 data-i18n="k23">Yan AKOUEDENOUDJE</h2>
+<div class="about-role" data-i18n="k24">Technicien Supérieur en Agroéquipements</div>
+<p class="bio" data-i18n="k25">Je souhaite développer des systèmes robotiques intelligents combinant mécanique, électronique,
              automatique et intelligence artificielle pour résoudre des problèmes concrets, notamment dans le domaine agricole</p>
-        <div class="about-badges">
-          <span class="about-badge">🚜 Technicien en Agroéquipements</span>
-          <span class="about-badge">🐍 Développeur de solutions informatiques en Python, C++</span>
-          <!-- Duplique une ligne .about-badge pour ajouter une autre casquette -->
-        </div>
-        <div class="about-ctas">
-          <a href="projets.html" class="btn btn-primary">Voir mes projets →</a>
-          <a href="mailto:yanakouedenoudje@gmail.com" class="btn btn-ghost">Me contacter</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="about-badges">
+<span class="about-badge" data-i18n="k26">🚜 Technicien en Agroéquipements</span>
+<span class="about-badge" data-i18n="k27">🐍 Développeur de solutions informatiques en Python, C++</span>
+<!-- Duplique une ligne .about-badge pour ajouter une autre casquette -->
+</div>
+<div class="about-ctas">
+<a class="btn btn-primary" data-i18n="k28" href="projets.html">Voir mes projets →</a>
+<a class="btn btn-ghost" data-i18n="k29" href="mailto:yanakouedenoudje@gmail.com">Me contacter</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============================================================
      PARCOURS — Formation académique & Expérience professionnelle
      ⚠️ Les dates/descriptions entre crochets ci-dessous sont des
      exemples à personnaliser : remplace-les par tes vraies infos.
      ============================================================ -->
 <section id="experiences">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Parcours</div>
-      <h2>Éducation &amp; Expérience</h2>
-    </div>
-    <div class="edu-exp-grid">
-
-      <!-- Colonne Formation académique -->
-      <div>
-        <div class="edu-exp-col-header">
-          <div class="edu-exp-icon">🎓</div>
-          <h3>Formation académique</h3>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">2025</span>
-              <h3>Licence professionnelle en Agroéquipements</h3>
-              <div class="timeline-org">École de Génie Rural (EGR) / Université Nationale d'Agriculture (UNA) · Bénin</div>
-              <p><!-- TODO : décris ici la spécialisation ou les matières clés de ta licence --></p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">2022</span>
-              <h3>Baccalauréat en Électrotechnique (F3)</h3>
-              <div class="timeline-org">Collège Privé d'Enseignement Technique (CPET) Don Bosco · Bénin</div>
-              <p><!-- TODO : décris ici brièvement cette formation --></p>
-            </div>
-          </div>
-          <!-- Duplique un .timeline-item pour ajouter d'autres diplômes -->
-        </div>
-      </div>
-
-      <!-- Colonne Parcours professionnel -->
-      <div>
-        <div class="edu-exp-col-header">
-          <div class="edu-exp-icon">💼</div>
-          <h3>Parcours professionnel</h3>
-        </div>
-     <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">Septembre 2026 — En cours</span>
-              <h3>Stage</h3>
-              <div class="timeline-org">FUN HIGH TECH (Société de développement des solutions informatiques et technologiques) - Bénin</div>
-              <ul>
-               <li>Conception et développement de circuits électroniques.</li>
-                <li>Conception de pièces mécaniques assistée par ordinateur (CAO)</li>
-                <li>Programmation informatique et développement de solutions techniques</li>
-              </ul>
-            </div>
-          </div>
-           
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">Juillet 2026 — Août 2026</span>
-              <h3>Participant à l'École d'Été sur l'Intelligence Artificielle (EEIA)</h3>
-              <div class="timeline-org">BENIN EXCELLENCE - Bénin</div>
-              <ul>
-               <li>Implémenté un code pour maintenir en équilibre un robot auto-balanceur
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow" data-i18n="k30">Parcours</div>
+<h2 data-i18n="k31">Éducation &amp; Expérience</h2>
+</div>
+<div class="edu-exp-grid">
+<!-- Colonne Formation académique -->
+<div>
+<div class="edu-exp-col-header">
+<div class="edu-exp-icon">🎓</div>
+<h3 data-i18n="k32">Formation académique</h3>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period">2025</span>
+<h3 data-i18n="k33">Licence professionnelle en Agroéquipements</h3>
+<div class="timeline-org" data-i18n="k34">École de Génie Rural (EGR) / Université Nationale d'Agriculture (UNA) · Bénin</div>
+<p><!-- TODO : décris ici la spécialisation ou les matières clés de ta licence --></p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period">2022</span>
+<h3 data-i18n="k35">Baccalauréat en Électrotechnique (F3)</h3>
+<div class="timeline-org" data-i18n="k36">Collège Privé d'Enseignement Technique (CPET) Don Bosco · Bénin</div>
+<p><!-- TODO : décris ici brièvement cette formation --></p>
+</div>
+</div>
+<!-- Duplique un .timeline-item pour ajouter d'autres diplômes -->
+</div>
+</div>
+<!-- Colonne Parcours professionnel -->
+<div>
+<div class="edu-exp-col-header">
+<div class="edu-exp-icon">💼</div>
+<h3 data-i18n="k37">Parcours professionnel</h3>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period" data-i18n="k38">Septembre 2026 — En cours</span>
+<h3 data-i18n="k39">Stage</h3>
+<div class="timeline-org" data-i18n="k40">FUN HIGH TECH (Société de développement des solutions informatiques et technologiques) - Bénin</div>
+<ul>
+<li data-i18n="k41">Conception et développement de circuits électroniques.</li>
+<li data-i18n="k42">Conception de pièces mécaniques assistée par ordinateur (CAO)</li>
+<li data-i18n="k43">Programmation informatique et développement de solutions techniques</li>
+</ul>
+</div>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period" data-i18n="k44">Juillet 2026 — Août 2026</span>
+<h3 data-i18n="k45">Participant à l'École d'Été sur l'Intelligence Artificielle (EEIA)</h3>
+<div class="timeline-org" data-i18n="k46">BENIN EXCELLENCE - Bénin</div>
+<ul>
+<li data-i18n="k47">Implémenté un code pour maintenir en équilibre un robot auto-balanceur
                     autonome avec différentes approches telles que
                     le PID, le LQR, la logique floue et l’apprentissage par renforcement</li>
-                <li>Développé un modèle ML de traduction de noms béninois en français, 
+<li data-i18n="k48">Développé un modèle ML de traduction de noms béninois en français, 
                      pour faciliter la compréhension et la valorisation du patrimoine culturel béninois</li>
-                <li>Conçu des systèmes domotique et robotique (drone DJI, robot éviteur d'obstacles, robot auto-balanceur autonome), 
+<li data-i18n="k49">Conçu des systèmes domotique et robotique (drone DJI, robot éviteur d'obstacles, robot auto-balanceur autonome), 
                      pour automatiser le contrôle d'équipements à distance et en environnement dynamique</li>
-                <li>Programmé des interfaces de commande multimodale (voix, clavier, caméra), 
+<li data-i18n="k50">Programmé des interfaces de commande multimodale (voix, clavier, caméra), 
                      pour permettre un pilotage intuitif et accessible des systèmes développés</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">Janvier 2026 — Juillet 2026</span>
-              <h3>Service civique</h3>
-              <div class="timeline-org">Agricampus de Castelnaudary - France</div>
-              <ul>
-                <li>Réalisations de travaux de soudure à l'arc pour l'assemblage et la réparation de pièces mécaniques agricoles</li>
-                <li>Conduite de tracteurs agricoles équipés de GPS-RTK pour la réalisation des opérations de travail du sol</li>
-                <li>Contribution à la réalisation de supports médias dans le cadre du Projet Alimentaire Territorial (PAT)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">Septembre 2025 — Décembre 2025</span>
-              <h3>Stage</h3>
-              <div class="timeline-org">Centre de Conception Mécanique d'Usinage et de Forge (CCMUF) - Bénin</div>
-              <ul>
-                <li>Conception et réalisation de machines (Dégauchisseuse, raboteuse, scie circulaire)</li>
-                <li>Usinage de pièces mécaniques sur tour et fraiseuse</li>
-                <li>Élaboration de dessins techniques et modélisation de pièces mécaniques dans un contexte de bureau d'études</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-period">Avril 2025 — Juillet 2025</span>
-              <h3>Stage</h3>
-              <div class="timeline-org">Centre de Construction et de Maintenance des Machines Agricoles (CeCOMA) - Bénin</div>
-              <ul>
-                <li>Conception et réalisation d'un système de bicarburation à commande électronique sur un moteur diesel</li>
-                <li>Modélisations et conception assistée par ordinateur (CAO)</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Duplique un .timeline-item pour ajouter d'autres expériences -->
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period" data-i18n="k51">Janvier 2026 — Juillet 2026</span>
+<h3 data-i18n="k52">Service civique</h3>
+<div class="timeline-org" data-i18n="k53">Agricampus de Castelnaudary - France</div>
+<ul>
+<li data-i18n="k54">Réalisations de travaux de soudure à l'arc pour l'assemblage et la réparation de pièces mécaniques agricoles</li>
+<li data-i18n="k55">Conduite de tracteurs agricoles équipés de GPS-RTK pour la réalisation des opérations de travail du sol</li>
+<li data-i18n="k56">Contribution à la réalisation de supports médias dans le cadre du Projet Alimentaire Territorial (PAT)</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period" data-i18n="k57">Septembre 2025 — Décembre 2025</span>
+<h3 data-i18n="k58">Stage</h3>
+<div class="timeline-org" data-i18n="k59">Centre de Conception Mécanique d'Usinage et de Forge (CCMUF) - Bénin</div>
+<ul>
+<li data-i18n="k60">Conception et réalisation de machines (Dégauchisseuse, raboteuse, scie circulaire)</li>
+<li data-i18n="k61">Usinage de pièces mécaniques sur tour et fraiseuse</li>
+<li data-i18n="k62">Élaboration de dessins techniques et modélisation de pièces mécaniques dans un contexte de bureau d'études</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<span class="timeline-period" data-i18n="k63">Avril 2025 — Juillet 2025</span>
+<h3 data-i18n="k64">Stage</h3>
+<div class="timeline-org" data-i18n="k65">Centre de Construction et de Maintenance des Machines Agricoles (CeCOMA) - Bénin</div>
+<ul>
+<li data-i18n="k66">Conception et réalisation d'un système de bicarburation à commande électronique sur un moteur diesel</li>
+<li data-i18n="k67">Modélisations et conception assistée par ordinateur (CAO)</li>
+</ul>
+</div>
+</div>
+<!-- Duplique un .timeline-item pour ajouter d'autres expériences -->
+</div>
+</div>
+</div>
+</div>
+</div></section>
 <!-- ============================================================
      PROJETS PHARES (aperçu — la liste complète est sur projets.html)
      ============================================================ -->
 <section id="projets" style="background:var(--panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="projects-header">
-      <div>
-        <div class="eyebrow">Portfolio</div>
-        <h2>Projets phares</h2>
-      </div>
-      <a href="projets.html" class="projects-all-link">Tous les projets →</a>
-    </div>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-thumb">
-          <img src="assets/images/drone_voice_touch_video/equipe.jpeg" alt="Contrôle Multimodal d'un Drone DJI Tello">
-        </div>
-        <div class="project-card-body">
-          <h3>Contrôle Multimodal d'un Drone DJI Tello (Vocal, Gestuel et Manuel)</h3>
-          <p>Développement d'une interface de pilotage intelligente et multimodale pour le drone DJI Tello. Elle intègre la commande vocale en temps réel et le guidage gestuel par vision par ordinateur au signal de la main. Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle de secours d'une précision maximale.</p>
-          <div class="project-tags">
-            <span class="project-tag">VS Code</span>
-            <span class="project-tag">djitellopy</span>
-            <span class="project-tag">Python 3</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-thumb">
-          <!-- ⚠️ Corrigé : il manquait l'extension du fichier image.
+<div class="wrap">
+<div class="projects-header">
+<div>
+<div class="eyebrow" data-i18n="k68">Portfolio</div>
+<h2 data-i18n="k69">Projets phares</h2>
+</div>
+<a class="projects-all-link" data-i18n="k70" href="projets.html">Tous les projets →</a>
+</div>
+<div class="projects-grid">
+<div class="project-card">
+<div class="project-thumb">
+<img alt="Contrôle Multimodal d'un Drone DJI Tello" data-i18n-alt="k128" src="assets/images/drone_voice_touch_video/equipe.jpeg"/>
+</div>
+<div class="project-card-body">
+<h3 data-i18n="k71">Contrôle Multimodal d'un Drone DJI Tello (Vocal, Gestuel et Manuel)</h3>
+<p data-i18n="k72">Développement d'une interface de pilotage intelligente et multimodale pour le drone DJI Tello. Elle intègre la commande vocale en temps réel et le guidage gestuel par vision par ordinateur au signal de la main. Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle de secours d'une précision maximale.</p>
+<div class="project-tags">
+<span class="project-tag" data-i18n="k73">VS Code</span>
+<span class="project-tag" data-i18n="k74">djitellopy</span>
+<span class="project-tag" data-i18n="k75">Python 3</span>
+</div>
+</div>
+</div>
+<div class="project-card">
+<div class="project-thumb">
+<!-- ⚠️ Corrigé : il manquait l'extension du fichier image.
                Vérifie que "equipe.jpeg" correspond bien au nom réel de
                ton fichier dans assets/images/robot_mobile/ -->
-          <img src="assets/images/projects/robot_eviteur_eeia.jpeg" alt="Robot mobile éviteur d'obstacle">
-        </div>
-        <div class="project-card-body">
-          <h3>Robot mobile éviteur d'obstacle</h3>
-          <p>Conception et réalisation d'un robot mobile autonome capable de naviguer dans un environnement inconnu tout en évitant les obstacles. Il embarque un capteur ultrason pour mesurer la distance en temps réel et un servomoteur permettant de balayer l'espace pour choisir la meilleure trajectoire. Le système analyse les données pour stopper les moteurs, réorienter le robot et poursuivre sa navigation en toute sécurité.</p>
-          <div class="project-tags">
-            <span class="project-tag">ESP32</span>
-            <span class="project-tag">Micropython</span>
-            <span class="project-tag">Thonny</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-thumb">
-          <img src="assets/images/robot_auto_balanceur/projet_robot_auto_balanceur.png" alt="Robot auto-balanceur autonome">
-        </div>
-        <div class="project-card-body">
-          <h3>Robot auto-balanceur autonome</h3>
-          <p>Ce projet consiste à modéliser un robot auto-balanceur comme un pendule inversé sur chariot, puis à comparer plusieurs stratégies de contrôle PID, LQR, logique floue et apprentissage par renforcement afin d'identifier l'approche la plus rapide, précise, robuste et économe en énergie. La commande retenue a ensuite été déployée et testée en conditions réelles sur un microcontrôleur STM32, validant la faisabilité d'un système embarqué d'équilibrage autonome.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Numpy</span>
-            <span class="project-tag">Scikit-learn</span>
-            <span class="project-tag">STM32CubeIDE</span>
-            <span class="project-tag">C embarqué</span>
-          </div>
-        </div>
-      </div>
-      <!-- Duplique un .project-card entier pour ajouter d'autres projets ici -->
-
-    </div>
-    <div class="projects-more">
-      <a href="projets.html" class="btn btn-ghost">+ Voir tous les projets</a>
-    </div>
-  </div>
+<img alt="Robot mobile éviteur d'obstacle" data-i18n-alt="k129" src="assets/images/projects/robot_eviteur_eeia.jpeg"/>
+</div>
+<div class="project-card-body">
+<h3 data-i18n="k76">Robot mobile éviteur d'obstacle</h3>
+<p data-i18n="k77">Conception et réalisation d'un robot mobile autonome capable de naviguer dans un environnement inconnu tout en évitant les obstacles. Il embarque un capteur ultrason pour mesurer la distance en temps réel et un servomoteur permettant de balayer l'espace pour choisir la meilleure trajectoire. Le système analyse les données pour stopper les moteurs, réorienter le robot et poursuivre sa navigation en toute sécurité.</p>
+<div class="project-tags">
+<span class="project-tag" data-i18n="k78">ESP32</span>
+<span class="project-tag" data-i18n="k79">Micropython</span>
+<span class="project-tag" data-i18n="k80">Thonny</span>
+</div>
+</div>
+</div>
+<div class="project-card">
+<div class="project-thumb">
+<img alt="Robot auto-balanceur autonome" data-i18n-alt="k130" src="assets/images/robot_auto_balanceur/projet_robot_auto_balanceur.png"/>
+</div>
+<div class="project-card-body">
+<h3 data-i18n="k81">Robot auto-balanceur autonome</h3>
+<p data-i18n="k82">Ce projet consiste à modéliser un robot auto-balanceur comme un pendule inversé sur chariot, puis à comparer plusieurs stratégies de contrôle PID, LQR, logique floue et apprentissage par renforcement afin d'identifier l'approche la plus rapide, précise, robuste et économe en énergie. La commande retenue a ensuite été déployée et testée en conditions réelles sur un microcontrôleur STM32, validant la faisabilité d'un système embarqué d'équilibrage autonome.</p>
+<div class="project-tags">
+<span class="project-tag" data-i18n="k83">Python</span>
+<span class="project-tag" data-i18n="k84">Numpy</span>
+<span class="project-tag" data-i18n="k85">Scikit-learn</span>
+<span class="project-tag" data-i18n="k86">STM32CubeIDE</span>
+<span class="project-tag" data-i18n="k87">C embarqué</span>
+</div>
+</div>
+</div>
+<!-- Duplique un .project-card entier pour ajouter d'autres projets ici -->
+</div>
+<div class="projects-more">
+<a class="btn btn-ghost" data-i18n="k88" href="projets.html">+ Voir tous les projets</a>
+</div>
+</div>
 </section>
-
 <!-- ============================================================
      COMPÉTENCES CLÉS (aperçu — détail complet sur competences.html)
      ============================================================ -->
-<section id="competences" class="skills-section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Stack technique</div>
-      <h2>Compétences clés</h2>
-    </div>
-    <div class="skills-cloud">
-      <span class="skill-pill">Python</span>
-      <span class="skill-pill">C++</span>
-      <span class="skill-pill">MicroPython</span>
-      <span class="skill-pill">Github</span>
-      <span class="skill-pill">Fusion 360</span>
-      <span class="skill-pill">EasyEDA</span>
-      <span class="skill-pill">Electronique</span>
-      <span class="skill-pill">Arduino</span>
-      <span class="skill-pill">Jupyter</span>
-      <!-- Ajoute/retire des .skill-pill selon tes vraies compétences -->
-    </div>
-    <a href="competences.html" class="btn btn-ghost">Voir toutes mes compétences →</a>
-  </div>
+<section class="skills-section" id="competences">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow" data-i18n="k89">Stack technique</div>
+<h2 data-i18n="k90">Compétences clés</h2>
+</div>
+<div class="skills-cloud">
+<span class="skill-pill" data-i18n="k91">Python</span>
+<span class="skill-pill">C++</span>
+<span class="skill-pill" data-i18n="k92">MicroPython</span>
+<span class="skill-pill" data-i18n="k93">Github</span>
+<span class="skill-pill" data-i18n="k94">Fusion 360</span>
+<span class="skill-pill" data-i18n="k95">EasyEDA</span>
+<span class="skill-pill" data-i18n="k96">Electronique</span>
+<span class="skill-pill" data-i18n="k97">Arduino</span>
+<span class="skill-pill" data-i18n="k98">Jupyter</span>
+<!-- Ajoute/retire des .skill-pill selon tes vraies compétences -->
+</div>
+<a class="btn btn-ghost" data-i18n="k99" href="competences.html">Voir toutes mes compétences →</a>
+</div>
 </section>
-
 <!-- ============================================================
      CERTIFICATIONS RÉCENTES (aperçu — liste complète sur certifications.html)
      ============================================================ -->
 <section id="certifications" style="background:var(--panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="projects-header">
-      <div>
-        <div class="eyebrow">Formation continue</div>
-        <h2>Certifications et Attestations récentes</h2>
-      </div>
-      <a href="certifications.html" class="projects-all-link">Toutes →</a>
-    </div>
-    <div class="certs-grid">
-
-      <div class="cert-card">
-        <div class="cert-thumb">
-          <img src="assets/images/certif/python_programming_fundamentals.png" alt="Python Programming Fundamentals">
-        </div>
-        <div class="cert-card-body">
-          <h3>Python Programming Fundamentals</h3>
-          <p class="cert-meta">Microsoft • 2026</p>
-        </div>
-        <div class="cert-actions">
-          <a href="assets/files/python_programming_fundamentals.pdf" class="btn btn-ghost">Télécharger</a>
-          <a href="assets/images/certif/python_programming_fundamentals.png" class="btn btn-primary">Agrandir</a>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-thumb">
-          <img src="assets/images/certif/iot.png" alt="IoT Wireless & Cloud Computing">
-        </div>
-        <div class="cert-card-body">
-          <h3>IoT (Internet of Things) Wireless & Cloud Computing Emerging Technologies</h3>
-          <p class="cert-meta">Yonsei University • 2025</p>
-        </div>
-        <div class="cert-actions">
-          <a href="assets/files/iot.pdf" class="btn btn-ghost">Télécharger</a>
-          <a href="assets/images/certif/iot.png" class="btn btn-primary">Agrandir</a>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-thumb">
-          <img src="assets/images/certif/inria.png" alt="inria">
-        </div>
-        <div class="cert-card-body">
-          <h3>Machine learning in Python with scikit-learn (Inria)</h3>
-          <p class="cert-meta">France Université Numérique • 2026</p>
-        </div>
-        <div class="cert-actions">
-          <a href="assets/files/2026-09-07_machine-learning-in-python-with-scikit-learn-inria-achievement-badge-fr.pdf" class="btn btn-ghost">Télécharger</a>
-          <a href="assets/images/certif/inria.png" class="btn btn-primary">Agrandir</a>
-        </div>
-      </div>
-
-         
-      <!-- Duplique un .cert-card entier pour ajouter d'autres certifications -->
-
-    </div>
-    <div class="certs-more">
-      <a href="certifications.html" class="btn btn-ghost">+ Voir toutes les certifications</a>
-    </div>
-  </div>
+<div class="wrap">
+<div class="projects-header">
+<div>
+<div class="eyebrow" data-i18n="k100">Formation continue</div>
+<h2 data-i18n="k101">Certifications et Attestations récentes</h2>
+</div>
+<a class="projects-all-link" data-i18n="k102" href="certifications.html">Toutes →</a>
+</div>
+<div class="certs-grid">
+<div class="cert-card">
+<div class="cert-thumb">
+<img alt="Python Programming Fundamentals" data-i18n-alt="k131" src="assets/images/certif/python_programming_fundamentals.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k103">Python Programming Fundamentals</h3>
+<p class="cert-meta" data-i18n="k104">Microsoft • 2026</p>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k105" href="assets/files/python_programming_fundamentals.pdf">Télécharger</a>
+<a class="btn btn-primary" data-i18n="k106" href="assets/images/certif/python_programming_fundamentals.png">Agrandir</a>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-thumb">
+<img alt="IoT Wireless &amp; Cloud Computing" data-i18n-alt="k132" src="assets/images/certif/iot.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k107">IoT (Internet of Things) Wireless &amp; Cloud Computing Emerging Technologies</h3>
+<p class="cert-meta" data-i18n="k108">Yonsei University • 2025</p>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k109" href="assets/files/iot.pdf">Télécharger</a>
+<a class="btn btn-primary" data-i18n="k110" href="assets/images/certif/iot.png">Agrandir</a>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-thumb">
+<img alt="inria" data-i18n-alt="k133" src="assets/images/certif/inria.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k111">Machine learning in Python with scikit-learn (Inria)</h3>
+<p class="cert-meta" data-i18n="k112">France Université Numérique • 2026</p>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k113" href="assets/files/2026-09-07_machine-learning-in-python-with-scikit-learn-inria-achievement-badge-fr.pdf">Télécharger</a>
+<a class="btn btn-primary" data-i18n="k114" href="assets/images/certif/inria.png">Agrandir</a>
+</div>
+</div>
+<!-- Duplique un .cert-card entier pour ajouter d'autres certifications -->
+</div>
+<div class="certs-more">
+<a class="btn btn-ghost" data-i18n="k115" href="certifications.html">+ Voir toutes les certifications</a>
+</div>
+</div>
 </section>
-
 <!-- ============================================================
      CONTACT
      ============================================================ -->
 <section id="contact">
-  <div class="wrap">
-    <div class="contact-box">
-      <h2>Discutons</h2>
-      <p>Ouvert aux opportunités, collaborations ou simplement échanger</p>
-      <div class="cta-row">
-        <a href="mailto:yanakouedenoudje@gmail.com" class="btn btn-primary">M'écrire un email →</a>
-        <a href="https://www.linkedin.com/in/yan-akouedenoudje-58b02929a/" class="btn btn-ghost">LinkedIn</a>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="contact-box">
+<h2 data-i18n="k116">Discutons</h2>
+<p data-i18n="k117">Ouvert aux opportunités, collaborations ou simplement échanger</p>
+<div class="cta-row">
+<a class="btn btn-primary" data-i18n="k118" href="mailto:yanakouedenoudje@gmail.com">M'écrire un email →</a>
+<a class="btn btn-ghost" data-i18n="k119" href="https://www.linkedin.com/in/yan-akouedenoudje-58b02929a/">LinkedIn</a>
+</div>
+</div>
+</div>
 </section>
-
-<footer>
+<footer data-i18n="k120">
   © <span id="year"></span> Bylvanus Yan Mahugnon AKOUEDENOUDJE. Tous droits réservés.
 </footer>
-
 <!-- Script UNIQUE partagé par les 4 pages (thème, menu mobile, filtres, etc.) -->
-<script src="assets/js/main.js"></script>
-
+<script src="assets/js/i18n-data.js"></script>
+<script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,779 +1,683 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projets — Yan Akouedenoudje</title>
-<meta name="description" content="Tous les projets de Yan Akouedenoudje">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="k445">Projets — Yan Akouedenoudje</title>
+<meta content="Tous les projets de Yan Akouedenoudje" data-i18n-content="k446" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 <!-- Les liens des cartes projet (Code source) s'ouvrent dans un nouvel onglet -->
-<base target="_blank">
+<base target="_blank"/>
 </head>
 <body>
-
 <!-- ===== HEADER / NAVIGATION (identique sur les 4 pages) ===== -->
 <header>
-  <nav>
-    <div class="logo">Yan <span>AKOUEDENOUDJE</span></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html#accueil" target="_self">Accueil</a></li>
-      <li><a href="index.html#apropos" target="_self">À propos</a></li>
-      <li><a href="projets.html" class="active" target="_self">Projets</a></li>
-      <li><a href="competences.html" target="_self">Compétences</a></li>
-      <li><a href="certifications.html" target="_self">Certifications</a></li>
-      <li><a href="index.html#contact" target="_self">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="index.html#contact" class="nav-cta" target="_self">Contact</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">🌙</button>
-      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<nav>
+<div class="logo" data-i18n="k136">Yan <span>AKOUEDENOUDJE</span></div>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="k137" href="index.html#accueil" target="_self">Accueil</a></li>
+<li><a data-i18n="k138" href="index.html#apropos" target="_self">À propos</a></li>
+<li><a class="active" data-i18n="k139" href="projets.html" target="_self">Projets</a></li>
+<li><a data-i18n="k140" href="competences.html" target="_self">Compétences</a></li>
+<li><a data-i18n="k141" href="certifications.html" target="_self">Certifications</a></li>
+<li><a data-i18n="k142" href="index.html#contact" target="_self">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a class="nav-cta" data-i18n="k143" href="index.html#contact" target="_self">Contact</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle" title="Français / English" type="button">EN</button><button aria-label="Changer de thème" class="theme-toggle" data-i18n-aria-label="k417" data-i18n-title="k416" id="themeToggle" title="Changer de thème">🌙</button>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle" data-i18n-aria-label="k418" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
 </header>
-
 <!-- ===== HERO DE LA PAGE ===== -->
 <section class="page-hero">
-  <div class="wrap">
-    <div class="eyebrow">Réalisations techniques</div>
-    <h1>Projets</h1>
-    <a href="index.html" class="back-link" target="_self">← Retour au portfolio</a>
-  </div>
+<div class="wrap">
+<div class="eyebrow" data-i18n="k144">Réalisations techniques</div>
+<h1 data-i18n="k145">Projets</h1>
+<a class="back-link" data-i18n="k146" href="index.html" target="_self">← Retour au portfolio</a>
+</div>
 </section>
-
 <!-- ===== FILTRES =====
      Chaque bouton porte data-filter, qui doit correspondre à une valeur
      data-category présente sur les cartes plus bas.
      Valeurs possibles : ml | embarque | pcb | cao
      Le script (main.js, section 4) gère automatiquement l'affichage/masquage. -->
 <div class="filters">
-  <span class="page-filter active" data-filter="all">Tous</span>
-  <span class="page-filter" data-filter="ml">Machine Learning</span>
-  <span class="page-filter" data-filter="embarque">Électronique embarquée</span>
-  <span class="page-filter" data-filter="pcb">PCB</span>
-  <span class="page-filter" data-filter="cao">CAO</span>
+<span class="page-filter active" data-filter="all" data-i18n="k147">Tous</span>
+<span class="page-filter" data-filter="ml" data-i18n="k148">Machine Learning</span>
+<span class="page-filter" data-filter="embarque" data-i18n="k149">Électronique embarquée</span>
+<span class="page-filter" data-filter="pcb" data-i18n="k150">PCB</span>
+<span class="page-filter" data-filter="cao" data-i18n="k151">CAO</span>
 </div>
-
 <!-- ===== CONTENU PRINCIPAL ===== -->
 <main>
-  <div class="wrap">
-
-    <!-- Grille de projets. Chaque .cert-card suit la même structure :
+<div class="wrap">
+<!-- Grille de projets. Chaque .cert-card suit la même structure :
          .cert-thumb (image) > .cert-card-body (texte, outils) > .cert-actions (bouton).
          Pour ajouter un projet, duplique un bloc .cert-card entier, modifie son contenu
          et renseigne data-category (plusieurs valeurs possibles, séparées par un espace). -->
-    <div class="certs-grid" id="certsGrid">
-
-      <!-- ═══ PROJET  : Drone DJI Tello ═══ -->
-      <div class="cert-card" data-category="ml">
-        <div class="cert-thumb">
-          <img src="assets/images/drone_voice_touch_video/equipe.jpeg" alt="Contrôle Multimodal d'un Drone DJI Tello">
-        </div>
-        <div class="cert-card-body">
-          <h3>Contrôle Multimodal d'un Drone DJI Tello (Vocal, Gestuel et Manuel)</h3>
-          <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
-          <p class="cert-desc">Développement d'une interface de pilotage intelligente et multimodale pour le drone DJI Tello. Elle intègre la commande vocale en temps réel et le guidage gestuel par vision par ordinateur au signal de la main. Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle de secours d'une précision maximale.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-blue"></span>Python 3</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>VS Code</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>sounddevice</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>djitellopy</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>numpy</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>pandas</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>cvzone</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>cv2</span>
-          </div>
-
-          <div class="cert-actions">
-            <!-- Corrigé : /edit/ (page d'édition GitHub) remplacé par /blob/ (lecture seule) -->
-            <a href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/blob/main/projects/drone/tp_groupe.py" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Robot mobile éviteur d'obstacle ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/robot_eviteur_eeia.jpeg" alt="Robot mobile éviteur d'obstacle">
-        </div>
-        <div class="cert-card-body">
-          <h3>Robot éviteur d'obstacle</h3>
-          <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
-          <p class="cert-desc">Conception et réalisation d'un robot mobile autonome capable de naviguer dans un environnement inconnu tout en évitant les obstacles. Il embarque un capteur ultrason pour mesurer la distance en temps réel et un servomoteur permettant de balayer l'espace pour choisir la meilleure trajectoire. Le système analyse les données pour stopper les moteurs, réorienter le robot et poursuivre sa navigation en toute sécurité.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-blue"></span>ESP32</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Micropython</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Thonny</span>
-          </div>
-
-          <!-- À FAIRE : ajoute ici le bon lien GitHub de ce projet. Le lien précédent
+<div class="certs-grid" id="certsGrid">
+<!-- ═══ PROJET  : Drone DJI Tello ═══ -->
+<div class="cert-card" data-category="ml">
+<div class="cert-thumb">
+<img alt="Contrôle Multimodal d'un Drone DJI Tello" data-i18n-alt="k419" src="assets/images/drone_voice_touch_video/equipe.jpeg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k152">Contrôle Multimodal d'un Drone DJI Tello (Vocal, Gestuel et Manuel)</h3>
+<p class="cert-meta" data-i18n="k153">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
+<p class="cert-desc" data-i18n="k154">Développement d'une interface de pilotage intelligente et multimodale pour le drone DJI Tello. Elle intègre la commande vocale en temps réel et le guidage gestuel par vision par ordinateur au signal de la main. Une interface manuelle au clavier complète l'ensemble pour offrir un contrôle de secours d'une précision maximale.</p>
+<div class="tools-title" data-i18n="k155">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k156"><span class="dot dot-blue"></span>Python 3</span>
+<span class="tool-tag" data-i18n="k157"><span class="dot dot-green"></span>VS Code</span>
+<span class="tool-tag" data-i18n="k158"><span class="dot dot-cyan"></span>sounddevice</span>
+<span class="tool-tag" data-i18n="k159"><span class="dot dot-green"></span>djitellopy</span>
+<span class="tool-tag" data-i18n="k160"><span class="dot dot-blue"></span>numpy</span>
+<span class="tool-tag" data-i18n="k161"><span class="dot dot-green"></span>pandas</span>
+<span class="tool-tag" data-i18n="k162"><span class="dot dot-cyan"></span>cvzone</span>
+<span class="tool-tag" data-i18n="k163"><span class="dot dot-blue"></span>cv2</span>
+</div>
+<div class="cert-actions">
+<!-- Corrigé : /edit/ (page d'édition GitHub) remplacé par /blob/ (lecture seule) -->
+<a class="btn btn-ghost" data-i18n="k164" href="https://github.com/yanakouedenoudje/yanakouedenoudje.github.io/blob/main/projects/drone/tp_groupe.py">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Robot mobile éviteur d'obstacle ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Robot mobile éviteur d'obstacle" data-i18n-alt="k420" src="assets/images/projects/robot_eviteur_eeia.jpeg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k165">Robot éviteur d'obstacle</h3>
+<p class="cert-meta" data-i18n="k166">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
+<p class="cert-desc" data-i18n="k167">Conception et réalisation d'un robot mobile autonome capable de naviguer dans un environnement inconnu tout en évitant les obstacles. Il embarque un capteur ultrason pour mesurer la distance en temps réel et un servomoteur permettant de balayer l'espace pour choisir la meilleure trajectoire. Le système analyse les données pour stopper les moteurs, réorienter le robot et poursuivre sa navigation en toute sécurité.</p>
+<div class="tools-title" data-i18n="k168">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k169"><span class="dot dot-blue"></span>ESP32</span>
+<span class="tool-tag" data-i18n="k170"><span class="dot dot-green"></span>Micropython</span>
+<span class="tool-tag" data-i18n="k171"><span class="dot dot-cyan"></span>Thonny</span>
+</div>
+<!-- À FAIRE : ajoute ici le bon lien GitHub de ce projet. Le lien précédent
                pointait par erreur vers le code du drone, je l'ai donc retiré.
           <div class="cert-actions">
             <a href="https://github.com/yanakouedenoudje/NOM_DU_DEPOT" class="btn btn-ghost">Code source</a>
           </div>
           -->
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Robot auto-balanceur autonome ═══ -->
-      <div class="cert-card" data-category="ml embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/robot_auto_balanceur/projet_robot_auto_balanceur.png" alt="Robot auto-balanceur autonome">
-        </div>
-        <div class="cert-card-body">
-          <h3>Robot auto-balanceur autonome</h3>
-          <p class="cert-meta">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
-          <p class="cert-desc">Ce projet consiste à modéliser un robot auto-balanceur comme un pendule inversé sur chariot, puis à comparer plusieurs stratégies de contrôle PID, LQR, logique floue et apprentissage par renforcement afin d'identifier l'approche la plus rapide, précise, robuste et économe en énergie. La commande retenue a ensuite été déployée et testée en conditions réelles sur un microcontrôleur STM32, validant la faisabilité d'un système embarqué d'équilibrage autonome.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>STM32CubeIDE</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C embarqué</span>
-          </div>
-
-          <!-- À FAIRE : ajoute ici le lien GitHub de ce projet (le lien précédent pointait
+</div>
+</div>
+<!-- ═══ PROJET : Robot auto-balanceur autonome ═══ -->
+<div class="cert-card" data-category="ml embarque">
+<div class="cert-thumb">
+<img alt="Robot auto-balanceur autonome" data-i18n-alt="k421" src="assets/images/robot_auto_balanceur/projet_robot_auto_balanceur.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k172">Robot auto-balanceur autonome</h3>
+<p class="cert-meta" data-i18n="k173">Projet réalisé dans le cadre de l'École d'Été sur l'Intelligence Artificielle 2026</p>
+<p class="cert-desc" data-i18n="k174">Ce projet consiste à modéliser un robot auto-balanceur comme un pendule inversé sur chariot, puis à comparer plusieurs stratégies de contrôle PID, LQR, logique floue et apprentissage par renforcement afin d'identifier l'approche la plus rapide, précise, robuste et économe en énergie. La commande retenue a ensuite été déployée et testée en conditions réelles sur un microcontrôleur STM32, validant la faisabilité d'un système embarqué d'équilibrage autonome.</p>
+<div class="tools-title" data-i18n="k175">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k176"><span class="dot dot-blue"></span>Python</span>
+<span class="tool-tag" data-i18n="k177"><span class="dot dot-green"></span>Numpy</span>
+<span class="tool-tag" data-i18n="k178"><span class="dot dot-cyan"></span>Scikit-learn</span>
+<span class="tool-tag" data-i18n="k179"><span class="dot dot-green"></span>STM32CubeIDE</span>
+<span class="tool-tag" data-i18n="k180"><span class="dot dot-blue"></span>C embarqué</span>
+</div>
+<!-- À FAIRE : ajoute ici le lien GitHub de ce projet (le lien précédent pointait
                par erreur vers le code du drone).
           <div class="cert-actions">
             <a href="https://github.com/yanakouedenoudje/NOM_DU_DEPOT" class="btn btn-ghost">Code source</a>
           </div>
           -->
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Yield prediction ═══ -->
-      <div class="cert-card" data-category="ml">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/yield_prediction.png" alt="Yield prediction">
-        </div>
-        <div class="cert-card-body">
-          <h3>Yield prediction</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Ce projet utilise la régression linéaire pour modéliser la relation entre la quantité d'engrais épandue et le rendement du maïs, à partir d'un jeu de données agricole, en s'appuyant sur une analyse de corrélation pour justifier le choix de la variable prédictive.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/maize_yield_prediction/blob/main/yield_prediction.ipynb" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : AgriPredict ═══ -->
-      <div class="cert-card" data-category="ml">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/agripredict_portfolio.svg" alt="AgriPredict">
-        </div>
-        <div class="cert-card-body">
-          <h3>AgriPredict</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Modèle KNN (scikit-learn) prédisant la classe d'une culture agricole à partir de données de sol et de climat, avec prétraitement adapté par type de variable. Précision de 96% en validation croisée, contre 21% pour une prédiction aléatoire.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/AgriPredict" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Calibration capteur ultrason ═══ -->
-      <div class="cert-card" data-category="ml embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/portfolio_capteur_ultrason.png" alt="Calibration d'un capteur ultrason par régression linéaire">
-        </div>
-        <div class="cert-card-body">
-          <h3>Calibration d'un capteur ultrason par régression linéaire</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Calibration d'un capteur ultrason HC-SR04 par régression linéaire : nettoyage et standardisation des données (StandardScaler), entraînement d'un modèle scikit-learn, puis simplification mathématique en une équation linéaire pour un déploiement optimisé en C++ sur Arduino Uno et ESP32.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Pandas</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Scikit-learn</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Seaborn</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++/Arduino</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Electronique embarquée</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/hcsr04_linear_regression" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Robot Mobile Éviteur d'Obstacles & Station Météo ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/robot_arduino_.svg" alt="Robot Mobile Éviteur d'Obstacles & Station Météo Embarquée">
-        </div>
-        <div class="cert-card-body">
-          <h3>Robot Mobile Éviteur d'Obstacles &amp; Station Météo Embarquée</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un robot autonome en C++ POO combinant navigation intelligente et mesure microclimatique. Le système balaye son environnement pour éviter les collisions tout en affichant la température et l'humidité en temps réel.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino (C++)</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Programmation Orientée Objet (POO)</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>L298N</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>HC-SR04</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Servomoteur</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>DHT11</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Ecran LCD I2C</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Régression linéaire</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/robot_eviteur_obstacles" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET: Prédiction du Risque de Diabète par Machine Learning ═══ -->
-      <div class="cert-card" data-category="ml">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/diabetes_risk_ml_portfolio_cover_v2.svg" alt="Prédiction du Risque de Diabète par Machine Learning">
-        </div>
-        <div class="cert-card-body">
-          <h3>Prédiction du Risque de Diabète par Machine Learning</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <!-- Corrigé : mots coupés par des retours à la ligne (« prédisan t », « de s variables ») -->
-          <p class="cert-desc">Conception d'un pipeline de classification en Python (scikit-learn) prédisant le niveau de risque de diabète d'un patient à partir de données démographiques, physiologiques et de mode de vie. Le système combine un prétraitement structuré des variables numériques et catégorielles avec un modèle KNN optimisé par recherche d'hyperparamètres.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Python</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Scikit-learn</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Pandas</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Numpy</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>KNeighborsClassifier</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Jupyter Notebook</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Seaborn</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/ml_diabetes_risk_classifier" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- ═══ PROJET : Traitement d'images avec NumPy ═══ -->
-<div class="cert-card" data-category="ml">
-  <div class="cert-thumb">
-    <img src="assets/images/projects/numpy_images.png" alt="Traitement d'images avec NumPy : image originale et image en niveaux de gris">
-  </div>
-  <div class="cert-card-body">
-    <h3>Traitement d'images avec NumPy</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Exercices de traitement d'images avec NumPy : manipulation des images comme tableaux de pixels (lecture des valeurs RGB, modification de zones), conversion en niveaux de gris par pondération des canaux, et réglage de la luminosité avec gestion du dépassement de plage.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-green"></span>Jupyter</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Python</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Numpy</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Matplotlib</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Pillow</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/numpy-image-processing" class="btn btn-ghost">Code source</a>
-    </div>
-  </div>
 </div>
-
-      <!-- ═══ PROJET : Ouverture Automatique de Porte par Capteur Ultrason ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/open_door.png" alt="Ouverture Automatique de Porte par Capteur Ultrason">
-        </div>
-        <div class="cert-card-body">
-          <h3>Ouverture Automatique de Porte par Capteur Ultrason</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d’un système embarqué en C++/Arduino permettant l’ouverture automatique d’une porte par détection de proximité. Intégration d’un capteur ultrason HC-SR04 et d’un servomoteur, avec une architecture modulaire basée sur la programmation orientée objet.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Servomoteur</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>HC-SR04</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Programmation Orientée Objet (POO)</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/smart-door-arduino" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Suiveur de Ligne par Capteurs Infrarouges ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/suiveur_ligne.jpeg" alt="Suiveur de Ligne par Capteurs Infrarouges">
-        </div>
-        <div class="cert-card-body">
-          <h3>Suiveur de Ligne par Capteurs Infrarouges</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino permettant la détection et le suivi d'une ligne au sol grâce à trois capteurs infrarouges. Traitement en temps réel des signaux de position (centre, gauche, droite) et retour visuel via un système de LEDs indicatrices (vert/jaune/rouge) reflétant l'alignement du robot par rapport à la ligne.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Capteurs infrarouges (IR)</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>LEDs</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Logique de contrôle conditionnel</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/line_follower_arduino" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Détecteur de Flamme par Capteur Infrarouge ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/detect_fire.jpeg" alt="Détecteur de Flamme par Capteur Infrarouge">
-        </div>
-        <div class="cert-card-body">
-          <h3>Détecteur de Flamme par Capteur Infrarouge</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino permettant la détection en temps réel d'une flamme grâce à un capteur infrarouge dédié. Déclenchement d'une alerte visuelle par LED clignotante en cas de détection, assurant une surveillance continue de l'environnement.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Capteurs infrarouges (IR)</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>LEDs</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Logique de contrôle conditionnel</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/detecteur_de_flamme_arduino" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Simulation de Feux de Circulation ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/feux.jpeg" alt="Simulation de Feux de Circulation">
-        </div>
-        <div class="cert-card-body">
-          <h3>Simulation de Feux de Circulation</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d'un système embarqué en C++/Arduino simulant la gestion d'un carrefour à deux feux de circulation. Implémentation d'un cycle temporel synchronisé entre les deux feux, avec transitions vert/jaune/rouge reproduisant fidèlement la logique de régulation du trafic routier.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Gestion de temporisation</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>LEDs</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Logique séquentielle</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/feux_de_circulation_arduino" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Robot mobile autonome à évitement d'obstacles ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/robot_photo_1_final.jpg" alt="Robot mobile autonome à évitement d'obstacles">
-        </div>
-        <div class="cert-card-body">
-          <h3>Robot mobile autonome à évitement d'obstacles</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d’un robot mobile autonome sur Arduino, capable de détecter les obstacles et de choisir une trajectoire adaptée grâce à un capteur ultrason HC-SR04 et un servomoteur. Développement en C++ orienté objet, pilotage des moteurs via un double pont en H et affichage des mesures sur écran LCD I2C.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Programmation Orientée Objet (POO)</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>LCD I2C</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>HC-SR04</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Servomoteur</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>L298N</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Électronique embarquée</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/smart-robot-car" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Détecteur de présence et de métal (Arduino) ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/sn04.jpg" alt="Détecteur de présence et de métal (Arduino)">
-        </div>
-        <div class="cert-card-body">
-          <h3>Détecteur de présence et de métal</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <!-- Corrigé : mot coupé par un retour à la ligne (« temp s d'écho ») -->
-          <p class="cert-desc">Conception d'un système de détection à deux niveaux sur Arduino : un capteur ultrason HC-SR04 repère la présence d'un objet à moins de 5 cm, puis un capteur inductif SN04-N détermine s'il est métallique. Développement en C++ avec lecture du capteur inductif en INPUT_PULLUP, calcul de distance par mesure du temps d'écho, signalisation par LED (métal détecté / objet non métallique) et suivi des mesures sur le moniteur série.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>SN04-N</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>HC-SR04</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Moniteur série</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>LED</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/detecteur-presence-metal-arduino" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROJET : Contrôle de servomoteur par potentiomètre ═══ -->
-      <div class="cert-card" data-category="embarque">
-        <div class="cert-thumb">
-          <img src="assets/images/projects/controle.jpeg" alt="Contrôle de servomoteur par potentiomètre">
-        </div>
-        <div class="cert-card-body">
-          <h3>Contrôle de servomoteur par potentiomètre</h3>
-          <p class="cert-meta">Projet réalisé en autodidacte</p>
-          <p class="cert-desc">Conception d’un système de commande de position sur Arduino : un potentiomètre branché sur une entrée analogique permet de piloter un servomoteur sur toute sa plage de 0 à 180°. Développement en C++ avec la bibliothèque Servo, conversion de la lecture analogique (0-1023) en angle grâce à map(), filtrage des micro-variations pour éviter les tremblements du servo, et suivi de l’angle en temps réel sur le moniteur série.</p>
-
-          <div class="tools-title">Outils utilisés</div>
-          <div class="tools-list">
-            <span class="tool-tag"><span class="dot dot-green"></span>Arduino</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
-            <span class="tool-tag"><span class="dot dot-green"></span>Servomoteur</span>
-            <span class="tool-tag"><span class="dot dot-cyan"></span>Potentiomètre</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Moniteur série</span>
-            <span class="tool-tag"><span class="dot dot-blue"></span>Bibliothèque Servo</span>
-          </div>
-
-          <div class="cert-actions">
-            <a href="https://github.com/yanakouedenoudje/arduino-servo-potentiometre" class="btn btn-ghost">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Duplique un bloc .cert-card entier pour ajouter un nouveau projet.
+</div>
+<!-- ═══ PROJET : Yield prediction ═══ -->
+<div class="cert-card" data-category="ml">
+<div class="cert-thumb">
+<img alt="Yield prediction" data-i18n-alt="k422" src="assets/images/projects/yield_prediction.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k181">Yield prediction</h3>
+<p class="cert-meta" data-i18n="k182">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k183">Ce projet utilise la régression linéaire pour modéliser la relation entre la quantité d'engrais épandue et le rendement du maïs, à partir d'un jeu de données agricole, en s'appuyant sur une analyse de corrélation pour justifier le choix de la variable prédictive.</p>
+<div class="tools-title" data-i18n="k184">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k185"><span class="dot dot-green"></span>Jupyter</span>
+<span class="tool-tag" data-i18n="k186"><span class="dot dot-blue"></span>Python</span>
+<span class="tool-tag" data-i18n="k187"><span class="dot dot-green"></span>Numpy</span>
+<span class="tool-tag" data-i18n="k188"><span class="dot dot-blue"></span>Pandas</span>
+<span class="tool-tag" data-i18n="k189"><span class="dot dot-cyan"></span>Scikit-learn</span>
+<span class="tool-tag" data-i18n="k190"><span class="dot dot-green"></span>Seaborn</span>
+<span class="tool-tag" data-i18n="k191"><span class="dot dot-cyan"></span>Matplotlib</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k192" href="https://github.com/yanakouedenoudje/maize_yield_prediction/blob/main/yield_prediction.ipynb">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : AgriPredict ═══ -->
+<div class="cert-card" data-category="ml">
+<div class="cert-thumb">
+<img alt="AgriPredict" data-i18n-alt="k423" src="assets/images/projects/agripredict_portfolio.svg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k193">AgriPredict</h3>
+<p class="cert-meta" data-i18n="k194">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k195">Modèle KNN (scikit-learn) prédisant la classe d'une culture agricole à partir de données de sol et de climat, avec prétraitement adapté par type de variable. Précision de 96% en validation croisée, contre 21% pour une prédiction aléatoire.</p>
+<div class="tools-title" data-i18n="k196">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k197"><span class="dot dot-green"></span>Jupyter</span>
+<span class="tool-tag" data-i18n="k198"><span class="dot dot-blue"></span>Python</span>
+<span class="tool-tag" data-i18n="k199"><span class="dot dot-green"></span>Numpy</span>
+<span class="tool-tag" data-i18n="k200"><span class="dot dot-blue"></span>Pandas</span>
+<span class="tool-tag" data-i18n="k201"><span class="dot dot-cyan"></span>Scikit-learn</span>
+<span class="tool-tag" data-i18n="k202"><span class="dot dot-green"></span>Seaborn</span>
+<span class="tool-tag" data-i18n="k203"><span class="dot dot-cyan"></span>Matplotlib</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k204" href="https://github.com/yanakouedenoudje/AgriPredict">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Calibration capteur ultrason ═══ -->
+<div class="cert-card" data-category="ml embarque">
+<div class="cert-thumb">
+<img alt="Calibration d'un capteur ultrason par régression linéaire" data-i18n-alt="k424" src="assets/images/projects/portfolio_capteur_ultrason.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k205">Calibration d'un capteur ultrason par régression linéaire</h3>
+<p class="cert-meta" data-i18n="k206">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k207">Calibration d'un capteur ultrason HC-SR04 par régression linéaire : nettoyage et standardisation des données (StandardScaler), entraînement d'un modèle scikit-learn, puis simplification mathématique en une équation linéaire pour un déploiement optimisé en C++ sur Arduino Uno et ESP32.</p>
+<div class="tools-title" data-i18n="k208">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k209"><span class="dot dot-green"></span>Jupyter</span>
+<span class="tool-tag" data-i18n="k210"><span class="dot dot-blue"></span>Python</span>
+<span class="tool-tag" data-i18n="k211"><span class="dot dot-green"></span>Numpy</span>
+<span class="tool-tag" data-i18n="k212"><span class="dot dot-blue"></span>Pandas</span>
+<span class="tool-tag" data-i18n="k213"><span class="dot dot-cyan"></span>Scikit-learn</span>
+<span class="tool-tag" data-i18n="k214"><span class="dot dot-green"></span>Seaborn</span>
+<span class="tool-tag" data-i18n="k215"><span class="dot dot-cyan"></span>Matplotlib</span>
+<span class="tool-tag" data-i18n="k216"><span class="dot dot-blue"></span>C++/Arduino</span>
+<span class="tool-tag" data-i18n="k217"><span class="dot dot-green"></span>Electronique embarquée</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k218" href="https://github.com/yanakouedenoudje/hcsr04_linear_regression">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Robot Mobile Éviteur d'Obstacles & Station Météo ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Robot Mobile Éviteur d'Obstacles &amp; Station Météo Embarquée" data-i18n-alt="k425" src="assets/images/projects/robot_arduino_.svg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k219">Robot Mobile Éviteur d'Obstacles &amp; Station Météo Embarquée</h3>
+<p class="cert-meta" data-i18n="k220">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k221">Conception d'un robot autonome en C++ POO combinant navigation intelligente et mesure microclimatique. Le système balaye son environnement pour éviter les collisions tout en affichant la température et l'humidité en temps réel.</p>
+<div class="tools-title" data-i18n="k222">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k223"><span class="dot dot-green"></span>Arduino (C++)</span>
+<span class="tool-tag" data-i18n="k224"><span class="dot dot-blue"></span>Programmation Orientée Objet (POO)</span>
+<span class="tool-tag"><span class="dot dot-green"></span>L298N</span>
+<span class="tool-tag" data-i18n="k225"><span class="dot dot-blue"></span>HC-SR04</span>
+<span class="tool-tag" data-i18n="k226"><span class="dot dot-cyan"></span>Servomoteur</span>
+<span class="tool-tag" data-i18n="k227"><span class="dot dot-green"></span>DHT11</span>
+<span class="tool-tag" data-i18n="k228"><span class="dot dot-cyan"></span>Ecran LCD I2C</span>
+<span class="tool-tag" data-i18n="k229"><span class="dot dot-blue"></span>Régression linéaire</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k230" href="https://github.com/yanakouedenoudje/robot_eviteur_obstacles">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET: Prédiction du Risque de Diabète par Machine Learning ═══ -->
+<div class="cert-card" data-category="ml">
+<div class="cert-thumb">
+<img alt="Prédiction du Risque de Diabète par Machine Learning" data-i18n-alt="k426" src="assets/images/projects/diabetes_risk_ml_portfolio_cover_v2.svg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k231">Prédiction du Risque de Diabète par Machine Learning</h3>
+<p class="cert-meta" data-i18n="k232">Projet réalisé en autodidacte</p>
+<!-- Corrigé : mots coupés par des retours à la ligne (« prédisan t », « de s variables ») -->
+<p class="cert-desc" data-i18n="k233">Conception d'un pipeline de classification en Python (scikit-learn) prédisant le niveau de risque de diabète d'un patient à partir de données démographiques, physiologiques et de mode de vie. Le système combine un prétraitement structuré des variables numériques et catégorielles avec un modèle KNN optimisé par recherche d'hyperparamètres.</p>
+<div class="tools-title" data-i18n="k234">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k235"><span class="dot dot-green"></span>Python</span>
+<span class="tool-tag" data-i18n="k236"><span class="dot dot-blue"></span>Scikit-learn</span>
+<span class="tool-tag" data-i18n="k237"><span class="dot dot-green"></span>Pandas</span>
+<span class="tool-tag" data-i18n="k238"><span class="dot dot-blue"></span>Numpy</span>
+<span class="tool-tag" data-i18n="k239"><span class="dot dot-cyan"></span>KNeighborsClassifier</span>
+<span class="tool-tag" data-i18n="k240"><span class="dot dot-green"></span>Jupyter Notebook</span>
+<span class="tool-tag" data-i18n="k241"><span class="dot dot-cyan"></span>Matplotlib</span>
+<span class="tool-tag" data-i18n="k242"><span class="dot dot-blue"></span>Seaborn</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k243" href="https://github.com/yanakouedenoudje/ml_diabetes_risk_classifier">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Traitement d'images avec NumPy ═══ -->
+<div class="cert-card" data-category="ml">
+<div class="cert-thumb">
+<img alt="Traitement d'images avec NumPy : image originale et image en niveaux de gris" data-i18n-alt="k427" src="assets/images/projects/numpy_images.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k244">Traitement d'images avec NumPy</h3>
+<p class="cert-meta" data-i18n="k245">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k246">Exercices de traitement d'images avec NumPy : manipulation des images comme tableaux de pixels (lecture des valeurs RGB, modification de zones), conversion en niveaux de gris par pondération des canaux, et réglage de la luminosité avec gestion du dépassement de plage.</p>
+<div class="tools-title" data-i18n="k247">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k248"><span class="dot dot-green"></span>Jupyter</span>
+<span class="tool-tag" data-i18n="k249"><span class="dot dot-blue"></span>Python</span>
+<span class="tool-tag" data-i18n="k250"><span class="dot dot-green"></span>Numpy</span>
+<span class="tool-tag" data-i18n="k251"><span class="dot dot-cyan"></span>Matplotlib</span>
+<span class="tool-tag" data-i18n="k252"><span class="dot dot-blue"></span>Pillow</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k253" href="https://github.com/yanakouedenoudje/numpy-image-processing">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Ouverture Automatique de Porte par Capteur Ultrason ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Ouverture Automatique de Porte par Capteur Ultrason" data-i18n-alt="k428" src="assets/images/projects/open_door.png"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k254">Ouverture Automatique de Porte par Capteur Ultrason</h3>
+<p class="cert-meta" data-i18n="k255">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k256">Conception d’un système embarqué en C++/Arduino permettant l’ouverture automatique d’une porte par détection de proximité. Intégration d’un capteur ultrason HC-SR04 et d’un servomoteur, avec une architecture modulaire basée sur la programmation orientée objet.</p>
+<div class="tools-title" data-i18n="k257">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k258"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k259"><span class="dot dot-green"></span>Servomoteur</span>
+<span class="tool-tag" data-i18n="k260"><span class="dot dot-blue"></span>HC-SR04</span>
+<span class="tool-tag" data-i18n="k261"><span class="dot dot-cyan"></span>Programmation Orientée Objet (POO)</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k262" href="https://github.com/yanakouedenoudje/smart-door-arduino">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Suiveur de Ligne par Capteurs Infrarouges ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Suiveur de Ligne par Capteurs Infrarouges" data-i18n-alt="k429" src="assets/images/projects/suiveur_ligne.jpeg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k263">Suiveur de Ligne par Capteurs Infrarouges</h3>
+<p class="cert-meta" data-i18n="k264">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k265">Conception d'un système embarqué en C++/Arduino permettant la détection et le suivi d'une ligne au sol grâce à trois capteurs infrarouges. Traitement en temps réel des signaux de position (centre, gauche, droite) et retour visuel via un système de LEDs indicatrices (vert/jaune/rouge) reflétant l'alignement du robot par rapport à la ligne.</p>
+<div class="tools-title" data-i18n="k266">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k267"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k268"><span class="dot dot-green"></span>Capteurs infrarouges (IR)</span>
+<span class="tool-tag" data-i18n="k269"><span class="dot dot-blue"></span>LEDs</span>
+<span class="tool-tag" data-i18n="k270"><span class="dot dot-cyan"></span>Logique de contrôle conditionnel</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k271" href="https://github.com/yanakouedenoudje/line_follower_arduino">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Détecteur de Flamme par Capteur Infrarouge ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Détecteur de Flamme par Capteur Infrarouge" data-i18n-alt="k430" src="assets/images/projects/detect_fire.jpeg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k272">Détecteur de Flamme par Capteur Infrarouge</h3>
+<p class="cert-meta" data-i18n="k273">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k274">Conception d'un système embarqué en C++/Arduino permettant la détection en temps réel d'une flamme grâce à un capteur infrarouge dédié. Déclenchement d'une alerte visuelle par LED clignotante en cas de détection, assurant une surveillance continue de l'environnement.</p>
+<div class="tools-title" data-i18n="k275">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k276"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k277"><span class="dot dot-green"></span>Capteurs infrarouges (IR)</span>
+<span class="tool-tag" data-i18n="k278"><span class="dot dot-blue"></span>LEDs</span>
+<span class="tool-tag" data-i18n="k279"><span class="dot dot-cyan"></span>Logique de contrôle conditionnel</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k280" href="https://github.com/yanakouedenoudje/detecteur_de_flamme_arduino">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Simulation de Feux de Circulation ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Simulation de Feux de Circulation" data-i18n-alt="k431" src="assets/images/projects/feux.jpeg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k281">Simulation de Feux de Circulation</h3>
+<p class="cert-meta" data-i18n="k282">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k283">Conception d'un système embarqué en C++/Arduino simulant la gestion d'un carrefour à deux feux de circulation. Implémentation d'un cycle temporel synchronisé entre les deux feux, avec transitions vert/jaune/rouge reproduisant fidèlement la logique de régulation du trafic routier.</p>
+<div class="tools-title" data-i18n="k284">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k285"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k286"><span class="dot dot-green"></span>Gestion de temporisation</span>
+<span class="tool-tag" data-i18n="k287"><span class="dot dot-blue"></span>LEDs</span>
+<span class="tool-tag" data-i18n="k288"><span class="dot dot-cyan"></span>Logique séquentielle</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k289" href="https://github.com/yanakouedenoudje/feux_de_circulation_arduino">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Robot mobile autonome à évitement d'obstacles ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Robot mobile autonome à évitement d'obstacles" data-i18n-alt="k432" src="assets/images/projects/robot_photo_1_final.jpg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k290">Robot mobile autonome à évitement d'obstacles</h3>
+<p class="cert-meta" data-i18n="k291">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k292">Conception d’un robot mobile autonome sur Arduino, capable de détecter les obstacles et de choisir une trajectoire adaptée grâce à un capteur ultrason HC-SR04 et un servomoteur. Développement en C++ orienté objet, pilotage des moteurs via un double pont en H et affichage des mesures sur écran LCD I2C.</p>
+<div class="tools-title" data-i18n="k293">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k294"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k295"><span class="dot dot-green"></span>Programmation Orientée Objet (POO)</span>
+<span class="tool-tag" data-i18n="k296"><span class="dot dot-blue"></span>LCD I2C</span>
+<span class="tool-tag" data-i18n="k297"><span class="dot dot-cyan"></span>HC-SR04</span>
+<span class="tool-tag" data-i18n="k298"><span class="dot dot-blue"></span>Servomoteur</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>L298N</span>
+<span class="tool-tag" data-i18n="k299"><span class="dot dot-green"></span>Électronique embarquée</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k300" href="https://github.com/yanakouedenoudje/smart-robot-car">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Détecteur de présence et de métal (Arduino) ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Détecteur de présence et de métal (Arduino)" data-i18n-alt="k433" src="assets/images/projects/sn04.jpg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k301">Détecteur de présence et de métal</h3>
+<p class="cert-meta" data-i18n="k302">Projet réalisé en autodidacte</p>
+<!-- Corrigé : mot coupé par un retour à la ligne (« temp s d'écho ») -->
+<p class="cert-desc" data-i18n="k303">Conception d'un système de détection à deux niveaux sur Arduino : un capteur ultrason HC-SR04 repère la présence d'un objet à moins de 5 cm, puis un capteur inductif SN04-N détermine s'il est métallique. Développement en C++ avec lecture du capteur inductif en INPUT_PULLUP, calcul de distance par mesure du temps d'écho, signalisation par LED (métal détecté / objet non métallique) et suivi des mesures sur le moniteur série.</p>
+<div class="tools-title" data-i18n="k304">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k305"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k306"><span class="dot dot-green"></span>SN04-N</span>
+<span class="tool-tag" data-i18n="k307"><span class="dot dot-cyan"></span>HC-SR04</span>
+<span class="tool-tag" data-i18n="k308"><span class="dot dot-blue"></span>Moniteur série</span>
+<span class="tool-tag" data-i18n="k309"><span class="dot dot-blue"></span>LED</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k310" href="https://github.com/yanakouedenoudje/detecteur-presence-metal-arduino">Code source</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Contrôle de servomoteur par potentiomètre ═══ -->
+<div class="cert-card" data-category="embarque">
+<div class="cert-thumb">
+<img alt="Contrôle de servomoteur par potentiomètre" data-i18n-alt="k434" src="assets/images/projects/controle.jpeg"/>
+</div>
+<div class="cert-card-body">
+<h3 data-i18n="k311">Contrôle de servomoteur par potentiomètre</h3>
+<p class="cert-meta" data-i18n="k312">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k313">Conception d’un système de commande de position sur Arduino : un potentiomètre branché sur une entrée analogique permet de piloter un servomoteur sur toute sa plage de 0 à 180°. Développement en C++ avec la bibliothèque Servo, conversion de la lecture analogique (0-1023) en angle grâce à map(), filtrage des micro-variations pour éviter les tremblements du servo, et suivi de l’angle en temps réel sur le moniteur série.</p>
+<div class="tools-title" data-i18n="k314">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k315"><span class="dot dot-green"></span>Arduino</span>
+<span class="tool-tag"><span class="dot dot-blue"></span>C++</span>
+<span class="tool-tag" data-i18n="k316"><span class="dot dot-green"></span>Servomoteur</span>
+<span class="tool-tag" data-i18n="k317"><span class="dot dot-cyan"></span>Potentiomètre</span>
+<span class="tool-tag" data-i18n="k318"><span class="dot dot-blue"></span>Moniteur série</span>
+<span class="tool-tag" data-i18n="k319"><span class="dot dot-blue"></span>Bibliothèque Servo</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k320" href="https://github.com/yanakouedenoudje/arduino-servo-potentiometre">Code source</a>
+</div>
+</div>
+</div>
+<!-- Duplique un bloc .cert-card entier pour ajouter un nouveau projet.
            N'oublie pas data-category="ml|embarque|pcb|cao" (plusieurs valeurs possibles,
            séparées par un espace) pour que le filtre fonctionne. -->
-      <!-- ═══ PROJET : Carte électronique (PCB) ═══ -->
+<!-- ═══ PROJET : Carte électronique (PCB) ═══ -->
 <div class="cert-card" data-category="pcb embarque">
-  <div class="cert-thumb">
-    <img src="assets/images/projects/pcb_exemple.jpg" alt="PCB carte de contrôle moteur">
-  </div>
-  <div class="cert-card-body">
-    <h3>Carte de contrôle moteur (PCB)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Conception d'un circuit imprimé double face pour piloter deux moteurs DC à partir d'un microcontrôleur. Réalisation du schéma électrique, placement-routage des composants, vérification des règles de conception (DRC) et export des fichiers Gerber pour la fabrication.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>KiCad</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Schéma électrique</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Routage PCB</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Fichiers Gerber</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/NOM_DU_DEPOT" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="PCB carte de contrôle moteur" data-i18n-alt="k435" src="assets/images/projects/pcb_exemple.jpg"/>
 </div>
-
-      <!-- ═══  ═══ -->
+<div class="cert-card-body">
+<h3 data-i18n="k321">Carte de contrôle moteur (PCB)</h3>
+<p class="cert-meta" data-i18n="k322">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k323">Conception d'un circuit imprimé double face pour piloter deux moteurs DC à partir d'un microcontrôleur. Réalisation du schéma électrique, placement-routage des composants, vérification des règles de conception (DRC) et export des fichiers Gerber pour la fabrication.</p>
+<div class="tools-title" data-i18n="k324">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k325"><span class="dot dot-blue"></span>KiCad</span>
+<span class="tool-tag" data-i18n="k326"><span class="dot dot-green"></span>Schéma électrique</span>
+<span class="tool-tag" data-i18n="k327"><span class="dot dot-cyan"></span>Routage PCB</span>
+<span class="tool-tag" data-i18n="k328"><span class="dot dot-blue"></span>Fichiers Gerber</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k329" href="https://github.com/yanakouedenoudje/NOM_DU_DEPOT">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══  ═══ -->
 <!-- ═══ PROJET : Guide mécanique (CAO) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/guide_mecanique.png" alt="Guide mécanique à collier fendu modélisé sous Autodesk Fusion">
-  </div>
-  <div class="cert-card-body">
-    <h3>Guide mécanique à collier fendu (CAO 3D)</h3>
-    <p class="cert-meta">Exercice d'apprentissage d'après un plan de référence</p>
-    <p class="cert-desc">Modélisation 3D d'un guide mécanique à partir d'un plan de référence : embase avec trous oblongs de fixation, montant, collier fendu avec oreille de serrage pour maintenir un tube ou un arbre, congés, chanfreins et gravure personnalisée.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Lecture de plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Congés et chanfreins</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/guide-mecanique" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Guide mécanique à collier fendu modélisé sous Autodesk Fusion" data-i18n-alt="k436" src="assets/images/cao_portfolio/guide_mecanique.png"/>
 </div>
-
-      <!-- ═══ PROJET : Support moteur (CAO) ═══ -->
+<div class="cert-card-body">
+<h3 data-i18n="k330">Guide mécanique à collier fendu (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k331">Exercice d'apprentissage d'après un plan de référence</p>
+<p class="cert-desc" data-i18n="k332">Modélisation 3D d'un guide mécanique à partir d'un plan de référence : embase avec trous oblongs de fixation, montant, collier fendu avec oreille de serrage pour maintenir un tube ou un arbre, congés, chanfreins et gravure personnalisée.</p>
+<div class="tools-title" data-i18n="k333">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k334"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k335"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k336"><span class="dot dot-cyan"></span>Lecture de plan</span>
+<span class="tool-tag" data-i18n="k337"><span class="dot dot-blue"></span>Congés et chanfreins</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k338" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/guide-mecanique">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Support moteur (CAO) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/support_moteur.png" alt="Support moteur en équerre modélisé sous Autodesk Fusion">
-  </div>
-  <div class="cert-card-body">
-    <h3>Support moteur en équerre (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d'un support moteur en équerre : platine de base avec trous oblongs pour régler la position, et plaque verticale arrondie avec passage central et perçages de fixation du moteur. Réalisation de la mise en plan cotée.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Mise en plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Fixation d'actionneur</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/support-moteur" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Support moteur en équerre modélisé sous Autodesk Fusion" data-i18n-alt="k437" src="assets/images/cao_portfolio/support_moteur.png"/>
 </div>
-
-      <!-- ═══ PROJET : Roue à denture rectangulaire (CAO 3D)═══ -->
+<div class="cert-card-body">
+<h3 data-i18n="k339">Support moteur en équerre (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k340">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k341">Modélisation 3D d'un support moteur en équerre : platine de base avec trous oblongs pour régler la position, et plaque verticale arrondie avec passage central et perçages de fixation du moteur. Réalisation de la mise en plan cotée.</p>
+<div class="tools-title" data-i18n="k342">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k343"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k344"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k345"><span class="dot dot-cyan"></span>Mise en plan</span>
+<span class="tool-tag" data-i18n="k346"><span class="dot dot-blue"></span>Fixation d'actionneur</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k347" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/support-moteur">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Roue à denture rectangulaire (CAO 3D)═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/rendu.png" alt="Roue à denture rectangulaire (CAO 3D)">
-  </div>
-  <div class="cert-card-body">
-    <h3>Roue à denture rectangulaire (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d’une roue à denture rectangulaire à angles arrondis, avec moyeu surélevé, alésage central et 6 perçages répartis régulièrement. Réalisation de la mise en plan cotée et export des fichiers STEP et STL.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Esquisses</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Mise en plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>STEP / STL</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/pignon" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Roue à denture rectangulaire (CAO 3D)" data-i18n-alt="k438" src="assets/images/cao_portfolio/rendu.png"/>
 </div>
-
-      <!-- ═══ PROJET: Bras de commande (CAO) ═══ -->
+<div class="cert-card-body">
+<h3 data-i18n="k348">Roue à denture rectangulaire (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k349">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k350">Modélisation 3D d’une roue à denture rectangulaire à angles arrondis, avec moyeu surélevé, alésage central et 6 perçages répartis régulièrement. Réalisation de la mise en plan cotée et export des fichiers STEP et STL.</p>
+<div class="tools-title" data-i18n="k351">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k352"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k353"><span class="dot dot-green"></span>Esquisses</span>
+<span class="tool-tag" data-i18n="k354"><span class="dot dot-cyan"></span>Mise en plan</span>
+<span class="tool-tag" data-i18n="k355"><span class="dot dot-blue"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k356"><span class="dot dot-green"></span>STEP / STL</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k357" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/pignon">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET: Bras de commande (CAO) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/bras_commande.png" alt="Bras de commande à lumière courbe modélisé sous Autodesk Fusion">
-  </div>
-  <div class="cert-card-body">
-    <h3>Bras de commande à lumière courbe (CAO 3D)</h3>
-    <p class="cert-meta">Modélisation d'après un plan de référence · mise en plan personnelle</p>
-    <p class="cert-desc">Modélisation 3D d'un bras de commande à partir d'un plan de référence : moyeu cylindrique avec alésage et rainure de clavette pour le montage sur un arbre, plaque à profil courbe et lumière en arc de cercle pour régler la position d'un axe de liaison, congés de raccordement. Réalisation de la mise en plan avec vue en coupe et vue de détail.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Mise en plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Vue en coupe</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Rainure de clavette</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/bras-commande" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Bras de commande à lumière courbe modélisé sous Autodesk Fusion" data-i18n-alt="k439" src="assets/images/cao_portfolio/bras_commande.png"/>
 </div>
-
-      <!-- ═══ PROJET : Trémie de semoir (CAO) ═══ -->
+<div class="cert-card-body">
+<h3 data-i18n="k358">Bras de commande à lumière courbe (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k359">Modélisation d'après un plan de référence · mise en plan personnelle</p>
+<p class="cert-desc" data-i18n="k360">Modélisation 3D d'un bras de commande à partir d'un plan de référence : moyeu cylindrique avec alésage et rainure de clavette pour le montage sur un arbre, plaque à profil courbe et lumière en arc de cercle pour régler la position d'un axe de liaison, congés de raccordement. Réalisation de la mise en plan avec vue en coupe et vue de détail.</p>
+<div class="tools-title" data-i18n="k361">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k362"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k363"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k364"><span class="dot dot-cyan"></span>Mise en plan</span>
+<span class="tool-tag" data-i18n="k365"><span class="dot dot-blue"></span>Vue en coupe</span>
+<span class="tool-tag" data-i18n="k366"><span class="dot dot-green"></span>Rainure de clavette</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k367" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/bras-commande">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ PROJET : Trémie de semoir (CAO) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/tremie.png" alt="Trémie de semoir modélisée sous Autodesk Fusion">
-  </div>
-  <div class="cert-card-body">
-    <h3>Trémie de semoir (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d'une trémie de semoir : réservoir rectangulaire se rétrécissant en entonnoir vers une sortie munie d'une collerette de fixation, pour guider les graines vers le système de dosage. Réalisation de la mise en plan cotée.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Mise en plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Agriculture de précision</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/tremie" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Trémie de semoir modélisée sous Autodesk Fusion" data-i18n-alt="k440" src="assets/images/cao_portfolio/tremie.png"/>
 </div>
-
-     <!-- ═══ Assemblage vis, rondelle et écrou (CAO 3D) ═══ -->
-
+<div class="cert-card-body">
+<h3 data-i18n="k368">Trémie de semoir (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k369">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k370">Modélisation 3D d'une trémie de semoir : réservoir rectangulaire se rétrécissant en entonnoir vers une sortie munie d'une collerette de fixation, pour guider les graines vers le système de dosage. Réalisation de la mise en plan cotée.</p>
+<div class="tools-title" data-i18n="k371">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k372"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k373"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k374"><span class="dot dot-cyan"></span>Mise en plan</span>
+<span class="tool-tag" data-i18n="k375"><span class="dot dot-blue"></span>Agriculture de précision</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k376" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/tremie">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ Assemblage vis, rondelle et écrou (CAO 3D) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/boulon.png" alt="Assemblage vis, rondelle et écrou (CAO 3D)">
-  </div>
-  <div class="cert-card-body">
-    <h3>Assemblage vis, rondelle et écrou (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d'un assemblage boulonné : vis à tête cylindrique avec filetage hélicoïdal, rondelle et écrou hexagonal. Mise en position des pièces dans un assemblage.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Assemblage</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Filetage</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Rondelle</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/assemblage-boulonne" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Assemblage vis, rondelle et écrou (CAO 3D)" data-i18n-alt="k441" src="assets/images/cao_portfolio/boulon.png"/>
 </div>
-
-      <!-- ═══ Disque doseur de graines (CAO 3D) ═══ -->
+<div class="cert-card-body">
+<h3 data-i18n="k377">Assemblage vis, rondelle et écrou (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k378">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k379">Modélisation 3D d'un assemblage boulonné : vis à tête cylindrique avec filetage hélicoïdal, rondelle et écrou hexagonal. Mise en position des pièces dans un assemblage.</p>
+<div class="tools-title" data-i18n="k380">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k381"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k382"><span class="dot dot-green"></span>Assemblage</span>
+<span class="tool-tag" data-i18n="k383"><span class="dot dot-cyan"></span>Filetage</span>
+<span class="tool-tag" data-i18n="k384"><span class="dot dot-blue"></span>Rondelle</span>
+<span class="tool-tag" data-i18n="k385"><span class="dot dot-green"></span>Modélisation 3D</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k386" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/assemblage-boulonne">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ Disque doseur de graines (CAO 3D) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/disque_doseur.png" alt="Disque doseur de graines modélisé sous Autodesk Fusion">
-  </div>
-  <div class="cert-card-body">
-    <h3>Disque doseur de graines (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d'un disque doseur de graines pour semoir : moyeu central, évidements et couronne de perçages dimensionnés pour prélever les graines une à une lors de la rotation du disque.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Mise en plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Agriculture de précision</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/disque-doseur" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Disque doseur de graines modélisé sous Autodesk Fusion" data-i18n-alt="k442" src="assets/images/cao_portfolio/disque_doseur.png"/>
 </div>
-
-
+<div class="cert-card-body">
+<h3 data-i18n="k387">Disque doseur de graines (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k388">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k389">Modélisation 3D d'un disque doseur de graines pour semoir : moyeu central, évidements et couronne de perçages dimensionnés pour prélever les graines une à une lors de la rotation du disque.</p>
+<div class="tools-title" data-i18n="k390">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k391"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k392"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k393"><span class="dot dot-cyan"></span>Mise en plan</span>
+<span class="tool-tag" data-i18n="k394"><span class="dot dot-blue"></span>Agriculture de précision</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k395" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/disque-doseur">Fichiers du projet</a>
+</div>
+</div>
+</div>
 <!-- ═══ PROJET  : Poulie de transmission (CAO) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/poulie.png" alt="Poulie de transmission modélisée sous Autodesk Fusion">
-  </div>
-  <div class="cert-card-body">
-    <h3>Poulie de transmission à gorge (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d'une poulie de transmission à gorge : deux flasques, gorge de guidage, moyeu central avec alésage et petits perçages de fixation, pour transmettre un mouvement de rotation par courroie ou par câble.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Mise en plan</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Transmission mécanique</span>
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/poulie" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Poulie de transmission modélisée sous Autodesk Fusion" data-i18n-alt="k443" src="assets/images/cao_portfolio/poulie.png"/>
 </div>
-      
-           <!-- ═══ Arbre étagé à rainures de clavette (CAO 3D) ═══ -->
-
+<div class="cert-card-body">
+<h3 data-i18n="k396">Poulie de transmission à gorge (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k397">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k398">Modélisation 3D d'une poulie de transmission à gorge : deux flasques, gorge de guidage, moyeu central avec alésage et petits perçages de fixation, pour transmettre un mouvement de rotation par courroie ou par câble.</p>
+<div class="tools-title" data-i18n="k399">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k400"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k401"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k402"><span class="dot dot-cyan"></span>Mise en plan</span>
+<span class="tool-tag" data-i18n="k403"><span class="dot dot-blue"></span>Transmission mécanique</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k404" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/poulie">Fichiers du projet</a>
+</div>
+</div>
+</div>
+<!-- ═══ Arbre étagé à rainures de clavette (CAO 3D) ═══ -->
 <div class="cert-card" data-category="cao">
-  <div class="cert-thumb">
-    <img src="assets/images/cao_portfolio/arbree.png" alt="Arbre étagé à rainures de clavette (CAO 3D)">
-  </div>
-  <div class="cert-card-body">
-    <h3>Arbre étagé à rainures de clavette (CAO 3D)</h3>
-    <p class="cert-meta">Projet réalisé en autodidacte</p>
-    <p class="cert-desc">Modélisation 3D d'un arbre de transmission étagé : plusieurs diamètres, épaulement, chanfrein et deux rainures de clavette pour l'entraînement de pièces en rotation.</p>
-
-    <div class="tools-title">Outils utilisés</div>
-    <div class="tools-list">
-      <span class="tool-tag"><span class="dot dot-blue"></span>Autodesk Fusion</span>
-      <span class="tool-tag"><span class="dot dot-green"></span>Modélisation 3D</span>
-      <span class="tool-tag"><span class="dot dot-cyan"></span>Rainures de clavette</span>
-      <span class="tool-tag"><span class="dot dot-blue"></span>Arbre étagé</span>
-      
-    </div>
-
-    <div class="cert-actions">
-      <a href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/arbre" class="btn btn-ghost">Fichiers du projet</a>
-    </div>
-  </div>
+<div class="cert-thumb">
+<img alt="Arbre étagé à rainures de clavette (CAO 3D)" data-i18n-alt="k444" src="assets/images/cao_portfolio/arbree.png"/>
 </div>
-
-
-      
-
-    </div>
-
-    <!-- Message affiché par le filtre quand une catégorie est vide (ex : PCB, CAO) -->
-    <p class="no-results" id="noResults">Aucun projet dans cette catégorie pour le moment.</p>
-
-  </div>
+<div class="cert-card-body">
+<h3 data-i18n="k405">Arbre étagé à rainures de clavette (CAO 3D)</h3>
+<p class="cert-meta" data-i18n="k406">Projet réalisé en autodidacte</p>
+<p class="cert-desc" data-i18n="k407">Modélisation 3D d'un arbre de transmission étagé : plusieurs diamètres, épaulement, chanfrein et deux rainures de clavette pour l'entraînement de pièces en rotation.</p>
+<div class="tools-title" data-i18n="k408">Outils utilisés</div>
+<div class="tools-list">
+<span class="tool-tag" data-i18n="k409"><span class="dot dot-blue"></span>Autodesk Fusion</span>
+<span class="tool-tag" data-i18n="k410"><span class="dot dot-green"></span>Modélisation 3D</span>
+<span class="tool-tag" data-i18n="k411"><span class="dot dot-cyan"></span>Rainures de clavette</span>
+<span class="tool-tag" data-i18n="k412"><span class="dot dot-blue"></span>Arbre étagé</span>
+</div>
+<div class="cert-actions">
+<a class="btn btn-ghost" data-i18n="k413" href="https://github.com/yanakouedenoudje/cao-portfolio/tree/main/arbre">Fichiers du projet</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Message affiché par le filtre quand une catégorie est vide (ex : PCB, CAO) -->
+<p class="no-results" data-i18n="k414" id="noResults">Aucun projet dans cette catégorie pour le moment.</p>
+</div>
 </main>
-
 <!-- ===== LIGHTBOX (agrandissement d'image, si tu ajoutes des galeries) ===== -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-  <div class="lightbox-caption" id="lightboxCaption"></div>
+<button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+<img alt="" id="lightboxImg" src=""/>
+<div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
-
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="wrap">
+<div class="wrap" data-i18n="k415">
     © <span id="year"></span> Yan Akouedenoudje.
   </div>
 </footer>
-
-<script src="assets/js/main.js"></script>
-
+<script src="assets/js/i18n-data.js"></script>
+<script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>
